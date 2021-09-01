@@ -110,6 +110,7 @@
 						'dependencies':
 						[
 							'../prebuilt/thirdparty.gyp:thirdparty_prebuilt_skia',
+							'../prebuilt/thirdparty.gyp:thirdparty_prebuilt_freetype',
 						],
 					},
 				],
@@ -183,6 +184,15 @@
                                 '$(SDKROOT)/System/Library/Frameworks/AVFoundation.framework',
                                 '$(SDKROOT)/System/Library/Frameworks/CoreMedia.framework',
 								'$(SDKROOT)/System/Library/Frameworks/MediaToolbox.framework',
+                            ],
+                        },
+                    ],
+                    [
+                        'OS == "ios" and ("11" not in target_sdk) and ("12" not in target_sdk) and ("13" not in target_sdk)',
+                        {
+                            'libraries':
+                            [
+                                '$(SDKROOT)/System/Library/Frameworks/AppTrackingTransparency.framework',
                             ],
                         },
                     ],

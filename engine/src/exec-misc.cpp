@@ -67,6 +67,14 @@ void MCMiscGetDeviceToken(MCExecContext& ctxt, MCStringRef& r_token)
     ctxt.Throw();
 }
 
+void MCMiscGetTrackingAuthorizationStatus(MCExecContext& ctxt, MCStringRef& r_status)
+{
+    if(MCSystemGetTrackingAuthorizationStatus(r_status))
+        return;
+    
+    ctxt.Throw();
+}
+
 void MCMiscGetLaunchUrl(MCExecContext& ctxt, MCStringRef& r_url)
 {
     if(MCSystemGetLaunchUrl(r_url))
@@ -104,6 +112,14 @@ void MCMiscExecVibrate(MCExecContext& ctxt, int32_t* p_number_of_times)
         t_number_of_times = *p_number_of_times;
     
     if (MCSystemVibrate(t_number_of_times))
+        return;
+    
+    ctxt.Throw();
+}
+
+void MCMiscGetDeviceModel(MCExecContext& ctxt, MCStringRef& r_model)
+{
+    if(MCSystemGetDeviceModel(r_model))
         return;
     
     ctxt.Throw();

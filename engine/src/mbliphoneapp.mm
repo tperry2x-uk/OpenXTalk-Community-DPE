@@ -30,6 +30,11 @@ along with LiveCode.  If not see <http://www.gnu.org/licenses/>.  */
 #include "mblnotification.h"
 #import <sys/utsname.h>
 
+#ifdef __IPHONE_14_0
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#endif
+
+
 #include "libscript/script.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -266,13 +271,19 @@ static UIDeviceOrientation patch_device_orientation(id self, SEL _cmd)
 	// PM-2016-09-08: [[ Bug 18327 ]] Take into account if x.y.z version of iOS has more than one digits in x,y,z
     NSArray *t_sys_version_array = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
     
-    MCmajorosversion = [[t_sys_version_array objectAtIndex:0] intValue] * 100;
-    MCmajorosversion += [[t_sys_version_array objectAtIndex:1] intValue] * 10;
-    
+    uint8_t t_major;
+    t_major = [[t_sys_version_array objectAtIndex:0] intValue];
+
+	uint8_t t_minor;
+    t_minor = [[t_sys_version_array objectAtIndex:1] intValue];
+
+    uint8_t t_bugfix;
     if ([t_sys_version_array count] == 3)
-    {
-        MCmajorosversion += [[t_sys_version_array objectAtIndex:2] intValue];
-    }
+		t_bugfix = [[t_sys_version_array objectAtIndex:2] intValue];
+	else
+		t_bugfix = 0;
+	
+	MCmajorosversion = MCOSVersionMake(t_major, t_minor, t_bugfix);
     
     m_keyboard_display = kMCIPhoneKeyboardDisplayModeOver;
     m_keyboard_type = UIKeyboardTypeDefault;
@@ -410,6 +421,16 @@ static UIDeviceOrientation patch_device_orientation(id self, SEL _cmd)
 	// Get the info dictionary.
 	NSDictionary *t_info_dict;
 	t_info_dict = [[NSBundle mainBundle] infoDictionary];
+    
+    // Show dialog about app tracking transparency
+#ifdef __IPHONE_14_0
+    if (@available(iOS 14, *))
+    {
+        NSString *t_app_tracking_transparency_key = [t_info_dict objectForKey: @"NSUserTrackingUsageDescription"];
+        if (t_app_tracking_transparency_key != nil)
+            [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {}];
+    }
+#endif
     
     // Read the allowed notification types from the plist.
     NSArray *t_allowed_push_notifications_array;
@@ -552,14 +573,14 @@ static UIDeviceOrientation patch_device_orientation(id self, SEL _cmd)
 
 // Check if we have received a custom URL
 // This handler is called at runtime, for example if the application tries to launch itself
-- (BOOL)application:(UIApplication *)p_application openURL:(NSURL*)p_url sourceApplication:(NSString *)p_source_application annotation:(id)p_annotation
+- (BOOL)application:(UIApplication *)p_application openURL:(NSURL *)p_url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)p_options
 {
     BOOL t_result = NO;
     if (p_url != nil)
     {
         MCAutoStringRef t_url_text;
-		/* UNCHECKED */ MCStringCreateWithCFStringRef((CFStringRef)[p_url absoluteString], &t_url_text);
-		MCValueAssign(m_launch_url, *t_url_text);
+        /* UNCHECKED */ MCStringCreateWithCFStringRef((CFStringRef)[p_url absoluteString], &t_url_text);
+        MCValueAssign(m_launch_url, *t_url_text);
         if (m_did_become_active)
             MCNotificationPostUrlWakeUp(m_launch_url);
         t_result = YES;
@@ -929,7 +950,7 @@ void MCiOSFilePostProtectedDataUnavailableEvent();
 	t_viewport = [[UIScreen mainScreen] bounds];
 	
     // MW-2014-10-02: [[ iOS 8 Support ]] iOS 8 already takes into account orientation when returning the bounds.
-	if (MCmajorosversion < 800 && UIInterfaceOrientationIsLandscape([self fetchOrientation]))
+	if (MCmajorosversion < MCOSVersionMake(8,0,0) && UIInterfaceOrientationIsLandscape([self fetchOrientation]))
 		return CGRectMake(0.0f, 0.0f, t_viewport . size . height, t_viewport . size . width);
 	
 	return t_viewport;
@@ -945,13 +966,13 @@ void MCiOSFilePostProtectedDataUnavailableEvent();
     // MM-2013-09-25: [[ iOS7Support ]] The status bar is always overlaid ontop of the view, irrespective of its style.
     // PM-2015-02-17: [[ Bug 14482 ]] If the style is "solid", do not put status bar on top of the view
 	CGFloat t_status_bar_size;
-	if (m_status_bar_hidden || (MCmajorosversion >= 700 && !m_status_bar_solid)|| ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && m_status_bar_style == UIStatusBarStyleBlackTranslucent))
+	if (m_status_bar_hidden || (MCmajorosversion >= MCOSVersionMake(7,0,0) && !m_status_bar_solid)|| ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && m_status_bar_style == UIStatusBarStyleBlackTranslucent))
 		t_status_bar_size = 0.0f;
 	else
 		t_status_bar_size = 20.0f;
 	
     // MM-2014-09-26: [[ iOS 8 Support ]] iOS 8 already takes into account orientation when returning the bounds.
-	if (MCmajorosversion < 800 && UIInterfaceOrientationIsLandscape([self fetchOrientation]))
+	if (MCmajorosversion < MCOSVersionMake(8,0,0) && UIInterfaceOrientationIsLandscape([self fetchOrientation]))
 		return CGRectMake(0.0f, t_status_bar_size, t_viewport . size . height, t_viewport . size . width - t_status_bar_size);
 	
 	return CGRectMake(0.0f, t_status_bar_size, t_viewport . size . width, t_viewport . size . height - t_status_bar_size);
@@ -1572,7 +1593,7 @@ extern UIReturnKeyType MCInterfaceGetUIReturnKeyTypeFromExecEnum(MCInterfaceRetu
 	
     // MM-2012-09-25: [[ iOS 6.0 ]] When the startup view controller is visible, it appears that didRotateFromInterfaceOrientation is not called.
     //   Set current orientation here instead.
-    if (MCmajorosversion >= 600)
+    if (MCmajorosversion >= MCOSVersionMake(6,0,0))
         m_current_orientation = m_pending_orientation;
 }
 
@@ -1685,66 +1706,7 @@ NSString* MCIPhoneGetDeviceModelName(void)
     
     NSString *t_machine_name = [NSString stringWithCString:t_system_info.machine encoding:NSUTF8StringEncoding];
     
-    // MARK: We can just return t_machine_name. Following is for convenience
-    // Full list at http://theiphonewiki.com/wiki/Models
-    
-	NSDictionary *commonNamesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-										   @"iPhone",       @"iPhone1,1",
-										   @"iPhone 3G",    @"iPhone1,2",
-										   @"iPhone 3GS",   @"iPhone2,1",
-                                           @"iPhone 4",     @"iPhone3,1",
-										   
-										   @"iPhone 4(Rev A)",      @"iPhone3,2",
-										   @"iPhone 4(CDMA)",       @"iPhone3,3",
-										   @"iPhone 4S",            @"iPhone4,1",
-										   @"iPhone 5(GSM)",        @"iPhone5,1",
-										   @"iPhone 5(GSM+CDMA)",   @"iPhone5,2",
-										   @"iPhone 5c(GSM)",       @"iPhone5,3",
-										   @"iPhone 5c(GSM+CDMA)",  @"iPhone5,4",
-										   @"iPhone 5s(GSM)",       @"iPhone6,1",
-                                           @"iPhone 5s(GSM+CDMA)",  @"iPhone6,2",
-										   
-										   @"iPhone 6+ (GSM+CDMA)", @"iPhone7,1",
-                                           @"iPhone 6 (GSM+CDMA)",  @"iPhone7,2",
-										   
-                                           @"iPad",                     @"iPad1,1",
-                                           @"iPad 2(WiFi)",             @"iPad2,1",
-                                           @"iPad 2(GSM)",              @"iPad2,2",
-										   @"iPad 2(CDMA)",             @"iPad2,3",
-										   @"iPad 2(WiFi Rev A)",       @"iPad2,4",
-										   @"iPad Mini 1G (WiFi)",      @"iPad2,5",
-										   @"iPad Mini 1G (GSM)",       @"iPad2,6",
-										   @"iPad Mini 1G (GSM+CDMA)",  @"iPad2,7",
-                                           @"iPad 3(WiFi)",             @"iPad3,1",
-										   @"iPad 3(GSM+CDMA)",         @"iPad3,2",
-										   @"iPad 3(GSM)",              @"iPad3,3",
-										   @"iPad 4(WiFi)",             @"iPad3,4",
-                                           @"iPad 4(GSM)",              @"iPad3,5",
-										   @"iPad 4(GSM+CDMA)",         @"iPad3,6",
-                                        
-                                           @"iPad Air(WiFi)",        @"iPad4,1",
-                                           @"iPad Air(GSM)",         @"iPad4,2",
-                                           @"iPad Air(GSM+CDMA)",    @"iPad4,3",
-										   
-                                           @"iPad Mini 2G (WiFi)",       @"iPad4,4",
-                                           @"iPad Mini 2G (GSM)",        @"iPad4,5",
-                                           @"iPad Mini 2G (GSM+CDMA)",   @"iPad4,6",
-										   
-                                           @"iPod 1st Gen",         @"iPod1,1",
-                                           @"iPod 2nd Gen",         @"iPod2,1",
-                                           @"iPod 3rd Gen",         @"iPod3,1",
-										   @"iPod 4th Gen",         @"iPod4,1",
-                                           @"iPod 5th Gen",         @"iPod5,1",
-                                           // PM-2015-03-03: [[ Bug 14689 ]] Cast to NSString* to prevent EXC_BAD_ACCESS when in release mode and run in 64bit device/sim
-                                           (NSString *)nil];
-										   
-	
-	NSString *t_device_name = [commonNamesDictionary objectForKey: t_machine_name];
-    
-    if (t_device_name == nil)
-        t_device_name = t_machine_name;
-    
-    return t_device_name;
+	return t_machine_name;
 }
 
 MCIPhoneApplication *MCIPhoneGetApplication(void)

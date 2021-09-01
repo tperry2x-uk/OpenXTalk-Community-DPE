@@ -1336,6 +1336,30 @@ Exec_stat MCHandleSensorAvailable(void *p_context, MCParameter *p_parameters)
 	return ES_ERROR;
 }
 
+Exec_stat MCHandleAllowBackgroundLocationUpdates(void *p_context, MCParameter *p_parameters)
+{
+    MCExecContext ctxt(nil, nil, nil);
+    ctxt . SetTheResultToEmpty();
+    
+    bool t_allow_background_location_updates = false;
+    
+    if (p_parameters)
+    {
+        MCAutoValueRef t_value;
+        MCAutoBooleanRef t_bool;
+        p_parameters->eval_argument(ctxt, &t_value);
+        if(ctxt . ConvertToBoolean(*t_value, &t_bool))
+            t_allow_background_location_updates = MCValueIsEqualTo(*t_bool, kMCTrue);
+    }
+    
+    MCSensorAllowBackgroundLocationUpdates(ctxt, t_allow_background_location_updates);
+    
+    if (!ctxt . HasError())
+        return ES_NORMAL;
+    
+    return ES_ERROR;
+}
+
 Exec_stat MCHandleCanTrackLocation(void *p_context, MCParameter *p_parameters)
 {
     MCExecContext ctxt(nil, nil, nil);
@@ -2816,6 +2840,23 @@ Exec_stat MCHandleVibrate(void *p_context, MCParameter *p_parameters)
     return ES_ERROR;
 }
 
+Exec_stat MCHandleDeviceModel(void *context, MCParameter *p_parameters)
+{
+    MCExecContext ctxt(nil, nil, nil);
+    
+    MCAutoStringRef t_device_model;
+    MCMiscGetDeviceModel(ctxt, &t_device_model);
+    
+    if (!ctxt.HasError())
+    {
+        ctxt.SetTheResultToValue(*t_device_model);
+        return ES_NORMAL;
+    }
+    
+    ctxt.SetTheResultToEmpty();
+    return ES_ERROR;
+}
+
 Exec_stat MCHandleDeviceResolution(void *context, MCParameter *p_parameters)
 {
     MCExecContext ctxt(nil, nil, nil);
@@ -2902,6 +2943,23 @@ static Exec_stat MCHandleLocationAuthorizationStatus(void *context, MCParameter 
         return ES_NORMAL;
     }
 
+    ctxt . SetTheResultToEmpty();
+    return ES_ERROR;
+}
+
+static Exec_stat MCHandleTrackingAuthorizationStatus(void *context, MCParameter *p_parameters)
+{
+    MCAutoStringRef t_status;
+    MCExecContext ctxt(nil, nil,nil);
+    
+    MCMiscGetTrackingAuthorizationStatus(ctxt, &t_status);
+    
+    if (!ctxt . HasError())
+    {
+        ctxt . SetTheResultToValue(*t_status);
+        return ES_NORMAL;
+    }
+    
     ctxt . SetTheResultToEmpty();
     return ES_ERROR;
 }
@@ -3596,7 +3654,7 @@ Exec_stat MCHandleIPhonePickMedia(void *context, MCParameter *p_parameters)
 		else if (MCCStringEqualCaseless(t_option_list, "audiobook"))
 			t_media_types += kMCMediaTypeAudiobooks;
 #ifdef __IPHONE_5_0
-		if (MCmajorosversion >= 500)
+		if (MCmajorosversion >= MCOSVersionMake(5,0,0))
 		{
 			if (MCCStringEqualCaseless(t_option_list, "movie"))
 				t_media_types += kMCMediaTypeMovies;
@@ -3616,7 +3674,7 @@ Exec_stat MCHandleIPhonePickMedia(void *context, MCParameter *p_parameters)
 	{
 		t_media_types = MCMediaTypeFromString(MCSTR("podcast, songs, audiobook"));;
 #ifdef __IPHONE_5_0
-		if (MCmajorosversion >= 500)
+		if (MCmajorosversion >= MCOSVersionMake(5,0,0))
 			t_media_types += MCMediaTypeFromString(MCSTR("movies, tv, videoPodcasts, musicVideos, videoITunesU"));;
 #endif
 	}
@@ -4555,6 +4613,7 @@ static const MCPlatformMessageSpec s_platform_messages[] =
     
     // MM-2012-02-11: Added support old style senseor syntax (iPhoneEnableAcceleromter etc)
 	/* DEPRECATED */ {false, "iphoneCanTrackLocation", MCHandleCanTrackLocation, nil},
+    {false, "iphoneAllowBackgroundLocationUpdates", MCHandleAllowBackgroundLocationUpdates, nil},
 
     // PM-2014-10-07: [[ Bug 13590 ]] StartTrackingLocation and StopTrackingLocation must run on the script thread
     /* DEPRECATED */ {true, "iphoneStartTrackingLocation", MCHandleLocationTrackingState, (void *)true},
@@ -4665,6 +4724,7 @@ static const MCPlatformMessageSpec s_platform_messages[] =
 	{false, "mobileSetKeyboardType", MCHandleSetKeyboardType, nil},
     {false, "mobileSetKeyboardReturnKey", MCHandleSetKeyboardReturnKey, nil}, // Added from androidmisc.cpp
 	
+    {false, "iphoneDeviceModel", MCHandleDeviceModel, nil},
 	{false, "iphoneDeviceResolution", MCHandleDeviceResolution, nil},
 	{false, "iphoneUseDeviceResolution", MCHandleUseDeviceResolution, nil},
 	{false, "iphoneDeviceScale", MCHandleDeviceScale, nil},
@@ -4672,6 +4732,8 @@ static const MCPlatformMessageSpec s_platform_messages[] =
     {false, "mobileUseDeviceResolution", MCHandleUseDeviceResolution, nil},
     {false, "mobileDeviceScale", MCHandleDeviceScale, nil},
     {false, "mobilePixelDensity", MCHandlePixelDensity, nil},
+    
+    {false, "iphoneTrackingAuthorizationStatus", MCHandleTrackingAuthorizationStatus, nil},
 
     // SN-2014-10-15: [[ Merge-6.7.0-rc-3 ]]
     {false, "iphoneLocationAuthorizationStatus", MCHandleLocationAuthorizationStatus, nil},
@@ -4842,7 +4904,7 @@ static const MCPlatformMessageSpec s_platform_messages[] =
     {false, "mobileSetKeyboardDisplay", MCHandleSetKeyboardDisplay, nil},
     {false, "mobileGetKeyboardDisplay", MCHandleGetKeyboardDisplay, nil},
     
-	{nil, nil, nil}    
+	{false, nil, nil}    
 };
 
 bool MCIsPlatformMessage(MCNameRef handler_name)
