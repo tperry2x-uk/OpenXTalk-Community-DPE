@@ -1,18 +1,8 @@
-# LiveCode Community Edition
-
-![LiveCode Community Logo](http://livecode.com/wp-content/uploads/2015/02/livecode-logo.png)
-
-Copyright © 2003-2019 LiveCode Ltd., Edinburgh, UK
+# OpenXTalk Community Edition is derived from legacy LiveCode Community Edition code base which is Copyright © 2003-2019 LiveCode Ltd., Edinburgh, UK
 
 ## Introduction
 
-The LiveCode Community open source platform provides a way to build applications for mobile, desktop and server platforms.
-
-The visual workflow allows the user to develop apps "live", using a powerful and uniquely-accessible language syntax.
-
-[LiveCode Ltd.](http://livecode.com/), based in Edinburgh, UK, coordinates development of LiveCode and has run the open source project since LiveCode Community was first released in April 2013.
-
-You can download pre-compiled versions of the LiveCode Community development environment from the [LiveCode download centre](http://downloads.livecode.com/livecode/).
+The OpenXTalk Community open source platform provides a way to build applications for mobile, desktop and server platforms.
 
 ## Overview
 
@@ -22,13 +12,13 @@ This repository contains a number of subprojects, each of which has its own subd
 
 1. Main system:
 
-  * `engine/` — The main LiveCode engine.  This directory produces the IDE, "standalone", "installer" and "server" engines
+  * `engine/` — The main OpenXTalk engine.  This directory produces the IDE, "standalone", "installer" and "server" engines
 
 2. Non-third-party libraries:
 
   * `libcore/` — A static library that provides various basic functions and types, and is used by many of the other subprojects
 
-  * `libexternal/` and `libexternalv1` — Static libraries that support the LiveCode "external" interface, which allows the engine to load plugins
+  * `libexternal/` and `libexternalv1` — Static libraries that support the OpenXTalk "external" interface, which allows the engine to load plugins
 
 3. Externals (libraries that can be dynamically loaded into the engine at runtime):
 
@@ -48,28 +38,28 @@ This repository contains a number of subprojects, each of which has its own subd
 
 ### Engine flavours
 
-The engine — which loads, saves, manages and runs LiveCode stack files — can be built in several different specialized modes, which are adapted for various specific purposes.  They are exposed as separate targets in the build system.
+The engine — which loads, saves, manages and runs OpenXTalk stack files — can be built in several different specialized modes, which are adapted for various specific purposes.  They are exposed as separate targets in the build system.
 
-1. **IDE engine** (`development` target)— Used to run the IDE.  It contains extra support for things like syntax handling and building LiveCode "standalone" programs.
+1. **IDE engine** (`development` target)— Used to run the IDE.  It contains extra support for things like syntax handling and building OpenXTalk "standalone" programs.
 
-2. **Installer engine** (`installer` target) — Used to create the LiveCode installer.  It contains extra support for things like handling zip archives and comparing binary files.
+2. **Installer engine** (`installer` target) — Used to create the OpenXTalk installer.  It contains extra support for things like handling zip archives and comparing binary files.
 
 3. **Server engine** (`server` target) — This is the engine used in a server context, when no graphical user interface is needed.  It contains server-specific functions such as CGI support.  It also has a much fewer system library dependencies (and requires only non-desktop APIs where possible).
 
-4. **Standalone engine** (`standalone` target) — The engine that is embedded in "standalone apps" created with LiveCode.
+4. **Standalone engine** (`standalone` target) — The engine that is embedded in "standalone apps" created with OpenXTalk.
 
-## Compiling LiveCode
+## Compiling OpenXTalk
 
 LiveCode uses the [gyp (Generate Your Projects)](https://chromium.googlesource.com/external/gyp.git) tool to generate platform-specific project files.  It can generate `xcodeproj` files for Xcode on Mac, `vcproj` files for Microsoft Visual Studio, and makefiles for compiling on Linux.
 
 ### Quick start
 
-**Note**: You can only compile LiveCode from a clone of the
+**Note**: You can only compile OpenXTalk from a clone of the
 [LiveCode git repository](https://github.com/livecode/livecode) on
 GitHub.  See also the GitHub documentation on
 [cloning a repository](https://help.github.com/articles/cloning-a-repository/).
 
-On Linux or Mac, you can quickly build LiveCode by installing basic development tools, and then running `make all`.
+On Linux or Mac, you can quickly build OpenXTalk by installing basic development tools, and then running `make all`.
 
 ### Detailed instructions
 
@@ -101,7 +91,7 @@ For information on modifying LiveCode and submitting contributions to the LiveCo
 
 ## License
 
-LiveCode Community is freely distributable under the GNU Public License (GPL), with some special exceptions.  For more information, please see the [LICENSE](LICENSE) file in this repository.
+OpenXTalk Community is freely distributable under the GNU Public License (GPL3), with some special exceptions.  For more information, please see the [LICENSE](LICENSE) file in this repository.
 
 The LiveCode Community engine, libraries, and associated files are, unless otherwise noted:
 
