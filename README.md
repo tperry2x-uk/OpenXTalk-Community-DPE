@@ -1,4 +1,5 @@
-# OpenXTalk Community Edition is derived from legacy LiveCode Community Edition code base which is Copyright © 2003-2019 LiveCode Ltd., Edinburgh, UK
+# OpenXTalk Community Edition 
+Derived from legacy LiveCode Community Edition code base which is Copyright © 2003-2019 LiveCode Ltd., Edinburgh, UK
 
 ## Introduction
 
