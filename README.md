@@ -1,5 +1,5 @@
 # OpenXTalk Community Edition 
-Derived from legacy LiveCode Community Edition code base, Copyright © 2003-2019 LiveCode Ltd., Edinburgh, UK
+OpenXTalk is derived from legacy LiveCode Community Edition code base that is Copyright © 2003-2019 LiveCode Ltd., Edinburgh, UK
 
 ## Introduction
 
@@ -51,7 +51,7 @@ The engine — which loads, saves, manages and runs OpenXTalk stack files — ca
 
 ## Compiling OpenXTalk
 
-LiveCode uses the [gyp (Generate Your Projects)](https://chromium.googlesource.com/external/gyp.git) tool to generate platform-specific project files.  It can generate `xcodeproj` files for Xcode on Mac, `vcproj` files for Microsoft Visual Studio, and makefiles for compiling on Linux.
+OpenXTalk uses the [gyp (Generate Your Projects)](https://chromium.googlesource.com/external/gyp.git) tool to generate platform-specific project files.  It can generate `xcodeproj` files for Xcode on Mac, `vcproj` files for Microsoft Visual Studio, and makefiles for compiling on Linux.
 
 ### Quick start
 
