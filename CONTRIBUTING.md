@@ -1,6 +1,4 @@
-# Contributing to LiveCode
-
-![LiveCode Community Logo](http://livecode.com/wp-content/uploads/2015/02/livecode-logo.png)
+# Contributing to OpenXTalk
 
 Copyright © 2003-2016 LiveCode Ltd., Edinburgh, UK
 
@@ -8,17 +6,19 @@ See also the [documentation contributions guide](docs/contributing_to_docs.md).
 
 ## Contributors' forums
 
-General discussion about contributing to the LiveCode Community open-source projects takes place on the [LiveCode Open Source forums](http://forums.livecode.com/viewforum.php?f=65), and in particular the [Engine Contributors forum](http://forums.livecode.com/viewforum.php?f=66).
+General discussion about contributing to the OpenXTalk Community projects takes place on the [OpenXTalk forums](http://forums.openxtalk.org/)
 
 ## Contributor's License Agreement (CLA)
 
-If you wish to contribute to development of LiveCode, you must sign the [Contributor's Agreement](http://livecode.com/account/developer/contribute).  This agreement is required because the LiveCode project is dual-licensed both under the GPLv3 and a commercial (closed-source) license; you need to give LiveCode Ltd. permission to use your submissions in this way.
+LiveCode Community Edition is licensed under the GPLv3 through August 2021 when LiveCode Ltd. abruptly drop support for the GPL3 open source version.
 
-**Note:** LiveCode cannot accept any pull-requests from individuals who have not signed this agreement.
+All future work on this fork, OpenXTalk-DPE, and any others forks continuing on from that must remain GPLv3 licensed open source.
+
+**Note:** Contributors do not need to sign an agreement form as was previously required by LiveCode Ltd. due to their dual licence.
 
 ## Using GitHub
 
-The LiveCode workflow is a typical git workflow, where contributors fork the [livecode/livecode](https://github.com/livecode/livecode) repository, make their changes on a branch, and then submit a pull request.
+The OpenXTalk workflow may use the typical git workflow, where contributors fork the repository, make their changes on a branch, and then submit a pull request.
 
 ### Setting up git with your user information
 
