@@ -56,7 +56,7 @@ LiveCode uses the [gyp (Generate Your Projects)](https://chromium.googlesource.c
 ### Quick start
 
 **Note**: You can only compile OpenXTalk from a clone of the
-[LiveCode git repository](https://github.com/livecode/livecode) on
+[OpenXTalk-DPE git repository](https://github.com/PaulMcClernan/OpenXTalkComunity-DPE/) on
 GitHub.  See also the GitHub documentation on
 [cloning a repository](https://help.github.com/articles/cloning-a-repository/).
 
@@ -76,24 +76,20 @@ Please see the following table, which shows which target platforms are supported
 
 ## Getting help
 
-There are several ways to get help with installing and using LiveCode:
+There are several ways to get help with installing and using OpenXTalk:
 
-* If you have a LiveCode Commercial subscription, you may [contact LiveCode Support](mailto:support@livecode.com).
+* Visit the [OpenXTalk open source forums](https://forums.openxtalk.org/).
 
-* Ask a question on the ["use-livecode" mailing list](http://lists.runrev.com/mailman/listinfo/use-livecode), or search the the mailing list archives for previous answers to similar questions
+* If you have discovered a bug, have a feature request, or have written a patch to improve OpenXTalk, drop by in and join the fun https://forums.openxtalk.org/
 
-* Visit the [LiveCode open source forums](http://forums.livecode.com/viewforum.php?f=65).  In particular, you may wish to post your question in the [Engine Contributors](http://forums.livecode.com/viewforum.php?f=66) forum.
+## Contributing to OpenXTalk
 
-* If you have discovered a bug, have a feature request, or have written a patch to improve LiveCode, please create an ticket in the [LiveCode issue tracking system](http://quality.livecode.com/).
-
-## Contributing to LiveCode
-
-For information on modifying LiveCode and submitting contributions to the LiveCode Community project, please see the [CONTRIBUTING](CONTRIBUTING.md) file.
+For information on modifying OpenXTalk and submitting contributions to the OpenXTalk Community project, please see the [CONTRIBUTING](CONTRIBUTING.md) file.
 
 ## License
 
 OpenXTalk Community is freely distributable under the GNU Public License (GPL3), with some special exceptions.  For more information, please see the [LICENSE](LICENSE) file in this repository.
 
-The LiveCode Community engine, libraries, and associated files are, unless otherwise noted:
+The OpenXTalk Community engine, libraries, and associated files are, unless otherwise noted:
 
 Copyright © 2003-2019 LiveCode Ltd.
