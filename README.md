@@ -74,13 +74,11 @@ Please see the following table, which shows which target platforms are supported
 | [android](docs/development/build-android.md)               | mac, linux        |
 | [emscripten (html5)](docs/development/build-emscripten.md) | linux             |
 
-## Getting help
+## Getting help and Gifting Help
 
-There are several ways to get help with installing and using OpenXTalk:
+For help with installing and using OpenXTalk or if you have discovered a bug, have a feature request, or have written a patch to improve OpenXTalk, drop by in and join the fun https://forums.openxtalk.org/:
 
 * Visit the [OpenXTalk open source forums](https://forums.openxtalk.org/).
-
-* If you have discovered a bug, have a feature request, or have written a patch to improve OpenXTalk, drop by in and join the fun https://forums.openxtalk.org/
 
 ## Contributing to OpenXTalk
 
