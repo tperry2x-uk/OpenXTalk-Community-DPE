@@ -86,8 +86,8 @@ For information on modifying OpenXTalk and submitting contributions to the OpenX
 
 ## License
 
-OpenXTalk Community is freely distributable under the GNU Public License (GPL3), with some special exceptions.  For more information, please see the [LICENSE](LICENSE) file in this repository.
+OpenXTalk Community is freely distributable under the GNU Public License (GPL3), with some special exceptions.  
+For more information, please see the [LICENSE](LICENSE) file in this repository.
 
 The OpenXTalk Community engine, libraries, and associated files are, unless otherwise noted:
-
 Copyright © 2003-2019 LiveCode Ltd.
