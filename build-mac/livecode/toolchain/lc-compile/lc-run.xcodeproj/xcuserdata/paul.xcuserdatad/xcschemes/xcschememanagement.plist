@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>All.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>293</integer>
+		</dict>
+		<key>lc-run (host) Support.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>299</integer>
+		</dict>
+		<key>lc-run (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>297</integer>
+		</dict>
+		<key>lc-run Support.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>298</integer>
+		</dict>
+		<key>lc-run.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>296</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

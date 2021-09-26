@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>All.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>148</integer>
+		</dict>
+		<key>lc-bootstrap-compile (host) Support.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>156</integer>
+		</dict>
+		<key>lc-bootstrap-compile (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>151</integer>
+		</dict>
+		<key>lc-bootstrap-compile Support.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>152</integer>
+		</dict>
+		<key>lc-bootstrap-compile.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>153</integer>
+		</dict>
+		<key>lc-compile-stage2 (host) Support.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>160</integer>
+		</dict>
+		<key>lc-compile-stage2 (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>154</integer>
+		</dict>
+		<key>lc-compile-stage2 Support.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>155</integer>
+		</dict>
+		<key>lc-compile-stage2.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>157</integer>
+		</dict>
+		<key>lc-compile-stage3 (host) Support.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>163</integer>
+		</dict>
+		<key>lc-compile-stage3 (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>158</integer>
+		</dict>
+		<key>lc-compile-stage3 Support.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>159</integer>
+		</dict>
+		<key>lc-compile-stage3.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>161</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

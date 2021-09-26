@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>All.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>277</integer>
+		</dict>
+		<key>dbmysql-server.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>268</integer>
+		</dict>
+		<key>dbmysql.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>267</integer>
+		</dict>
+		<key>dbodbc-server.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>270</integer>
+		</dict>
+		<key>dbodbc.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>269</integer>
+		</dict>
+		<key>dbpostgresql-server.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>272</integer>
+		</dict>
+		<key>dbpostgresql.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>271</integer>
+		</dict>
+		<key>dbsqlite-server.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>274</integer>
+		</dict>
+		<key>dbsqlite.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>273</integer>
+		</dict>
+		<key>external-revdb-server.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>276</integer>
+		</dict>
+		<key>external-revdb.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>275</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

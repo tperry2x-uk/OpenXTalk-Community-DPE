@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>All.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>106</integer>
+		</dict>
+		<key>encode_minimal_icu_data (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>118</integer>
+		</dict>
+		<key>encode_minimal_icu_data.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>108</integer>
+		</dict>
+		<key>libicu (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>110</integer>
+		</dict>
+		<key>libicu.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>109</integer>
+		</dict>
+		<key>libicu_include (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>112</integer>
+		</dict>
+		<key>libicu_include.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>111</integer>
+		</dict>
+		<key>libicu_link (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>114</integer>
+		</dict>
+		<key>libicu_link.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>113</integer>
+		</dict>
+		<key>minimal_icu_data (host).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>116</integer>
+		</dict>
+		<key>minimal_icu_data.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>115</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>
