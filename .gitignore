@@ -92,3 +92,6 @@ build-mac/livecode/engine/._kernel-development.xcodeproj
 build-mac/livecode/engine/._engine.xcodeproj
 build-mac/livecode/engine/._engine-common.xcodeproj
 build-mac/livecode/._livecode.xcodeproj
+ide
+ide
+ide
