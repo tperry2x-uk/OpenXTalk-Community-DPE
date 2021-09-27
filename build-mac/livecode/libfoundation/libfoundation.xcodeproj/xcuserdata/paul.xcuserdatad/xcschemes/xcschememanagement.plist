@@ -7,37 +7,37 @@
 		<key>All.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>98</integer>
+			<integer>0</integer>
 		</dict>
 		<key>libFoundation (host) Support.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>107</integer>
+			<integer>4</integer>
 		</dict>
 		<key>libFoundation (host).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>101</integer>
+			<integer>3</integer>
 		</dict>
 		<key>libFoundation Support.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>102</integer>
+			<integer>2</integer>
 		</dict>
 		<key>libFoundation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>103</integer>
+			<integer>1</integer>
 		</dict>
 		<key>run-test-libFoundation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>104</integer>
+			<integer>6</integer>
 		</dict>
 		<key>test-libFoundation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>105</integer>
+			<integer>5</integer>
 		</dict>
 	</dict>
 </dict>
