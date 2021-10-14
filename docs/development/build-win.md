@@ -1,4 +1,4 @@
-# Compiling LiveCode for Windows
+# Compiling for Windows
 
 ![LiveCode Community Logo](http://livecode.com/wp-content/uploads/2015/02/livecode-logo.png)
 
@@ -10,7 +10,7 @@ The Windows build scripts currently don't have any ability to auto-discover tool
 
 ### git
 
-You will need to install [git for Windows](https://git-scm.com/download/win) in order to obtain the LiveCode source code from GitHub.
+You will need to install [git for Windows](https://git-scm.com/download/win) in order to obtain the source code from GitHub.
 
 ### Microsoft Visual Studio
 
@@ -28,9 +28,9 @@ In addition, you should install
 [Microsoft Speech SDK 5.1](https://www.microsoft.com/en-gb/download/details.aspx?id=10121)
 in order to allow you to compile the `revspeech` external.
 
-Note : If Using Microsoft Visual Studio 2017, you will need to add C++ support and 
+Note : If Using Microsoft Visual Studio 2017, you will need to add C++ support and
 support for the Windows 8.1 SDK to your Visual Studio installation as these features are currently
-not installed by default with Visual Studio 2017 and are necessary for building LiveCode.
+not installed by default with Visual Studio 2017 and are necessary for building.
 
 #### Configure for C++ development
 
@@ -65,7 +65,7 @@ You need to [install Cygwin](https://cygwin.com/install.html), along with the fo
 When you get to the Select Packages screen in the Cygwin installer do the following:
 
 1. Change the View to Full.
-2. Search for each additional package listed on the LiveCode web page.
+2. Search for each additional package listed on the web page.
 3. Click on Skip to mark it for installation.
 ![Cygwin Install 1](./images/install-cygwin-with-additional-packages.png)
 
@@ -88,7 +88,7 @@ With the Python 2.7 installer you have to customize the installation so that the
 
 ![Python Install 1](./images/add-python-27-to-path.png)
 
-## Configuring LiveCode
+## Configuring
 
 Once you have checked out the source code from git, you can run:
 
@@ -108,13 +108,13 @@ In order to debug the IDE you need to configure the Debugging Command for LiveCo
 $(TargetDir)\LiveCode-Community.exe
 ```
 
-![Debug with LiveCode](./images/set-the-livecode-all-debugging-command.png)
+![Debug](./images/set-the-livecode-all-debugging-command.png)
 
-## Compiling LiveCode
+## Compiling
 
 If you installed the Visual Studio IDE, you can open the
 `build-win-x86/livecode/livecode.sln` solution file in Visual Studio,
-and build LiveCode from there.
+and build from there.
 
 If you installed the Visual Studio build tools, you can run:
 

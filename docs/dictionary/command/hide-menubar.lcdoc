@@ -28,7 +28,7 @@ The menu bar can be hidden only on Mac OS and OS X systems. On OS X
 systems, the <hide menubar> <command> also hides the Dock. This
 <command> has no effect on <Windows> or <Unix|Unix systems>.
 
-Hiding the menu bar in OpenXTalk does not affect its appearance in other
+Hiding the menu bar does not affect its appearance in other
 applications; if the user switches to another application, the menu bar
 becomes visible. If the user switches back to OpenXTalk, the menu bar is
 hidden again.
@@ -39,4 +39,3 @@ Windows (glossary), Mac OS (glossary), menu bar (glossary),
 command (glossary)
 
 Tags: menus
-

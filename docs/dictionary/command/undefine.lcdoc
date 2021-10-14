@@ -5,7 +5,7 @@ Type: command
 Syntax: undefine <propertyName> of <object>
 
 Summary:
-Has no effect and is included in <OpenXTalk> for compatibility with
+Has no effect and is included for compatibility with
 <import|imported> <Oracle Media Objects> and <SuperCard> projects.
 
 Introduced: 1.0

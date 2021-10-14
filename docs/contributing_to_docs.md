@@ -1,14 +1,14 @@
-# Contributing to LiveCode Documentation
+# Contributing to Documentation
 
-*Note this document is specifically about contributing to the 
-documentation of LiveCode. If you are looking for a general guide to 
-contributing to the LiveCode source, see the 
+*Note this document is specifically about contributing to the
+documentation. If you are looking for a general guide to
+contributing to the source, see the
 [toplevel CONTRIBUTING.md document](../CONTRIBUTING.md)*
 
-Have you noticed an error in the documentation? Do you want to add an 
-instructive example? Or can you explain a concept better than it is 
-currently explained? Please consider submitting your proposed changes 
-directly to the LiveCode repo on GitHub.
+Have you noticed an error in the documentation? Do you want to add an
+instructive example? Or can you explain a concept better than it is
+currently explained? Please consider submitting your proposed changes
+directly to the repo on GitHub.
 
 Please consult the [documentation style guide](development/docs_style_guide.md)
 and the [documentation format specification](guides/LiveCode%20Documentation%20Format%20Reference.md)
@@ -17,23 +17,23 @@ documentation.
 
 # Documentation Objectives
 
-Our objectives for the LiveCode documentation can be categorised as
+Our objectives for the documentation can be categorised as
 - Completeness
 - Correctness
 - Instructiveness
 
 ## Completeness
 
-In the context of the dictionary, completeness clearly entails the 
-documentation of all LiveCode syntax. The most basic form of 
-incompleteness is a completely missing dictionary entry. If you intend 
-to write a missing dictionary entry, please bear these documentation 
-objectives in mind and consult the 
+In the context of the dictionary, completeness clearly entails the
+documentation of all syntax. The most basic form of
+incompleteness is a completely missing dictionary entry. If you intend
+to write a missing dictionary entry, please bear these documentation
+objectives in mind and consult the
 [documentation format specification](guides/LiveCode%20Documentation%20Format%20Reference.md).
 
 The dictionary ought to contain *all* the relevant information about a
-particular piece of LiveCode syntax. Every syntax variant should be 
-explained in detail in the description. Some of the most commonly 
+particular piece of syntax. Every syntax variant should be
+explained in detail in the description. Some of the most commonly
 missing information in our current dictionary is as follows:
 - Inadequate or missing explanation of a parameter's function
 - Omitted description of side effects, especially when `the result` or
@@ -44,38 +44,38 @@ missing information in our current dictionary is as follows:
 
 Correctness of documentation comes in two forms.
 
-Firstly, the information contained in the descriptions of elements 
-should be accurate and up-to-date. Some of our documentation was written 
-prior to major developments in both our software and the hardware it 
+Firstly, the information contained in the descriptions of elements
+should be accurate and up-to-date. Some of our documentation was written
+prior to major developments in both our software and the hardware it
 runs on.
 
 Secondly, dictionary Syntax elements must be correct. The
 [documentation format specification](guides/LiveCode%20Documentation%20Format%20Reference.md)
 contains a description of the Syntax element.
 
-Thirdly, the dictionary files must be formatted correctly. This means 
-conforming to the aforementioned format reference, and also for 
+Thirdly, the dictionary files must be formatted correctly. This means
+conforming to the aforementioned format reference, and also for
 parameters defined in the Syntax elements to correspond exactly to those
 described later on in the entry.
 
 Furthermore, where possible, individual lines within the document should
-not exceed 72 characters in length. This makes it easier to read, and 
+not exceed 72 characters in length. This makes it easier to read, and
 review on GitHub.
 
 ## Instructiveness
 
 One major objective we have with our documentation is to improve our
-code examples. Where possible, the `Example:` elements of the docs 
+code examples. Where possible, the `Example:` elements of the docs
 should be complete and runnable.
 This means that where possible one of the following should apply:
--The example can be copied, pasted into the message box and executed to 
+-The example can be copied, pasted into the message box and executed to
 demonstrate the functionality being described.
--The example contains commented commands and functions which, can be 
-copied and pasted into the script of an object, and which when called 
-with appropriate parameters demonstrates the functionality being 
+-The example contains commented commands and functions which, can be
+copied and pasted into the script of an object, and which when called
+with appropriate parameters demonstrates the functionality being
 described.
 
-In general, the way to ensure this is to use constants where possible, 
+In general, the way to ensure this is to use constants where possible,
 rather than variables and objects:
 
 (Good)
@@ -120,37 +120,37 @@ end fibonacciNumber
 
 ## Tags
 
-Tags are a great way to help users find what they want in the dictionary. 
-However badly coordinated tags can quickly become a hindrance. Ensure 
-the tag you want to add doesn't exist already in a slightly different 
-form, and consider starting a dialogue about a new tag and what entries 
+Tags are a great way to help users find what they want in the dictionary.
+However badly coordinated tags can quickly become a hindrance. Ensure
+the tag you want to add doesn't exist already in a slightly different
+form, and consider starting a dialogue about a new tag and what entries
 could be most usefully tagged with it.
 
 ## References
 
 One thing to look out for when auditing a dictionary entry's references
 is ambiguity of entry type. For example, there are two entries for URL:
-one is for URL as a keyword, and one is a general description of the 
+one is for URL as a keyword, and one is a general description of the
 concept of a URL in the glossary. Sometimes two different references
 should be used in the same sentence, for example:
 
-	Use the <URL(keyword)> keyword to fetch the contents of a file 
+	Use the <URL(keyword)> keyword to fetch the contents of a file
 	located at the given <URL(glossary)>
-	
+
 If there are many references in a given entry, consider sorting them
 alphabetically - this helps prevent duplication and makes it easier to
 spot potential ambiguities.
 
 # Community Documentation Contribution Process
 
-After creating an account on GitHub at https://github.com/join, there 
-are three main ways of submitting pull requests. The first exclusively 
-uses the GitHub website, and is most suitable for people with no 
+After creating an account on GitHub at https://github.com/join, there
+are three main ways of submitting pull requests. The first exclusively
+uses the GitHub website, and is most suitable for people with no
 experience of git or other version control systems.
 
 ## Using the GitHub Web Interface
 
-It is possible to contribute to the LiveCode dictionary using the GitHub 
+It is possible to contribute to the dictionary using the GitHub
 website, without having to download any software or use the command line.
 
 ### Making your dictionary change
@@ -161,13 +161,13 @@ For example, the accept command is at:
 https://github.com/livecode/livecode/blob/develop-9.0/docs/dictionary/command/accept.lcdoc
 
 Either go directly to the community docs branch URL
-(https://github.com/livecode/livecode/tree/develop-9.0) or if you are 
-on the main LiveCode repository page, select 'develop-9.0' from the 
+(https://github.com/livecode/livecode/tree/develop-9.0) or if you are
+on the main repository page, select 'develop-9.0' from the
 branch dropdown menu:
 
 ![](images/branch-dropdown.png)
 
-You should see that the develop-9.0 branch is selected both in the 
+You should see that the develop-9.0 branch is selected both in the
 label of the dropdown and the url of your browser.
 
 ![](images/develop-branch.png)
@@ -181,15 +181,15 @@ click on it.
 
 ![](images/editing-file.png)
 
-Once you have clicked the pencil, you may get information that 
-submitting a change will create a new branch in your fork of the target 
+Once you have clicked the pencil, you may get information that
+submitting a change will create a new branch in your fork of the target
 repo.
 
 ![](images/new-fork.png)
 
 **Make your changes**
 
-Please ensure that you have tabs enabled if you are indenting code 
+Please ensure that you have tabs enabled if you are indenting code
 blocks.
 
 ![](images/tabs.png)
@@ -202,7 +202,7 @@ paragraphs when there are two return characters in a row).
 
 ![](images/propose-file-change.png)
 
-The title should be along the lines of 
+The title should be along the lines of
 
 `[[ Community Docs ]] <short description of what was fixed / updated>`
 
@@ -238,17 +238,17 @@ and description
 
 **Click the Propose File Change button.**
 
->*Note:* Please ensure the pull request has the correct base branch and 
+>*Note:* Please ensure the pull request has the correct base branch and
 comparison branch. The base fork should be `livecode/livecode`, with
-base branch `develop-9.0`, and the head fork should be 
+base branch `develop-9.0`, and the head fork should be
 `<your user name>/livecode` with compare branch something like `patch-1`
 (unless you have renamed it).
 
 ![](images/pull-request-target.png)
 
-**Click Create Pull Request** 
+**Click Create Pull Request**
 
-It will confirm the title and description you entered before, and show 
+It will confirm the title and description you entered before, and show
 you the files that are changed in the pull request.
 
 Now is a good time to check the changes you are proposing.
@@ -263,16 +263,6 @@ Requests' menu item at the top of the GitHub website.
 
 ![](images/github-top-menu.png)
 
-**Sign the CLA if you haven't already**
-
-Go to the list of pull requests and click on the link to your pull request.
-If you have not signed the Contributor's Agreement, livecode-vulcan will have commented (or will soon!)
-to ask you to:
-1. Sign the LiveCode CLA
-2. Link your GitHub account to the LiveCode account you signed with
-
-Once you have done this, livecode-vulcan should remove the need-CLA tag from the pull request
-
 If you are not fixing a specific bug in the bug database, then you're done! You can skip the next section.
 Otherwise you need to add a release note describing what bug you have fixed.
 
@@ -280,11 +270,11 @@ Otherwise you need to add a release note describing what bug you have fixed.
 
 **Click on the link to your github user name on the pull request (or go to `https://github.com/<user name>`)**
 
-**Click on the link to your livecode repository (under the Popular Repositories heading).**
+**Click on the link to your repository (under the Popular Repositories heading).**
 
 You should see a link to your recently pushed branch (called patch-1 or similar).
 
-If you do, **click on the link to the recently pushed branch**. If not, select the branch 
+If you do, **click on the link to the recently pushed branch**. If not, select the branch
 from the branch dropdown list.
 
 **Navigate using the folder listing to docs/notes**
@@ -320,19 +310,19 @@ You should see the "Add release note" commit added to the pull request.
 
 ### Await review
 
-Once all the above has been sorted out, someone will review your pull request. Please 
+Once all the above has been sorted out, someone will review your pull request. Please
 check back in case there is something that the reviewer would like you to change.
 
-When the pull request has been reviewed, it will be merged into the main repository and 
-should be in the LiveCode Dictionary in the next release!
+When the pull request has been reviewed, it will be merged into the main repository and
+should be in the Dictionary in the next release!
 
 ## Making further changes
 
-If you need to make further changes to your pull request, first make 
-sure you are looking at the pull request you want to change (you can 
-find your pull request either in the list of pull requests to the 
-livecode repo at https://github.com/livecode/livecode/pulls, or by 
-clicking the 'Pull Requests' menu item at the top of the GitHub website 
+If you need to make further changes to your pull request, first make
+sure you are looking at the pull request you want to change (you can
+find your pull request either in the list of pull requests to the repo
+at https://github.com/livecode/livecode/pulls, or by
+clicking the 'Pull Requests' menu item at the top of the GitHub website
 which shows all your outstanding pull requests).
 
 **Click on the 'Files Changed' tab**
@@ -351,10 +341,10 @@ The pull request will be automatically updated.
 
 ## Using Git GUI software
 
-Download a Git GUI Client from 
+Download a Git GUI Client from
 http://git-scm.com/downloads/guis
 
-Once you have familiarised yourself with the client, go to the livecode repo
+Once you have familiarised yourself with the client, go to the repo
 https://github.com/livecode/livecode
 and click Fork, and then "Clone in Desktop" button at the top right.
 clone to a suitable location.
@@ -366,7 +356,7 @@ Modify what you want to change
 
 You should see the change appear in the GUI client.
 
-If you are fixing a particular bug in the bug database, you need to add a release note 
+If you are fixing a particular bug in the bug database, you need to add a release note
 describing what bug you have fixed.
 
 Add a new file to docs/notes locally, named `bugfix-<bug number>.md`, containing the single line
@@ -377,7 +367,7 @@ Make sure both the docs change and the bugfix note are ready for commit in the G
 
 In the summary and description section,
 
-The title should be along the lines of 
+The title should be along the lines of
 
 `[[ Community Docs ]] <short description of what was fixed / updated>`
 
@@ -415,7 +405,7 @@ https://github.com/livecode/livecode/pulls
 
 ## Command Line
 
-go to the livecode repo
+go to the repo
 https://github.com/livecode/livecode
 and click Fork
 
@@ -427,7 +417,7 @@ once this is done, change directory into the newly created directory
 
 `cd livecode`
 
-and add the livecode repo as upstream
+and add the repo as upstream
 
 `git remote add upstream https://github.com/livecode/livecode.git`
 
@@ -453,7 +443,7 @@ make your changes to the file you are changing, then add the changes to the stag
 
 `git add docs/dictionary/command/accept.lcdoc`
 
-If you are fixing a particular bug in the bug database, you need to add a release note 
+If you are fixing a particular bug in the bug database, you need to add a release note
 describing what bug you have fixed.
 
 Add a new file to docs/notes locally, named `bugfix-<bug number>.md`, containing the single line
@@ -479,7 +469,7 @@ Push the changes to your fork of the repo
 Navigate to your fork on the Git website, `https://github.com/<your user name>/livecode/`
 
 You should see a link to the recently pushed branch, and an invitation to submit a pull request.
-Click this. 
+Click this.
 
 Ensure the base fork is livecode/livecode, and the base is develop-9.0.
 

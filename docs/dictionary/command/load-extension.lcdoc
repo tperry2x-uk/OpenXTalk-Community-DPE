@@ -5,7 +5,7 @@ Type: command
 Syntax: load extension {from file <filePath> | from data <moduleData>} [ with resource path <resourcePath> ]
 
 Summary:
-Load a OpenXTalk Builder extension.
+Load a Builder extension.
 
 Introduced: 8.0
 
@@ -14,9 +14,9 @@ OS: mac, windows, linux, ios, android
 Platforms: desktop, server, mobile
 
 Example:
-load extension from file "packaged_extensions/com.OpenXTalk.widget.navbar/module.lcm"
+load extension from file "packaged_extensions/com.livecodewidget.navbar/module.lcm"
 if the result is empty then
-    create widget "My Navbar" as "com.OpenXTalk.widget.navbar"
+    create widget "My Navbar" as "com.livecodewidget.navbar"
 end if
 
 Example:
@@ -28,16 +28,16 @@ load extension from data tExtensionData with resource path (tMyExtensionFolder \
 
 Parameters:
 filePath:
-The path to a compiled <OpenXTalk Builder extension> file.
+The path to a compiled <Builder extension> file.
 
 moduleData:
-Binary data that constitutes a valid compiled 
-<OpenXTalk Builder extension>. 
+Binary data that constitutes a valid compiled
+<Builder extension>.
 
 resourcePath:
-The path to use for any operations in the 
-<OpenXTalk Builder extension|extensions> 
-that use resource files (eg 'image from resource file'). 
+The path to use for any operations in the
+<Builder extension|extensions>
+that use resource files (eg 'image from resource file').
 
 The result:
 If the <load extension> <command> succeeds, the <result> is empty.
@@ -45,10 +45,10 @@ Otherwise the <result> contains an error message describing why the
 extension could not be loaded.
 
 Description:
-Use the <load extension> <command> to load a 
-<OpenXTalk Builder extension>. If the extension is a library, its 
-public handlers will be added to the bottom of the message path. 
-If it is a widget, it will be available as a control in the tools 
+Use the <load extension> <command> to load a
+<OpenXTalk Builder extension>. If the extension is a library, its
+public handlers will be added to the bottom of the message path.
+If it is a widget, it will be available as a control in the tools
 palette to drag out, or to create with the <create widget> <command>.
 
 If the <moduleData> or the data loaded from <filePath> contains more
@@ -64,7 +64,6 @@ OpenXTalk Builder extension (glossary), command (glossary)
 
 Changes:
 The ability to load multiple modules in a single <load extension>
-command was added in OpenXTalk 9.0.
+command was added in version 9.0.
 
 Tags: extensions
-

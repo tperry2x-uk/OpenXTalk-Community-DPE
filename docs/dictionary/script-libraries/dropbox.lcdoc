@@ -25,9 +25,9 @@ Upload sessions allow you to upload a single file in one or more requests, for e
 file is greater than 150 MB.
 
 Description:
-This call starts a new upload session with the given data. You can then use 
-dropboxUploadSessionAppend with the returned session id to add more data and 
-dropboxUploadSessionFinish to save all the data to a file in Dropbox. 
+This call starts a new upload session with the given data. You can then use
+dropboxUploadSessionAppend with the returned session id to add more data and
+dropboxUploadSessionFinish to save all the data to a file in Dropbox.
 
 > *Note:* A single request should not upload more than 150 MB of file contents.
 
@@ -39,7 +39,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -47,7 +47,7 @@ pData: The binary file data
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -94,7 +94,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -102,7 +102,7 @@ pSharedFolderID: The ID for the shared folder.
 
 pActions:
 This is a return delimited list indicating whether the returned folder data will
-include a boolean value FolderPermission.allow that describes whether the current user can 
+include a boolean value FolderPermission.allow that describes whether the current user can
 perform the folder action on the folder. This field is optional.
 
 Actions that may be taken on shared folders. The value will be one of the following datatypes.
@@ -122,7 +122,7 @@ New values may be introduced as our API evolves.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -182,8 +182,8 @@ Syntax: dropboxCreateSharedLinkWithSettings <pAccessToken>, <pPath>, [<pSettings
 Summary: Create a shared link with custom settings
 
 Description:
-If no settings are given then the default visibility is RequestedVisibility.public 
-(The resolved visibility, though, may depend on other aspects such as team and 
+If no settings are given then the default visibility is RequestedVisibility.public
+(The resolved visibility, though, may depend on other aspects such as team and
 shared folder settings).
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -194,7 +194,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -215,7 +215,7 @@ pSettings:
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -277,7 +277,7 @@ Syntax: dropboxMountFolder <pAccessToken>, <pSharedFolderId>, [<pCallback>]
 Summary: The current user mounts the designated folder.
 
 Description:
-Mount a shared folder for a user after they have been added as a member. Once 
+Mount a shared folder for a user after they have been added as a member. Once
 mounted, the shared folder will appear in their Dropbox.
 Apps must have full Dropbox access to use this endpoint.
 
@@ -289,7 +289,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -297,7 +297,7 @@ pSharedFolderId: The ID of the shared folder to mount.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -354,7 +354,7 @@ Type: command
 
 Syntax: dropboxUnmountFolder <pAccessToken>, <pSharedFolderId>, [<pCallback>]
 
-Summary: The current user unmounts the designated folder. 
+Summary: The current user unmounts the designated folder.
 
 Description:
 The user can re-mount the folder at a later time using dropboxMountFolder.
@@ -367,7 +367,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -375,7 +375,7 @@ pSharedFolderID: The ID for the shared folder.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -413,13 +413,13 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -461,7 +461,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -484,7 +484,7 @@ The value will be one of the following datatypes:
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -515,7 +515,7 @@ Syntax: dropboxGetPreview <pAccessToken>, <pPath>, [<pCallback>]
 Summary: Get a preview for a file.
 
 Description:
-Currently previews are only generated for the files with the following extensions: 
+Currently previews are only generated for the files with the following extensions:
 .doc, .docx, .docm, .ppt, .pps, .ppsx, .ppsm, .pptx, .pptm, .xls, .xlsx, .xlsm, .rtf.
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -526,7 +526,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -534,7 +534,7 @@ pPath: Path in the user's Dropbox to be deleted.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -573,7 +573,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -583,7 +583,7 @@ pRevision: The revision to restore for the file.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -655,7 +655,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -663,7 +663,7 @@ pPath: Path in the user's Dropbox to be searched.
 
 pQuery:
 The string to search for. The search string is split on spaces into multiple tokens.
-For file name searching, the last token is used for prefix matching (i.e. "bat c" matches 
+For file name searching, the last token is used for prefix matching (i.e. "bat c" matches
 "bat cave" but not "batman car").
 
 pStart:
@@ -681,7 +681,7 @@ The search mode. Note that searching file content is only available for Dropbox 
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -762,7 +762,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -772,7 +772,7 @@ pLimit: The maximum number of revision entries returned. The default for this fi
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -852,7 +852,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -864,7 +864,7 @@ video. The default for this field is False.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -939,7 +939,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -947,7 +947,7 @@ pCursor: The cursor returned by your last call to dropboxListFolders or dropboxL
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1020,7 +1020,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1028,7 +1028,7 @@ pUserAccountID: The user's unique Dropbox ID
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1078,7 +1078,7 @@ Summary: The current user relinquishes their membership in the designated shared
 
 Description:
 A folder owner cannot relinquish membership in their own folder.
-This will run synchronously if leave_a_copy is false, and asynchronously if leave_a_copy 
+This will run synchronously if leave_a_copy is false, and asynchronously if leave_a_copy
 is true. Apps must have full Dropbox access to use this endpoint.
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -1089,7 +1089,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1101,7 +1101,7 @@ for this field is False.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1148,7 +1148,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1156,12 +1156,12 @@ pSharedFolderID: The ID for the shared folder.
 
 pLeaveACopy:
 If true, members of this shared folder will get a copy of this folder after
-it's unshared. Otherwise, it will be removed from their Dropbox. The current user, who is an owner, 
+it's unshared. Otherwise, it will be removed from their Dropbox. The current user, who is an owner,
 will always retain their copy. The default for this field is False.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1208,7 +1208,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1230,7 +1230,7 @@ Policy governing who can change a shared folder's access control list (ACL). In 
 pSharedLinkPolicy:
 The policy to apply to shared links created for content inside this shared folder. The current
 user must be on a team to set this policy to SharedLinkPolicy.members. The default for this union is anyone.
-Policy governing who can view shared links. The value will be one of the following datatypes. New values may be 
+Policy governing who can view shared links. The value will be one of the following datatypes. New values may be
 introduced as our API evolves.
 
 - "anyone": Links can be shared with anyone.
@@ -1238,7 +1238,7 @@ introduced as our API evolves.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1308,7 +1308,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1318,7 +1318,7 @@ from the method that launched the job.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1361,7 +1361,7 @@ Syntax: dropboxUpload <pAccessToken>, <pPath>, <pMode>, <pAutorename>, <pMute>, 
 Summary: Create a new file with the contents provided in the request.
 
 Description:
-> *Note:* Do not use this to upload a file larger than 150 MB. Instead, create an upload 
+> *Note:* Do not use this to upload a file larger than 150 MB. Instead, create an upload
 > session with dropboxUploadSessionStart.
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -1372,7 +1372,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1381,11 +1381,11 @@ pPath: Path in the user's Dropbox to upload to.
 pMode:
 Selects what to do if the file already exists. The default for this union is add.
 
-- "add": Do not overwrite an existing file if there is a conflict. The autorename strategy is 
+- "add": Do not overwrite an existing file if there is a conflict. The autorename strategy is
 to append a number to the file name. For example, "document.txt" might become "document (2).txt".
 - "overwrite": Always overwrite the existing file. The autorename strategy is the same as it is for add.
-- "update": Overwrite if the given "rev" matches the existing file's "rev". The autorename 
-strategy is to append the string "conflicted copy" to the file name. For example, "document.txt" 
+- "update": Overwrite if the given "rev" matches the existing file's "rev". The autorename
+strategy is to append the string "conflicted copy" to the file name. For example, "document.txt"
 might become "document (conflicted copy).txt" or "document (Panda's conflicted copy).txt".
 
 pAutoRename:
@@ -1394,14 +1394,14 @@ the file to avoid conflict. The default for this field is False.
 
 pMute:
 Normally, users are made aware of any file modifications in their Dropbox account via
-notifications in the client software. If true, this tells the clients that this modification 
+notifications in the client software. If true, this tells the clients that this modification
 shouldn't result in a user notification. The default for this field is False
 
 pData: The binary file data
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1475,7 +1475,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1486,7 +1486,7 @@ This is a list indicating whether each returned member will include a boolean va
 MemberPermission.allow that describes whether the current user can perform the member Aaction on
 the member. This field is optional.
 
-Actions that may be taken on members of a shared folder. The value will be one of the following 
+Actions that may be taken on members of a shared folder. The value will be one of the following
 datatypes. New values may be introduced as our API evolves.
 
 - "leave_a_copy": Allow the member to keep a copy of the folder when removing.
@@ -1502,7 +1502,7 @@ The default for this field is 1000.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1602,7 +1602,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1610,7 +1610,7 @@ pCursor: The cursor returned by your last call to dropboxListFolderMembers or dr
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1707,7 +1707,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1717,7 +1717,7 @@ from the method that launched the job.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1789,24 +1789,24 @@ Type: command
 
 Syntax: dropboxListFolder <pAccessToken>, <pPath>, <pRecursive>, <pIncludeMediaInfo>, [<pCallback>]
 
-Summary: Starts returning the contents of a folder. 
+Summary: Starts returning the contents of a folder.
 
 Description:
-If the result's ListFolderResult.has_more field is true, call list_folder/continue with 
+If the result's ListFolderResult.has_more field is true, call list_folder/continue with
 the returned ListFolderResult.cursor to retrieve more entries.
 
 If you're using ListFolderArg.recursive set to true to keep a local cache of the contents
 of a Dropbox account, iterate through each entry in order and process them as follows to
 keep your local state in sync:
 
-- For each FileMetadata, store the new entry at the given path in your local state. 
+- For each FileMetadata, store the new entry at the given path in your local state.
 If the required parent folders don't exist yet, create them. If there's already something
 else at the given path, replace it and remove all its children.
 - For each FolderMetadata, store the new entry at the given path in your local state. If the
-required parent folders don't exist yet, create them. If there's already something else at 
-the given path, replace it but leave the children as they are. Check the new entry's 
+required parent folders don't exist yet, create them. If there's already something else at
+the given path, replace it but leave the children as they are. Check the new entry's
 FolderSharingInfo.read_only and set all its children's read-only statuses to match.
-- For each DeletedMetadata, if your local state has something at the given path, remove it and 
+- For each DeletedMetadata, if your local state has something at the given path, remove it and
 all its children. If there's nothing at the given path, ignore this entry.
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -1817,7 +1817,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1833,7 +1833,7 @@ video. The default for this field is False.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -1935,7 +1935,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -1950,11 +1950,11 @@ pPath: Path in the user's Dropbox to upload to.
 pMode:
 Selects what to do if the file already exists. The default for this union is add.
 
-- "add": Do not overwrite an existing file if there is a conflict. The autorename strategy is 
+- "add": Do not overwrite an existing file if there is a conflict. The autorename strategy is
 to append a number to the file name. For example, "document.txt" might become "document (2).txt".
 - "overwrite": Always overwrite the existing file. The autorename strategy is the same as it is for add.
-- "update": Overwrite if the given "rev" matches the existing file's "rev". The autorename 
-strategy is to append the string "conflicted copy" to the file name. For example, "document.txt" 
+- "update": Overwrite if the given "rev" matches the existing file's "rev". The autorename
+strategy is to append the string "conflicted copy" to the file name. For example, "document.txt"
 might become "document (conflicted copy).txt" or "document (Panda's conflicted copy).txt".
 
 pAutoRename:
@@ -1963,14 +1963,14 @@ the file to avoid conflict. The default for this field is False.
 
 pMute:
 Normally, users are made aware of any file modifications in their Dropbox account via
-notifications in the client software. If true, this tells the clients that this modification 
+notifications in the client software. If true, this tells the clients that this modification
 shouldn't result in a user notification. The default for this field is False
 
 pData: The binary file data
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2041,7 +2041,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2057,7 +2057,7 @@ for this field is False.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2094,8 +2094,8 @@ Syntax: dropboxRevokeSharedLink <pAccessToken>, <pURL>, [<pCallback>]
 Summary: Revoke a shared link.
 
 Description:
-Note that even after revoking a shared link to a file, the file may be accessible if there are shared 
-links leading to any of the file parent folders. To list all shared links that enable access to a specific 
+Note that even after revoking a shared link to a file, the file may be accessible if there are shared
+links leading to any of the file parent folders. To list all shared links that enable access to a specific
 file, you can use the list_shared_links with the file as the ListSharedLinksArg.path argument.
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -2106,7 +2106,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2114,7 +2114,7 @@ pURL: URL of the shared link.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2151,7 +2151,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2159,7 +2159,7 @@ pPath: Path in the user's Dropbox to be download.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2200,7 +2200,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2214,7 +2214,7 @@ pAutoRename: If there's a conflict, have the Dropbox server try to autorename th
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2284,7 +2284,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2294,7 +2294,7 @@ pAutoRename: If there's a conflict, have the Dropbox server try to autorename th
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2364,7 +2364,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2372,7 +2372,7 @@ pPath: Path in the user's Dropbox to be deleted.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2442,7 +2442,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2450,7 +2450,7 @@ pUserAccountIDs: A return delimited list of unique Dropbox IDs.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2501,8 +2501,8 @@ Syntax: dropboxAddFolderMember <pAccessToken>, <pSharedFolderId>, <pMembers>, <p
 Summary: Allows an owner or editor (if the ACL update policy allows) of a shared folder to add another member.
 
 Description:
-For the new member to get access to all the functionality for this folder, you will need 
-to call dropboxMountFolder on their behalf. Apps must have full Dropbox access to use 
+For the new member to get access to all the functionality for this folder, you will need
+to call dropboxMountFolder on their behalf. Apps must have full Dropbox access to use
 this endpoint.
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -2513,7 +2513,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2528,13 +2528,13 @@ receive invites to join the shared folder.
 {
 "email" : email address of member (optional if dropbox_id is set)
 "drobox_id" : a unique dropbox user id
-"access_level" (enum): 
-- "owner" : The collaborator is the owner of the shared folder. Owners can 
-view and edit the shared folder as well as set the folder's policies using 
+"access_level" (enum):
+- "owner" : The collaborator is the owner of the shared folder. Owners can
+view and edit the shared folder as well as set the folder's policies using
 update_folder_policy.
 - "editor: The collaborator can both view and edit the shared folder.
 - "viewer": The collaborator can only view the shared folder.
-- "viewer_no_comment": The collaborator can only view the shared folder 
+- "viewer_no_comment": The collaborator can only view the shared folder
 and does not have any access to comments.
 }
 ]
@@ -2548,7 +2548,7 @@ pCustomMessage: Optional message to display to added members in their invitation
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2590,13 +2590,13 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
 pActions:
 This is a return delimited list indicating whether the returned folder data will
-include a boolean value FolderPermission.allow that describes whether the current user can 
+include a boolean value FolderPermission.allow that describes whether the current user can
 perform the folder action on the folder. This field is optional.
 
 Actions that may be taken on shared folders. The value will be one of the following datatypes.
@@ -2620,7 +2620,7 @@ The default for this field is 1000.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2693,14 +2693,14 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
 pPath:
 If no path is given, returns a list of all shared links for the current user.
-If a non-empty path is given, returns a list of all shared links that allow access 
-to the given path - direct links to the given path and links to parent folders of 
+If a non-empty path is given, returns a list of all shared links that allow access
+to the given path - direct links to the given path and links to parent folders of
 the given path.
 
 pDirectOnly: Links to parent folders can be suppressed by setting direct_only to true.
@@ -2709,7 +2709,7 @@ pCursor: The cursor returned by your last call to list_shared_links. This field 
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2777,13 +2777,13 @@ Syntax: dropboxModifySharedLinkSettings <pAccessToken>, <pUrl>, [<pSettings>, <p
 Summary: Modify the shared link's settings.
 
 Description:
-If the requested visibility conflict with the shared links policy of the team or the shared folder 
-(in case the linked file is part of a shared folder) then the LinkPermissions.resolved_visibility 
-of the returned SharedLinkMetadata will reflect the actual visibility of the shared link and the 
+If the requested visibility conflict with the shared links policy of the team or the shared folder
+(in case the linked file is part of a shared folder) then the LinkPermissions.resolved_visibility
+of the returned SharedLinkMetadata will reflect the actual visibility of the shared link and the
 LinkPermissions.requested_visibility will reflect the requested visibility.
 
-If no settings are given then the default visibility is RequestedVisibility.public 
-(The resolved visibility, though, may depend on other aspects such as team and 
+If no settings are given then the default visibility is RequestedVisibility.public
+(The resolved visibility, though, may depend on other aspects such as team and
 shared folder settings).
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -2794,7 +2794,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2819,7 +2819,7 @@ The default for this field is False.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2891,7 +2891,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -2899,7 +2899,7 @@ pPath: Path in the user's Dropbox to be deleted.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -2942,13 +2942,13 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
 pActions:
 This is a return delimited list indicating whether the returned folder data will
-include a boolean value FolderPermission.allow that describes whether the current user can 
+include a boolean value FolderPermission.allow that describes whether the current user can
 perform the folder action on the folder. This field is optional.
 
 Actions that may be taken on shared folders. The value will be one of the following datatypes.
@@ -2972,7 +2972,7 @@ The default for this field is 1000.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3045,7 +3045,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3059,7 +3059,7 @@ pAutoRename: If there's a conflict, have the Dropbox server try to autorename th
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3132,7 +3132,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pCursor:
 A cursor as returned by dropboxListFolder or dropboxListFolderContinue. Cursors retrieved
@@ -3146,7 +3146,7 @@ this field is 30.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3191,7 +3191,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3205,7 +3205,7 @@ pLinkPassword: If the shared link has a password, this parameter can be used. Th
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3244,7 +3244,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3264,14 +3264,14 @@ The value will be one of the following datatypes. New values may be introduced a
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
 It:
 For asynchronous requests it will contain a request ID. This may be used with
 tsNet's tsNetGetStatus function. If the request is synchronous and successful the it
-variable will be a UTF-8 encoded JSON string that contains information about a member's 
+variable will be a UTF-8 encoded JSON string that contains information about a member's
 access level to content after an operation.
 
 If an error occurred the JSON string will be in the following form:
@@ -3304,7 +3304,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3318,7 +3318,7 @@ pLinkPassword: If the shared link has a password, this parameter can be used. Th
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3382,21 +3382,21 @@ Once a cursor has been retrieved from list_folder, use this to paginate through 
 retrieve updates to the folder, following the same rules as documented for list folder.
 
 Description:
-If the result's ListFolderResult.has_more field is true, call list_folder/continue with 
+If the result's ListFolderResult.has_more field is true, call list_folder/continue with
 the returned ListFolderResult.cursor to retrieve more entries.
 
 If you're using ListFolderArg.recursive set to true to keep a local cache of the contents
 of a Dropbox account, iterate through each entry in order and process them as follows to
 keep your local state in sync:
 
-- For each FileMetadata, store the new entry at the given path in your local state. 
+- For each FileMetadata, store the new entry at the given path in your local state.
 If the required parent folders don't exist yet, create them. If there's already something
 else at the given path, replace it and remove all its children.
 - For each FolderMetadata, store the new entry at the given path in your local state. If the
-required parent folders don't exist yet, create them. If there's already something else at 
-the given path, replace it but leave the children as they are. Check the new entry's 
+required parent folders don't exist yet, create them. If there's already something else at
+the given path, replace it but leave the children as they are. Check the new entry's
 FolderSharingInfo.read_only and set all its children's read-only statuses to match.
-- For each DeletedMetadata, if your local state has something at the given path, remove it and 
+- For each DeletedMetadata, if your local state has something at the given path, remove it and
 all its children. If there's nothing at the given path, ignore this entry.
 
 If the callback parameter is not empty the request will be asynchronus and
@@ -3407,7 +3407,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3415,7 +3415,7 @@ pCursor: The cursor returned by your last call to list folder or list folder con
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3509,7 +3509,7 @@ Summary: Share a folder with collaborators.
 Description:
 Most sharing will be completed synchronously. Large folders will be completed asynchronously. To make
 testing the async case repeatable, set `ShareFolderArg.force_async`.
-If a ShareFolderLaunch.async_job_id is returned, you'll need to call check_share_job_status until the 
+If a ShareFolderLaunch.async_job_id is returned, you'll need to call check_share_job_status until the
 action completes to get the metadata for the folder.
 Apps must have full Dropbox access to use this endpoint.
 
@@ -3521,7 +3521,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3543,7 +3543,7 @@ Policy governing who can change a shared folder's access control list (ACL). In 
 pSharedLinkPolicy:
 The policy to apply to shared links created for content inside this shared folder. The current
 user must be on a team to set this policy to SharedLinkPolicy.members. The default for this union is anyone.
-Policy governing who can view shared links. The value will be one of the following datatypes. New values may be 
+Policy governing who can view shared links. The value will be one of the following datatypes. New values may be
 introduced as our API evolves.
 
 - "anyone": Links can be shared with anyone.
@@ -3553,7 +3553,7 @@ pForceAsync: Whether to force the share to happen asynchronously. The default fo
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3601,7 +3601,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3611,7 +3611,7 @@ pToDropboxId: A account or team member ID to transfer ownership to.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3647,13 +3647,13 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3715,7 +3715,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3723,7 +3723,7 @@ pCursor: The cursor returned by your last call to dropboxListMountableFolders or
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3798,7 +3798,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3812,13 +3812,13 @@ pData: The binary file data
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
 It:
 For asynchronous requests it will contain a request ID. This may be used with
-tsNet's tsNetGetStatus function. 
+tsNet's tsNetGetStatus function.
 
 If an error occurred the JSON string will be in the following form:
 
@@ -3842,7 +3842,7 @@ Syntax: dropboxListFolderGetLatestCursor <pAccessToken>, <pPath>, <pRecursive>, 
 Summary: A way to get a cursor for the folder's state.
 
 Description:
-Unlike dropboxListFolder, dropboxListFolderGetLatestCursor doesn't return any entries. This endpoint is 
+Unlike dropboxListFolder, dropboxListFolderGetLatestCursor doesn't return any entries. This endpoint is
 for app which only needs to know about new files and modifications and doesn't need to know
 about files that already exist in Dropbox. Use the returned cursor with dropboxListFolderContinue to
 obtain the entries.
@@ -3855,7 +3855,7 @@ The callback will be sent with three parameters:
 - The HTTP response code
 - The data returned which will be the same data as documented for the it variable in a synchronous request.
 
-Parameters: 
+Parameters:
 
 pAccessToken: An OAuth2 Access token to access the user's account
 
@@ -3871,7 +3871,7 @@ video. The default for this field is False.
 
 pCallback:
 The handler to call when the request is complete. If empty the command
-will block until complete. Requires tsNet with LiveCode Indy License.
+will block until complete. Requires tsNet with Commercial License.
 
 The result: An error if the HTTP request failed
 
@@ -3896,6 +3896,3 @@ If an error occurred the JSON string will be in the following form:
 }
 }
 ````
-
-
-

@@ -82,7 +82,7 @@ The name of the property to retrieve, see below for a full list.
     set to "version" then the instanceId is ignored. This property is
     deprecated and is only available when using the XBrowser_Get
     synonym. The browser external is now part of OpenXTalk and its
-    version is the same as OpenXTalk's version.
+    version is the same as xTalk's version.
 -   "htmlimage": The image data of what is being displayed in the
     browser. This property is deprecated and is only available when
     using the XBrowser_Get synonym. To get a snapshot from the browser

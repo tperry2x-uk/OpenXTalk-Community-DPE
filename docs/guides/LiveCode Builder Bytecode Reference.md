@@ -2,11 +2,11 @@
 group: reference
 ---
 
-# LiveCode Builder Bytecode Reference
+# Builder Bytecode Reference
 
 ## Introduction
 
-The LiveCode Builder Virtual Machine is a infinite register machine with a
+The Builder Virtual Machine is a infinite register machine with a
 high-level and verifiable bytecode.
 
 All bytecode runs in the context of a module instance with executing handlers

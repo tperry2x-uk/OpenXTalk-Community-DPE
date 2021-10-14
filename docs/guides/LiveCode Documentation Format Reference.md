@@ -2,17 +2,17 @@
 group: reference
 ---
 
-# LiveCode Documentation Format Reference
+# Documentation Format Reference
 
 ## Introduction
 
-LiveCode uses a custom documentation format for the dictionary and for extension APIs. The 
-format has very few special characters and is intended to maximise readability and 
-modifiability. 
+There is a custom documentation format for the dictionary and for extension APIs. The
+format has very few special characters and is intended to maximise readability and
+modifiability.
 
 ## Format
 
-Documentation for a LiveCode API or documentation entry consists of a series of elements and their values, in the following form:
+Documentation for an API or documentation entry consists of a series of elements and their values, in the following form:
 
 *elementName* : *content*
 
@@ -42,7 +42,7 @@ The type of this API entry. One of the following:
 * operator
 * statement
 * expression
-	
+
 (Glossary-level)
 * library
 * widget
@@ -57,7 +57,7 @@ The glossary-level entries have part of their content generated from the API-lev
 A description of how to use or call this facet of the API. May just be the name itself, for keywords etc.
 An entry may have a number of Syntax elements, if there are variations within the same entry.
 
-The following can be used to specify livecode syntax:
+The following can be used to specify syntax:
 - `[optional]`
 - `[repeated optional ...]`
 - `{ variant 1 | variant 2 }`
@@ -66,7 +66,7 @@ The following can be used to specify livecode syntax:
 For example, the syntax for the first variant of the `split` command:
 
 	split <variableToSplit> {by | using | with} <primaryDelimiter> [and <secondaryDelimiter>]
-	
+
 describes the following possible usages:
 - `split tVar by comma`
 - `split tVar using return`
@@ -96,7 +96,7 @@ A comma-delimited list of names of other API or docs entries. Each one must be o
 In particular, every API entry in a library should have that library name in its Associated list.
 
 #### Introduced
-The LiveCode version in which the API entry was first available.
+The version in which the API entry was first available.
 
 #### OS
 A comma-delimited list specifying which operating systems the API entry is available for. One or more of the following:
@@ -120,7 +120,7 @@ A comma-delimited list specifying which platforms the API entry is available for
 #### Example
 Example elements should show how API entries are used in context. Each example will be displayed in the documentation viewer as a multiline code block. Where possible, an example should be entirely self contained, so that it is runnable as a block of code without any additions.
 
-An API entry can have any number of Example elements. 
+An API entry can have any number of Example elements.
 
 #### Parameters
 The parameters element itself does not do anything, but can be helpful for readability as a precursor to the parameter elements themselves.
@@ -144,7 +144,7 @@ etc.
 After the description parameter of **array** type, the format of the array may optionally be specified in the following way:
 
 ```
-{ 
+{
 	key1 (keyType) : description of key1
 	value1 (valueType) : description of value1
 	key2 (keyType) : description of key2
@@ -155,7 +155,7 @@ After the description parameter of **array** type, the format of the array may o
 The key type and value type are optional. If one of the values is a sub-array, and the **array** type is specified, then the array specification may be nested as follows:
 
 ```
-{ 
+{
 	key1 (keyType) : description of key1
 	value1 (array) : description of value1
 	{
@@ -175,7 +175,7 @@ For simple return parameters, i.e. the direct return value of a function, use th
 When a value is both an input and output value, for example the value of a property, use the Value element.
 The Returns and Value elements are mutually exclusive.
 
-Some functions and commands in LiveCode change the value of 'the result' and the 'it' variable. In these cases there are also special return parameter elements It and The result.
+Some functions and commands in change the value of 'the result' and the 'it' variable. In these cases there are also special return parameter elements It and The result.
 
 All of these elements can have a type specified in brackets before the colon, as for parameter elements. The same comments about formatting apply to return parameters.
 
@@ -237,9 +237,9 @@ Name: *anotherEntryName*
 etc.
 
 ### Inline documentation
-Documentation for LiveCode script and LiveCode extensions can be done in-line. In this case, the Name, Type, Syntax and Associated elements are auto-generated. 
+Documentation for script and extensions can be done in-line. In this case, the Name, Type, Syntax and Associated elements are auto-generated.
 
-The code-block enclosed in /** */ immediately preceding the handler or syntax definition is used for the other elements of the documentation for that entry. In LiveCode extensions, the types of parameters are also pulled from the associated handler.
+The code-block enclosed in /** */ immediately preceding the handler or syntax definition is used for the other elements of the documentation for that entry. In extensions, the types of parameters are also pulled from the associated handler.
 
 ### Separate docs files examples
 
@@ -291,7 +291,7 @@ Converts from text to binary data.
 
 The <textEncode> function takes text, and returns it as binary data, encoded with the specified encoding.
 
-It is highly recommended that any time you interface with things outside LiveCode (files, network sockets, processes, etc) that you explicitly textEncode any text you send outside LiveCode and <textDecode> all text received into LiveCode. If this doesn't happen, a platform-dependent encoding will be used (which normally does not support Unicode text).
+It is highly recommended that any time you interface with things outside of the engine (files, network sockets, processes, etc) that you explicitly textEncode any text you send outside and <textDecode> all text received into the engine. If this doesn't happen, a platform-dependent encoding will be used (which normally does not support Unicode text).
 
 It is not, in general, possible to reliably auto-detect text encodings so please check the documentation for the programme you are communicating with to find out what it expects. If in doubt, try UTF-8.
 
@@ -305,7 +305,7 @@ Module: com.livecode.sort
 
 Type: library
 
-Description: This library consists of the sorting operations provided by the standard library of LiveCode Builder
+Description: This library consists of the sorting operations provided by the standard library of Builder
 
 
 Name: SortListDescendingText
@@ -317,7 +317,7 @@ Syntax: sort <Target> in descending [text] order
 
 Summary: Sorts <Target> in descending text order.
 Parameters:
-Target (inout list): An expression that evaluates to a list of strings. 
+Target (inout list): An expression that evaluates to a list of strings.
 Example:     
 	variable tTestList as List
     put the empty list into tTestList
@@ -345,11 +345,11 @@ Syntax: sort <Target> in ascending [text] order
 
 In general, writing inline docs has fewer requirements since several of the elements are auto-generated.
 
-#### LiveCode Builder syntax example
+#### Builder syntax example
 
 ```
 /**  
-This library consists of the operations on lists included in the standard library of LiveCode Builder.
+This library consists of the operations on lists included in the standard library of Builder.
 */
 
 module com.livecode.list
@@ -363,18 +363,18 @@ Example:
 	variable tVar as List
 	put the empty list into tVar
 	push "first element" onto tVar
-	
+
 	variable tResult as Boolean
 	if the head of tVar is "first element" then
 		put "success" into tResult
 	end if
-	
+
 Description:
 Returns the first element of the list <Target> without modifying <Target>.
 \`\`\`	the head of tVar\`\`\`
 is equivalent to using the <IndexedElementOfList> operator with index -1,
 \`\`\`	tVar[1]\`\`\`
-	
+
 References: IndexedElementOfList(operator)
 
 Tags: Lists
@@ -389,7 +389,7 @@ end syntax
 end module
 ```
 
-#### LiveCode Builder handler example
+#### Builder handler example
 ```
 /**
 Summary: Logs the result of a test to the <xResults> list
@@ -417,7 +417,7 @@ public handler testLog(in pModule as String, in pTest as String, in pResult as B
     push tStringResult && ":" && pModule & "_" & pTest onto xResults
 end handler
 ```
-#### LiveCode script handler example
+#### Script handler example
 ```
 /**
 Summary: Extracts the inline docs from a .lcb file
@@ -430,7 +430,7 @@ Description:
 <revDocsGenerateDocsFileFromModularFile> is used when packaging a widget to create its API documentation.
 It generates the Library and Type elements from the declaration in the <pFile> (either widget or library), and extracts
 the comment block that precedes any initial declaration for use as the library-level Description element.
-It then extracts the comment blocks that precede syntax and handler definitions in <pFile>, and generates the 
+It then extracts the comment blocks that precede syntax and handler definitions in <pFile>, and generates the
 Name, Type, Syntax, and Associated elements for each entry, as well as the parameter types.
 
 Tags: Package building

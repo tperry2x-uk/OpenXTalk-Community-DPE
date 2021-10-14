@@ -2,10 +2,10 @@
 /*
 Copyright (C) 2016 LiveCode Ltd.
 
-This file is part of LiveCode.
+This file is part of LiveCode Community Edition.
 
-LiveCode is free software; you can redistribute it and/or modify it under
-the terms of the GNU General Public License v3 as published by the Free
+LiveCode Community Edition is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License v3 as published by the Free
 Software Foundation.
 
 LiveCode is distributed in the hope that it will be useful, but WITHOUT ANY
@@ -25,7 +25,7 @@ on extensionInitialize
    if the target is not me then
       pass extensionInitialize
    end if
-   
+
    insert the script of me into back
 
    if the environment contains "development" then
@@ -37,7 +37,7 @@ on extensionFinalize
    if the target is not me then
       pass extensionFinalize
    end if
-   
+
    remove the script of me from back
 end extensionFinalize
 
@@ -45,7 +45,7 @@ end extensionFinalize
 
 Title: Semantic Versioning Library
 
-Author: LiveCode 
+Author: LiveCode
 
 Type: library
 
@@ -91,11 +91,11 @@ but not the versions `1.2.8` or `2.0.0`.
 ## Prerelease Tags
 
 If a version has a prerelease tag (for example, `1.2.3-alpha.3`) then it will only be
-allowed to satisfy comparator sets if at least one comparator with the same 
+allowed to satisfy comparator sets if at least one comparator with the same
 [major, minor, patch] tuple also has a prerelease tag.
 
 For example, the range `>1.2.3-alpha.3` would be allowed to match the version `1.2.3-alpha.7`,
-but it would not be satisfied by `3.4.5-alpha.9`, even though `3.4.5-alpha.9` is technically 
+but it would not be satisfied by `3.4.5-alpha.9`, even though `3.4.5-alpha.9` is technically
 *greater than* `1.2.3-alpha.3` according to the SemVer sort rules. The version range only
 accepts prerelease tags on the `1.2.3` version. The version `3.4.5` would satisfy the range,
 because it does not have a prerelease flag, and `3.4.5` is greater than `1.2.3-alpha.7`.
@@ -266,16 +266,16 @@ end semverParse
 private command __SemverParse @xVersion, pRange
    local tVersion, tParsedVersion
    put xVersion into tVersion
-   
+
    if tVersion is not an ascii string then
       return "Version is not an ascii string:" && xVersion for error
    end if
-   
+
    -- strip leading v
    if tVersion begins with "v" then
       delete char 1 of tVersion
    end if
-   
+
    -- parse operators
    if pRange then
       repeat while char 1 of tVersion is in "<>=~^"
@@ -283,21 +283,21 @@ private command __SemverParse @xVersion, pRange
          delete char 1 of tVersion
       end repeat
    end if
-   
+
    -- metadata if any -> major.minor.patch-prerelease.build+metadata
    set the itemDelimiter to "+"
    if the number of items of tVersion > 1 then
       put the last item of tVersion into tParsedVersion["metadata"]
       delete the last item of tVersion
    end if
-   
+
    -- prerelease stage if any -> major.minor.patch-prerelease.build
    set the itemDelimiter to "-"
    if the number of items of tVersion > 1 then
       local tPrerelease
       put item 2 to -1 of tVersion into tPrerelease
       delete item 2 to -1 of tVersion
-      
+
       set the itemDelimiter to "."
       put item 1 of tPrerelease into tParsedVersion["prerelease"]
       put item 2 of tPrerelease into tParsedVersion["build"]
@@ -305,8 +305,8 @@ private command __SemverParse @xVersion, pRange
          put 0 into tParsedVersion["build"]
       end if
    end if
-   
-   
+
+
    -- major number -> major.minor.patch
    set the itemDelimiter to "."
    put item 1 of tVersion into tParsedVersion["major"]
@@ -321,7 +321,7 @@ private command __SemverParse @xVersion, pRange
       replace "*" with "x" in tParsedVersion["major"]
    end if
    delete item 1 of tVersion
-   
+
    -- minor number -> minor.patch
    put item 1 of tVersion into tParsedVersion["minor"]
    if tParsedVersion["minor"] is empty then
@@ -335,7 +335,7 @@ private command __SemverParse @xVersion, pRange
       replace "*" with "x" in tParsedVersion["minor"]
    end if
    delete item 1 of tVersion
-   
+
    -- patch number -> patch
    put tVersion into tParsedVersion["patch"]
    if tParsedVersion["patch"] is empty then
@@ -348,26 +348,26 @@ private command __SemverParse @xVersion, pRange
    if pRange then
       replace "*" with "x" in tParsedVersion["patch"]
    end if
-   
+
    if tParsedVersion["major"] is not an integer \
          and not (pRange and tParsedVersion["major"] is "x") then
       return "Invalid major number:" && xVersion for error
    end if
-   
+
    if tParsedVersion["minor"] is not an integer \
          and not (pRange and tParsedVersion["minor"] is "x") then
       return "Invalid minor number:" && xVersion for error
    end if
-   
+
    if tParsedVersion["patch"] is not an integer \
          and not (pRange and tParsedVersion["patch"] is "x") then
       return "Invalid patch number:" && xVersion for error
    end if
-   
+
    if tParsedVersion["prerelease"] is not empty and tParsedVersion["build"] is not an integer then
       return "Invalid build number string:" && xVersion for error
    end if
-   
+
    put tParsedVersion into xVersion
 end __SemverParse
 
@@ -378,33 +378,33 @@ private function __GreaterThan pLeft, pRight
    if pLeft["major"] is "x" or pRight["major"] is "x" then
       return __PrereleaseGreaterThan(pLeft, pRight)
    end if
-   
+
    if pLeft["major"] > pRight["major"] then
       return __PrereleaseGreaterThan(pLeft, pRight)
    else if pLeft["major"] < pRight["major"] then
       return false
    end if
-   
+
    if pLeft["minor"] is "x" or pRight["minor"] is "x" then
       return __PrereleaseGreaterThan(pLeft, pRight)
    end if
-   
+
    if pLeft["minor"] > pRight["minor"] then
       return __PrereleaseGreaterThan(pLeft, pRight)
    else if pLeft["minor"] < pRight["minor"] then
       return false
    end if
-   
+
    if pLeft["patch"] is "x" or pRight["patch"] is "x" then
       return __PrereleaseGreaterThan(pLeft, pRight)
    end if
-   
+
    if pLeft["patch"] > pRight["patch"] then
       return __PrereleaseGreaterThan(pLeft, pRight)
    else if pLeft["patch"] < pRight["patch"] then
       return false
    end if
-   
+
    return false
 end __GreaterThan
 
@@ -413,28 +413,28 @@ private function __PrereleaseGreaterThan pLeft, pRight
          pLeft["prerelease"] is empty and pRight["prerelease"] is empty then
       return true
    end if
-   
+
    if pLeft["prerelease"] is empty and pRight["prerelease"] is not empty then
       return true
    else if pLeft["prerelease"] is not empty and pRight["prerelease"] is empty then
       return false
    end if
-   
+
    -- ascii string comparison
    if pLeft["prerelease"] > pRight["prerelease"] then
       return true
    else if pLeft["prerelease"] < pRight["prerelease"] then
       return false
    end if
-   
+
    if pLeft["build"] is "x" or pRight["build"] is "x" then
       return true
    end if
-   
+
    if pLeft["build"] > pRight["build"] then
       return true
    end if
-   
+
    return false
 end __PrereleaseGreaterThan
 
@@ -443,7 +443,7 @@ private function __PrereleaseGreaterThanOrEqual pLeft, pRight
          pLeft["build"] is pRight["build"] then
       return true
    end if
-   
+
    return __PrereleaseGreaterThan(pLeft, pRight)
 end __PrereleaseGreaterThanOrEqual
 
@@ -465,12 +465,12 @@ function semverGreaterThan pLeft, pRight
    if the result is not empty then
       return the result for error
    end if
-   
+
    semverParse pRight
    if the result is not empty then
       return the result for error
    end if
-   
+
    return __GreaterThan(pLeft, pRight)
 end semverGreaterThan
 
@@ -492,12 +492,12 @@ function semverGreaterThanOrEqual pLeft, pRight
    if the result is not empty then
       return the result for error
    end if
-   
+
    semverParse pRight
    if the result is not empty then
       return the result for error
    end if
-   
+
    return __Equal(pLeft, pRight) or __GreaterThan(pLeft, pRight)
 end semverGreaterThanOrEqual
 
@@ -527,12 +527,12 @@ function semverEqual pLeft, pRight
    if the result is not empty then
       return the result for error
    end if
-   
+
    semverParse pRight
    if the result is not empty then
       return the result for error
    end if
-   
+
    return __Equal(pLeft, pRight)
 end semverEqual
 
@@ -546,22 +546,22 @@ private function __SatisfiesCaret pVersion, pRange
       if pVersion[tKey] is 0 and pRange[tKey] is 0 then
          next repeat
       end if
-      
+
       if pRange[tKey] is "x" then
          return true
       end if
-      
+
       if not tChecked and pVersion[tKey] > pRange[tKey] then
          return false
       end if
-      
+
       if pVersion[tKey] < pRange[tKey] then
          return false
       end if
-      
+
       put true into tChecked
    end repeat
-   
+
    return true
 end __SatisfiesCaret
 
@@ -569,13 +569,13 @@ private function __SatisfiesTilde pVersion, pRange
    if pVersion["major"] is not pRange["major"] then
       return false
    end if
-   
+
    if pRange["minor"] is "x" then
       return true
    else if pVersion["minor"] is not pRange["minor"] then
       return false
    end if
-   
+
    -- allow patches to minor release
    return __GreaterThan(pVersion, pRange)
 end __SatisfiesTilde
@@ -589,7 +589,7 @@ private function __SatisfiesXRange pVersion, pRange
          return false
       end if
    end repeat
-   
+
    return true
 end __SatisfiesXRange
 
@@ -597,7 +597,7 @@ private function __SatisfiesRange pVersion, pRange
    local tConditions
    local tConditionIndex = 1
    local tResult
-   
+
    local tIndex
    repeat with tIndex = 1 to the number of elements of pRange
       if pRange[tIndex] is "||" then
@@ -632,7 +632,7 @@ private function __SatisfiesRange pVersion, pRange
                put __SatisfiesXRange(pVersion, pRange[tIndex]) into tResult
                break
          end switch
-         
+
          if tConditions[tConditionIndex] is empty then
             put tResult into tConditions[tConditionIndex]
          else
@@ -640,9 +640,9 @@ private function __SatisfiesRange pVersion, pRange
          end if
       end if
    end repeat
-   
+
    put tConditions[1] into tResult
-   
+
    repeat with tIndex = 2 to the number of elements in tConditions
       put tResult or tConditions[tIndex] into tResult
    end repeat
@@ -659,7 +659,7 @@ end __SemverSplitRange
 
 command semverParseRange @xRange
    __SemverSplitRange xRange
-   
+
    local tHyphen = false
    repeat with tIndex = 1 to the number of elements of xRange
       if xRange[tIndex] is "||" then
@@ -670,12 +670,12 @@ command semverParseRange @xRange
          put true into tHyphen
          next repeat
       end if
-      
+
       __SemverParse xRange[tIndex], true
       if the result is not empty then
          return the result for error
       end if
-      
+
       if tHyphen then
          put "<=" into xRange[tIndex]["operator"]
          put false into tHyphen
@@ -700,17 +700,17 @@ function semverSatisfies pVersion, pRange
    if pRange is empty then
       return true
    end if
-   
+
    semverParse pVersion, false
    if the result is not empty then
       return the result for error
    end if
-   
+
    semverParseRange pRange
    if the result is not empty then
       return the result for error
    end if
-   
+
    return __SatisfiesRange(pVersion, pRange)
 end semverSatisfies
 
@@ -729,14 +729,14 @@ The highest version satisfying the range
 
 function semverMaxSatisfying pVersions, pRange
    split pVersions by return
-   
+
    if pRange is not empty then
       semverParseRange pRange
       if the result is not empty then
          return the result for error
       end if
    end if
-   
+
    local tVersions
    put pVersions into tVersions
    local tIndex, tFoundIndex
@@ -745,17 +745,17 @@ function semverMaxSatisfying pVersions, pRange
       if the result is not empty then
          return the result for error
       end if
-      
+
       if pRange is not empty and not __SatisfiesRange(tVersions[tIndex], pRange) then
          next repeat
       end if
-      
+
       if tFoundIndex is empty or __GreaterThan(tVersions[tIndex], tVersions[tFoundIndex]) then
          put tIndex into tFoundIndex
       end if
-      
+
    end repeat
-   
+
    -- will return empty if tFoundIndex is empty
    return pVersions[tFoundIndex]
 end semverMaxSatisfying

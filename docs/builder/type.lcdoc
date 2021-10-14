@@ -2,7 +2,7 @@ Library: com.livecode.type
 
 Type: module
 
-Summary:   This library consists of the general operations on types provided by the standard library of LiveCode Builder.
+Summary:   This library consists of the general operations on types provided by the standard library of Builder.
 
 
 Name: IsAList
@@ -162,7 +162,3 @@ Summary: Determines whether <Target> is an array or not.
 Target: Any expression
 
 Returns: Returns true if the given expression <Target> is an array, and false if not.
-
-
-
-

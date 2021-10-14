@@ -17,7 +17,7 @@ Syntax: colorToString(<pColor>,<pIncludeAlpha>)
 
 Summary: Converts a color to a string representing the color
 
-Parameters: 
+Parameters:
 
 pColor: A value of type com.livecode.canvas.Color
 
@@ -41,7 +41,7 @@ end handler
 Example: log colorToString(color [0.4,0.4,0.4,0.4])			-- logs "102,102,102,102"
 
 Description:
-Use the <colorToString> handler when logging colors, returning them to LiveCode script 
+Use the <colorToString> handler when logging colors, returning them to a script
 via a property getter, or serialising them in the widget's stored properties array for saving.
 
 
@@ -54,7 +54,7 @@ Syntax: stringToColor(<pString>)
 
 Summary: Converts a string to a color
 
-Parameters: 
+Parameters:
 
 pString: A comma delimited string representing a color in RGB / RGBA format
 
@@ -74,7 +74,7 @@ public handler setColor(in pColor as String)
 end handler
 
 Description:
-Use the <stringToColor> handler when receiving colors from LiveCode script 
+Use the <stringToColor> handler when receiving colors from a script
 via a property setter, or from the widget's stored properties array when loading.
 
 
@@ -87,7 +87,7 @@ Syntax: intToString(<pNumber>)
 
 Summary: Formats an integer as a string
 
-Parameters: 
+Parameters:
 
 pNumber: The integer to format
 
@@ -109,7 +109,7 @@ Syntax: placeholderIcon(<pOS>)
 
 Summary: Returns a placeholder icon for a given operating system
 
-Parameters: 
+Parameters:
 
 pOS:
 The operating system.
@@ -135,7 +135,7 @@ Syntax: stripZeros(<pString>)
 
 Summary: Removes any superfluous zeros and decimal places.
 
-Parameters: 
+Parameters:
 
 pString: The string to remove zeros from
 
@@ -145,7 +145,7 @@ log stripZeros("5.432100")			-- logs 5.4321
 
 Description:
 Use <stripZeros> to remove any superfluous zeros and decimal places from <pString>
-which have been added by the 
+which have been added by the
 
 `tNumber formatted as string`
 
@@ -161,7 +161,7 @@ Syntax: constrainPathToRect(<pTargetRect>,<xPath>)
 
 Summary: Scales and translates a path to fit within a rectangle
 
-Parameters: 
+Parameters:
 
 pTargetRect: The rectangle to fit the path within
 
@@ -226,7 +226,7 @@ Syntax: paintPlaceholderImage(<pCanvas>,<pBounds>,<pSVGIcon>,<pLabel>,<pFont>,<p
 
 Summary: Paint a placeholder image using an SVG icon and name
 
-Parameters: 
+Parameters:
 
 pCanvas: The canvas on which to draw the placeholder
 
@@ -241,9 +241,6 @@ pFont: A font to draw the label with. If none specified, Arial 14pt is used.
 pColor: A color to draw the label with. If none specified, #404040 is used
 
 Description:
-Use the <paintPlaceHolder> image handler to draw a placeholder on the 
-given canvas when, for example, the widget shouldn't be displayed as 
+Use the <paintPlaceHolder> image handler to draw a placeholder on the
+given canvas when, for example, the widget shouldn't be displayed as
 active in browse mode, or is not available on the current platform.
-
-
-

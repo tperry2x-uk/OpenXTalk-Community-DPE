@@ -5,7 +5,7 @@ Type: property
 Syntax: get the freeSize of <stack>
 
 Summary:
-Always reports zero and is included in <OpenXTalk> for compatibility with
+Always reports zero and is included for compatibility with
 imported <HyperCard> <stacks>.
 
 Associations: stack

@@ -4,7 +4,7 @@ type: library
 
 Description:
 mergDevice is an iOS external to access information from the device that
-is not currently available in the LiveCode engine. 
+is not currently available in the engine. 
 
 
 Tags: Externals
@@ -31,6 +31,3 @@ Edition: Community
 
 
 Returns:  The name of the device
-
-
-

@@ -29,7 +29,7 @@ otherwise. If the <systemPrintSelector> is set to false, then the
 <answer page setup> command will use a stack called "Page Setup Dialog".
 
 Description:
-Use the <systemPrintSelector> property to specify whether OpenXTalk's
+Use the <systemPrintSelector> property to specify whether xTalk's
 print dialogs or the system default dialogs should be used by the
 <answer printer> and <answer page setup> commands.
 

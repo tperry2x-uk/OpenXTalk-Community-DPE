@@ -2,19 +2,19 @@
 group: reference
 ---
 
-# LiveCode Builder Style Guide
+# Builder Style Guide
 
 ## Introduction
 
 This document describes best practices to be followed when working with
-LiveCode Builder source code.  Please follow it *especially* when writing code
-to be included with the main LiveCode product package.
+Builder source code.  Please follow it *especially* when writing code
+to be included with the main product package.
 
 ## Copyright headers
 
 Please include a license header at the top of the `.lcb` file.
 
-For the main LiveCode repository, or for any community extensions, the license
+For the main repository, or for any community extensions, the license
 is the [GNU General Public License v3](http://www.gnu.org/licenses) *without*
 the "any later version" clause.
 
@@ -34,16 +34,16 @@ name starting with a digit.  For example, a module derived from the
 `999.example.org` domain could be `org.example._999`.
 
 You must only use module names corresponding to domain names that you control
-or are allowed to use.  This restriction is enforced by the the LiveCode
+or are allowed to use.  This restriction is enforced by the 
 extension store.
 
 If you don't have a domain name of your own, you may use module names
 beginning with `community.livecode.<username>`, replacing `<username>`
-with the username you use to log into the LiveCode extension store.
+with the username you use to log into the extension repository.
 For example, if your username is "sophie", then you can create a
 module named `community.livecode.sophie.mymodule`.
 
-For the main LiveCode repository, please use module names beginning with
+For the main repository, please use module names beginning with
 `com.livecode`.
 
 Always write module names in lower case.
@@ -235,7 +235,7 @@ This section contains recommendations that are specific to writing
 widgets.
 
 As a general rule, try to minimize surprise for users who mix widgets
-with classic LiveCode controls by using similarly named events and
+with classic controls by using similarly named events and
 properties with similar semantics.
 
 ### Writing load handlers

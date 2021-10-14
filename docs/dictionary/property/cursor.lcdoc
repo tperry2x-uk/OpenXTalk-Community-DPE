@@ -103,7 +103,7 @@ following two statements:
 
 
 Caution! If you use the <delete stack> command to remove the
-"revCursors" <stack>, OpenXTalk's <cursor(glossary)|cursors> are
+"revCursors" <stack>, xTalk's <cursor(glossary)|cursors> are
 permanently deleted and you will need to <download> a new cursors
 <stack> to restore them.
 

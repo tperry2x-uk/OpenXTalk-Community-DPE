@@ -5,7 +5,7 @@ Type: property
 Syntax: set the allowKeyInField to {true | false}
 
 Summary:
-Has no effect and is included in <OpenXTalk> for compatibility with
+Has no effect and is included for compatibility with
 imported <SuperCard> projects.
 
 Associations: field

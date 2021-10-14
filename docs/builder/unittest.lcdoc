@@ -3,7 +3,7 @@ Library: com.livecode.unittest
 Type: module
 
 Summary:
-This library provides syntax for unit testing LiveCode Builder
+This library provides syntax for unit testing Builder
 programs.  It is used by the LiveCode Builder standard library's
 testsuite.
 
@@ -327,7 +327,3 @@ If the test fails, it will not cause a test suite failure; instead, an
 will be recorded instead of a normal test pass.
 
 Tags: Unit tests
-
-
-
-

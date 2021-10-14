@@ -14,7 +14,7 @@ OS: mac, windows, linux, ios, android
 Platforms: desktop, server, mobile
 
 Example:
-unload extension com.OpenXTalk.widget.navbar
+unload extension com.livecodewidget.navbar
 
 Example:
 -- Unload all extensions

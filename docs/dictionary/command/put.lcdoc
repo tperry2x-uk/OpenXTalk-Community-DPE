@@ -128,7 +128,7 @@ URL:
 Then you can use the <put> <command> with a <resfile> <URL> type to
 create the <resource fork>.
 
->*Important:* The syntax for file URLs with OpenXTalk's <URL(keyword)>
+>*Important:* The syntax for file URLs with xTalk's <URL(keyword)>
 >does not conform to [RFC 1738](https://tools.ietf.org/html/rfc1738).
 >To ensure proper operation on all platforms make sure you use
 >`file:path` rather than `file://path`.

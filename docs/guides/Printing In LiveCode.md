@@ -2,17 +2,17 @@
 group: intermediate
 ---
 
-# Printing In LiveCode
+# Printing
 
 ## Introduction
 
-Printing is a vital aspect of many applications. LiveCode provides a
-comprehensive set of printing capabilities. Whether you want a simple
+Printing is a vital aspect of many applications. A comprehensive set of printing
+capabilities are provided. Whether you want a simple
 print out of your stack, want to print labels or produce complex
-reports, LiveCode has the features you need.
+reports it should be possible to do.
 
-LiveCode supports a number of methods of printing. You can use the
-*print card command* and have LiveCode manage the layout of cards on the
+There are a number of methods of printing. You can use the
+*print card command* and have the engine manage the layout of cards on the
 paper. Alternatively you can use the *print into rectangle commands*
 which allow you to take full control over the layout of your print out.
 The former method is most suited to implementing simple print
@@ -21,14 +21,14 @@ printing or printing reports. Finally, you can use the built-in field
 printing script library to print the contents of any text field using a
 simple command.
 
-LiveCode also includes a full set of features to access and set printer
+The engine includes a full set of features to access and set printer
 device options, including options such as margins, page range and number
 of copies. This feature is invaluable if you want to produce a high
 resolution PDF file from your stack.
 
 ## Controlling Printer Device Settings
 
-LiveCode gives you full programmatic control over your printer device
+The engine gives you full programmatic control over your printer device
 and any available settings.
 
 ### Choosing a Printer
@@ -85,19 +85,19 @@ discuss how to save and utilize these properties below.
 
 On Linux systems you will need a recent version of GTK installed in
 order to display the OS printer dialog. If you don't have this
-installed, LiveCode will display its own printer dialog which has been
+installed, The engine will display its own printer dialog which has been
 built as a stack and script library. This dialog mimics the standard
-system printer dialog and sets the LiveCode printing global properties
+system printer dialog and sets the printing global properties
 directly.
 
-> **Tip:** You may force LiveCode to use its own internal print settings
+> **Tip:** You may force the engine to use its own internal print settings
 > dialog by setting the `systemPrintSelector`global property to false.
-> Advanced users may customize the printer dialog that LiveCode uses by
+> Advanced users may customize the printer dialog that the engine uses by
 > running `toplevel "print dialog"`or `toplevel "page setup"`in the
 > Message Box. Remember to save a copy of the stack as it will be
-> overwritten each time you upgrade your copy of LiveCode.
+> overwritten each time you upgrade your copy.
 
-> **Important:** The LiveCode print and page setup dialogs must be
+> **Important:** The print and page setup dialogs must be
 > included in a standalone application if you use them. Ensure that the
 > check box Print Dialog is turned on in the Standalone Application
 > Settings dialog for your application. You do not need to include these
@@ -114,7 +114,7 @@ If the user does not press the cancel button then any changes to the
 printer settings will be reflected in the global printing properties,
 discussed below.
 
-To bring up the standard OS page setup dialog, use the 
+To bring up the standard OS page setup dialog, use the
 **answer page setup** command.
 
 	answer page setup
@@ -133,15 +133,15 @@ You should not attempt to modify the printerSettings but rather get and
 set it in its entirety. To access individual printer properties, use the
 global printing properties described below.
 
-When you set the **printerSettings** property to a saved value, LiveCode
+When you set the **printerSettings** property to a saved value, The engine
 will choose the printer named in the property and set all of its
 settings to those contained within the property. If the printer cannot
-be found LiveCode will return the error "unknown printer" in the result.
-If the printer is found but the settings are not valid then LiveCode
+be found the engine will return the error "unknown printer" in the result.
+If the printer is found but the settings are not valid then the engine
 will choose the printer and reset it to default values.
 
 > **Note:** You must save a separate copy of the printerSettings
-> property for each printer 
+> property for each printer
 >or OS you intend to use. The printerSettings property cannot be
 >transferred between platforms. For example, a printerSettings property
 >generated on a Windows computer cannot be used on Mac – even for the
@@ -184,7 +184,7 @@ the **printPaperOrientation**(discussed below).
 
 Do not confuse the **printMargins**and other card layout printing
 properties with paper properties such as the **printRectangle**. The
-**printMargins**only applies to printing cards using LiveCode's automatic
+**printMargins**only applies to printing cards using the engine's automatic
 card layout capabilities (discussed below). Thus the **printMargins**has
 no effect on **printRectangle**.
 
@@ -235,9 +235,9 @@ print. The printCopies should be set to a value of 1 or more.
 Use the **printDuplex** property to tell the printer to print double
 sided. This property may be set to any of the following values:
 
-- *none*: no double-sided printing 
-- *short edge*: double-sided printing with tumble (flip the non-facing 
-page) 
+- *none*: no double-sided printing
+- *short edge*: double-sided printing with tumble (flip the non-facing
+page)
 - *long edge*: double-sided printing without tumble.
 
 	set the printDuplex to "short edge"
@@ -258,7 +258,7 @@ monochrome. This property may be set to either *true* or *false*.
 For example, to check if color printing is supported on the current
 printer and use it if it is:
 
-	if "color" is among the lines of the printerFeatures then 
+	if "color" is among the lines of the printerFeatures then
 		set the printColors to true
 	end if
 
@@ -284,34 +284,34 @@ read only and cannot be set directly.
 Windows systems sometimes use different versions of the same font for
 displaying text on screen and printing. This can result in layouts and
 line breaks differing between the screen display and the printed output.
-To prevent this from happening, you can tell LiveCode to use the printer
+To prevent this from happening, you can tell the engine to use the printer
 fonts for display on screen. To do this, set a stacks
 **formatForPrinting** property to true.
 
 **Do:**                                                                                                                                                                                                                                
-- Set the **formatForPrinting**stack property to true before loading a 
-stack in memory. If the stack is already loaded, set this property to 
-true then save and reload it. (Save then use 
+- Set the **formatForPrinting**stack property to true before loading a
+stack in memory. If the stack is already loaded, set this property to
+true then save and reload it. (Save then use
 *Close and Remove from Memory* in the File menu).  
-- Create a stack off screen (with **formatForPrinting** set to true) 
+- Create a stack off screen (with **formatForPrinting** set to true)
 with your print layout template and copy text into it prior to printing.                                                                                                 
-- Set the **formatForPrinting**before doing any print layout related 
+- Set the **formatForPrinting**before doing any print layout related
 calculations on the stack.                                                                                                                                              
-- Set the **formatForPrinting**to true on any print preview stack being 
+- Set the **formatForPrinting**to true on any print preview stack being
 displayed to the user.
 
-**Don't:** 
-- Allow the user to directly edit text in fields whose 
-**formatForPrinting** is set to true. Attempting to do this may cause 
-display anomalies. Set this property to false and reload the stack 
+**Don't:**
+- Allow the user to directly edit text in fields whose
+**formatForPrinting** is set to true. Attempting to do this may cause
+display anomalies. Set this property to false and reload the stack
 first.                 
-- Generally use stacks with **formatForPrinting**set to true for display 
-on screen, as this will show text that has been optimized for print 
+- Generally use stacks with **formatForPrinting**set to true for display
+on screen, as this will show text that has been optimized for print
 display (instead of screen display), which is harder to read on screen.  
-- Use this property on other platforms – Windows is the only platform 
+- Use this property on other platforms – Windows is the only platform
 that uses different fonts on screen vs. in a print out.                                                                                      
-- Use the **windowBoundingRect** property to constrain display of a 
-stack who's **formatForPrinting**has been set to true – this property 
+- Use the **windowBoundingRect** property to constrain display of a
+stack who's **formatForPrinting**has been set to true – this property
 will be ignored when the stack is opened or maximized.
 
 ## Printing a Card
@@ -324,8 +324,8 @@ we will discuss ways of printing more complex layouts, fields and text.
 	print this card -- prints the current card
 	print card 12 -- prints card 12
 
-For more details on how to specify which cards to print, see the 
-**print** command in the *LiveCode Dictionary*.
+For more details on how to specify which cards to print, see the
+**print** command in the *Dictionary*.
 
 To print a scale between 1 and 100% set the **printScale** to a number
 between 0 and 1. To print at 200% set the **printScale** to 2.
@@ -342,7 +342,7 @@ around the border of the card on the page.
 
 > **Note:** When calculating placement on the printed page, all
 > calculations assume that there are 72 dots per inch – regardless of
-> platform or printer device. LiveCode will automatically adjust the
+> platform or printer device. The engine will automatically adjust the
 > print out for resolution of the actual device. This makes it simple to
 > calculate your printed layout.
 
@@ -372,14 +372,14 @@ contains 8 cards, each one containing a mailing label. If you want to
 try out this example:
 
 - Create a stack and size it to be small – the size of a mailing label
-- Create a single field, and in the field Inspector turn off the 
+- Create a single field, and in the field Inspector turn off the
 *Shared Text* property
-- Group the field and in the group property *Inspector* turn on 
+- Group the field and in the group property *Inspector* turn on
 *Behave as Background*
 - Turn on *Select Grouped* on the Toolbar and select the field
-- Place the contents of the first mailing label into the *Contents* tab 
+- Place the contents of the first mailing label into the *Contents* tab
 of the *Inspector*
-- Create 8 more cards, and in each select the field and place the 
+- Create 8 more cards, and in each select the field and place the
 contents of a different label
 
 Thus we have a stack that looks like the figure below.
@@ -443,14 +443,14 @@ command below.
 
 	revPrintField the long id of field "text document"
 
-**revPrintField** is implemented as a script library located in the
-LiveCode IDE. The script library creates an invisible stack, sets the
+**revPrintField** is implemented as a script library located in the IDE.
+The script library creates an invisible stack, sets the
 rectangle of that stack to the current paper size, sets the
 **formatForPrinting**to true, creates a field, then copies the contents
 of the field you specify into this invisible stack. It then prints the
 field one page at a time, scrolling the text after each page. Advanced
 users can locate this library script by going to the *Back Scripts* tab
-in the Message Box, turning on the checkbox for *Show LiveCode UI Back
+in the Message Box, turning on the checkbox for *Show UI Back
 Scripts*, then editing the script of *stack "revPrintLibrary"*. The
 *revPrintField* handler is near the top of the script.
 
@@ -473,8 +473,8 @@ field containing styled text to a HTML use the **htmlText** property.)
 
 The *headerText* and *footerText* contains the text to use as a header
 and footer. You may include an expression that is computed for each
-page. For more details on using expressions, see the 
-*LiveCode Dictionary* entry for **revPrintText**.
+page. For more details on using expressions, see the
+*Dictionary* entry for **revPrintText**.
 
 The *fieldTemplate* parameter allows you to specify a field reference to
 use. Fonts in the print out will be inherited from this field.
@@ -503,7 +503,7 @@ printing.
 
 For example, lets say that we want to print the text field from the
 middle of the stack in the figure below. (You can load the stack shown in
-the picture by going to your LiveCode installation folder then opening
+the picture by going to your installation folder then opening
 Resources-\> Examples-\> SQLite Sampler.rev.) We want the output to
 scale to take up the entire width of the paper and half the height.
 
@@ -561,7 +561,7 @@ To print these onto a single sheet:
 To print a more complicated layout, create a stack and set its rectangle
 to the current **printRectangle**. Add rectangular areas for each
 component you will be printing. Then set *Geometry* properties (see the
-section on the *Geometry Manager*, in the **LiveCode Script** guide for
+section on the *Geometry Manager*, in the **Script** guide for
 more information) on each of these rectangles so they resize correctly
 when the stack is scaled. Set up your print routine so that you open
 this stack invisibly then resize it to the **printRectangle**. This will
@@ -593,13 +593,13 @@ can add the following handler to the stack script:
 		set the height of this stack to (item 4 of the printRectangle - item 2 of the printRectangle)
 	end preOpenStack
 
-We now have a working print template stack. All that remains is to write the script that 
+We now have a working print template stack. All that remains is to write the script that
 prints into the rectangles:
 
 	-- prepare to load this stack off screen
 	hide stack "print layout"
 
-	-- this will trigger the stack to resize, which run the geometry 
+	-- this will trigger the stack to resize, which run the geometry
 	-- routines, giving us the correct values for each rectangle
 	go stack "print layout"
 
@@ -612,7 +612,7 @@ prints into the rectangles:
 	-- we can close the layout stack as its no longer needed
 	close stack "print layout"
 
-	-- load the system printer dialog to allow the user 
+	-- load the system printer dialog to allow the user
 	-- to choose number of copies, etc.
 	answer printer
 
@@ -623,7 +623,7 @@ prints into the rectangles:
 	-- you could use any stack or region within a card here
 	set the defaultStack to stack "header graphics"
 
-	-- print from the rectangle of our header group 
+	-- print from the rectangle of our header group
 	-- into the rectangle we stored earlier
 	-- we could use a graphic or any rectangular area instead of a group
 	print this card from the topLeft of group "header" \
@@ -717,7 +717,7 @@ formatForPrinting property, above.)
 	-- print the field rectangle
 	-- you may want to add an output "into" rectangle
 
-	print this card from the topLeft of field "body text" \ 
+	print this card from the topLeft of field "body text" \
 		to the bottomRight of field "body text"
 
 	-- print a new page
@@ -753,18 +753,18 @@ property, open a system printer dialog, then store the **printRanges**
 in a variable. Then set the **printRanges** to "all", then send only the
 pages that were selected (stored in the variable) to the printer.
 
-> **Note:** If you ignore the printRanges property LiveCode will handle
+> **Note:** If you ignore the printRanges property the engine will handle
 > this setting automatically. Simply send every page to the printer as
-> normal and LiveCode will ignore the pages the user has not selected in
+> normal and the engine will ignore the pages the user has not selected in
 > the print dialog. Handle this option manually only if you are printing
 > an extremely complex layout and want to save processing time building
 > the layout for every unselected page.
 
-Use the **printPageNumber** to get the number of the page currently 
+Use the **printPageNumber** to get the number of the page currently
 being printed during your printing loop.
 
 ## Printing a Browser Object
 
-To print the contents of a browser object, use the **revBrowserPrint** 
-command. For more information, see the **revBrowserPrint** command in 
-the *LiveCode Dictionary*.
+To print the contents of a browser object, use the **revBrowserPrint**
+command. For more information, see the **revBrowserPrint** command in
+the *Dictionary*.

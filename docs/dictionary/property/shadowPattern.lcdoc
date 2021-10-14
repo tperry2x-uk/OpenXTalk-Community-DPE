@@ -26,7 +26,7 @@ Value:
 The <shadowPattern> of an <object(glossary)> is a pattern specifier.
 A <patternNumber> is a built-in pattern number between 1 and 164. These
 patterns are provided for compatibility with patterns available in
-MetaCard and correspond to OpenXTalk's built in image id 137 to 300. As
+MetaCard and correspond to xTalk's built in image id 137 to 300. As
 with MetaCard pattern numbers 105 to 114 and 146 and above are 
 unavailable.
 

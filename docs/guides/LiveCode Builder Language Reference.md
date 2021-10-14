@@ -2,15 +2,15 @@
 group: reference
 ---
 
-# LiveCode Builder Language Reference
+# Builder Language Reference
 
 ## Introduction
-LiveCode Builder is a variant of the current LiveCode scripting language
-(LiveCode Script) which has been designed for 'systems' building. It is
+Builder is a variant of the current xTalk scripting language
+(LCS Script) which has been designed for 'systems' building. It is
 statically compiled with optional static typing and direct foreign code
 interconnect (allowing easy access to APIs written in other languages).
 
-Unlike most languages, LiveCode Builder has been designed around the
+Unlike most languages, Builder has been designed around the
 idea of extensible syntax. Indeed, the core language is very small -
 comprising declarations and control structures - with the majority of
 the language syntax and functionality being defined in modules.
@@ -18,13 +18,12 @@ the language syntax and functionality being defined in modules.
 > **Note:** It is an eventual aim that control structures will also be
 > extensible, however this is not the case in the current incarnation).
 
-The syntax will be familiar to anyone familiar with LiveCode Script,
-however LiveCode Builder is a great deal more strict - the reason being
+The syntax will be familiar to anyone familiar with xTalk Script,
+however Builder is a great deal more strict - the reason being
 it is intended that it will eventually be compilable to machine code
 with the performance and efficiency you'd expect from any 'traditional'
 programming language. Indeed, over time we hope to move the majority of
-implementation of the whole LiveCode system over to being written in
-LiveCode Builder.
+implementation of the whole system over to being written in Builder.
 
 > **Note:** One of the principal differences is that type conversion is
 > strict - there is no automatic conversion between different types such
@@ -34,7 +33,7 @@ LiveCode Builder.
 
 ## Tokens
 
-The structure of tokens is similar to LiveCode Script, but again a
+The structure of tokens is similar to xTalk Script, but again a
 little stricter. The regular expressions describing the tokens are as
 follows:
 
@@ -62,7 +61,7 @@ Strings use backslash ('\') as an escape - the following are understood:
 
 ## Comments
 
-LiveCode Builder supports single line comments, which begin with `//`
+Builder supports single line comments, which begin with `//`
 or `--` and extend to the end of the line.  There are also block
 comments, which begin with `/*` and end with `*/`, and can span
 multiple lines.
@@ -75,7 +74,7 @@ multiple lines.
 
 ## Line continuation
 
-A LiveCode builder statement or declaration can be continued onto
+A builder statement or declaration can be continued onto
 multiple lines of code by placing the line continuation character `\`
 at the end each line.
 
@@ -94,8 +93,8 @@ lower-case identifiers for names of definitions should be avoided.
 However, identifiers *are* case-insensitive - so a variable with name
 pFoo can also be referenced as PFOO, PfOO, pfoO etc.
 
-> **Aside:** The current parser and syntax rules for LiveCode Builder
-> are constructed at build-time of the LiveCode Builder compiler and
+> **Aside:** The current parser and syntax rules for Builder
+> are constructed at build-time of the Builder compiler and
 > uses *bison* (a standard parser generator tool) to build the parser.
 > Unfortunately, this means that any keywords have to be reserved as the
 > parser cannot distinguish the use of an identifier in context (whether
@@ -123,7 +122,7 @@ identifiers and keywords. (All keywords are all lower-case).
 
 ## Typing
 
-LiveCode Builder is a typed language, although typing is completely
+Builder is a typed language, although typing is completely
 optional in most places (the only exception being in foreign handler
 declarations). If a type annotation is not specified it is simply taken
 to be the most general type *optional any* (meaning any value, including
@@ -157,7 +156,7 @@ annotation means the value may be the original type or nothing.
             { ( Definition | Metadata | Import ) SEPARATOR }
           'end' 'module'
 
-The smallest compilable unit of LiveCode Builder is the module. Each
+The smallest compilable unit of Builder is the module. Each
 module is uniquely named using reverse DNS notation, and the names of
 modules are considered to live in a global namespace.
 
@@ -167,10 +166,10 @@ constants, variables, types and handlers.
 A module may depend on another module through import. An imported
 modules public definitions become accessible to the importing module.
 
-> **Note:** For integration with the existing LiveCode system, there are
+> **Note:** For integration with the existing system, there are
 > two module variants which may be used. Widgets (use 'widget' instead
 > of 'module') and Libraries (use 'library' instead of 'module'). A
-> widget appears in LiveCode as a control, whilst a library adds all its
+> widget appears in the IDE as a control, whilst a library adds all its
 > public handlers to the bottom of the message path.
 
 ## Metadata
@@ -242,7 +241,7 @@ definitions can only be used within the module.
 > they define things which only make sense to access from outside.
 >
 > **Note**: When writing a library module, all public handlers are added
-> to bottom of the message path in LiveCode Script.
+> to bottom of the message path in Script.
 
 ### Constants
 
@@ -294,7 +293,7 @@ The remaining types are as follows:
  - **Number**: any number value
  - **String**: a sequence of UTF-16 code units
  - **Data**: a sequence of bytes
- - **Array**: a map from string to any value (i.e. an associative array, just like in LiveCode Script)
+ - **Array**: a map from string to any value (i.e. an associative array, just like in xTalk Script)
  - **List**: a sequence of any value
  - **nothing**: a single value *nothing* (this is used to describe handlers with no return value - i.e. void)
  - **Pointer**: a low-level pointer (this is used with foreign code interconnect and shouldn't be generally used).
@@ -379,8 +378,8 @@ a value.
         'end' 'handler'
 
 Handler definitions are used to define functions which can be called
-from LiveCode Builder code, invoked as a result of events triggering in
-a widget module, or called from LiveCode Script if public and inside a
+from Builder code, invoked as a result of events triggering in
+a widget module, or called from xTalk Script if public and inside a
 library module.
 
 There is no distinction between handlers which return a value and ones
@@ -605,7 +604,7 @@ The Java binding string has the following form:
 
 Here *className* is the qualified name of the Java class to bind to.
 
-Here *functionType* is either empty, or `get` or `set`, which are 
+Here *functionType* is either empty, or `get` or `set`, which are
 currently used for getting and setting member fields of a Java class.
 
 For example
@@ -613,26 +612,26 @@ For example
 	"java:java.util.Calendar>set.time(J)"
 	"java:java.util.Calendar>get.time()J"
 
-are binding strings for setting and getting the `time` field of a 
+are binding strings for setting and getting the `time` field of a
 Calendar object.
 
 Here *function* specifies the name of the method or field to bind to. The
 function `new` may be used to call a class constructor. *function* also
-includes the specification of function signature, according to the 
-[standard rules for forming these](http://journals.ecs.soton.ac.uk/java/tutorial/native1.1/implementing/method.html) 
+includes the specification of function signature, according to the
+[standard rules for forming these](http://journals.ecs.soton.ac.uk/java/tutorial/native1.1/implementing/method.html)
 when calling the JNI.
 
-The function `interface` may be used on Android to create an interface 
-proxy - that is an instance of a generic Proxy class for a given 
-interface. This effectively allows LCB handlers to be registered as the 
+The function `interface` may be used on Android to create an interface
+proxy - that is an instance of a generic Proxy class for a given
+interface. This effectively allows LCB handlers to be registered as the
 targets for java interface callbacks, such as event listeners.
 
-The foreign handler binding to such a function takes a value that should 
-either be a `Handler` or an `Array` - if it is a `Handler`, the specified 
-listener should only have one available callback. If the listener has 
-multiple callbacks, an array can be used to assign handlers to each. Each 
-key in the array must match the name of a callback in the listener. The 
-specified handlers must match the callback's parameters and return type, 
+The foreign handler binding to such a function takes a value that should
+either be a `Handler` or an `Array` - if it is a `Handler`, the specified
+listener should only have one available callback. If the listener has
+multiple callbacks, an array can be used to assign handlers to each. Each
+key in the array must match the name of a callback in the listener. The
+specified handlers must match the callback's parameters and return type,
 using JObject where primitive type parameters are used.
 
 Overloaded methods in the interface are not currently supported.
@@ -643,13 +642,13 @@ For example:
 
 	foreign handler _JNI_OnClickListener(in pHandler as ClickCallback) returns JObject binds to "java:android.view.View$OnClickListener>interface()"
 
-	foreign handler _JNI_SetOnClickListener(in pButton as JObject, in pListener as JObject) returns nothing binds to "java:android.view.View>setOnClickListener(Landroid/view/View$OnClickListener;)V"	
-	
+	foreign handler _JNI_SetOnClickListener(in pButton as JObject, in pListener as JObject) returns nothing binds to "java:android.view.View>setOnClickListener(Landroid/view/View$OnClickListener;)V"
+
 	public handler ButtonClicked(in pView as JObject) returns nothing
 		post "buttonClicked"
 		MCEngineRunloopBreakWait()
 	end handler
-	
+
 	public handler SetOnClickListenerCallback(in pButton as JObject)
 		unsafe
 			variable tListener as JObject
@@ -657,24 +656,24 @@ For example:
 			_JNI_SetOnClickListener(pButton, tListener)
 		end unsafe
 	end handler
-	
+
 or
 
 	handler type MouseEventCallback(in pMouseEvent as JObject) returns nothing
 
 	foreign handler _JNI_MouseListener(in pCallbacks as Array) returns JObject binds to "java:java.awt.event.MouseListener>interface()"
 
-	foreign handler _JNI_SetMouseListener(in pJButton as JObject, in pListener as JObject) returns nothing binds to "java:java.awt.Component>addMouseListener(Ljava/awt/event/MouseListener;)V"	
-	
+	foreign handler _JNI_SetMouseListener(in pJButton as JObject, in pListener as JObject) returns nothing binds to "java:java.awt.Component>addMouseListener(Ljava/awt/event/MouseListener;)V"
+
 	public handler MouseEntered(in pEvent as JObject) returns nothing
 		post "mouseEnter"
 		MCEngineRunloopBreakWait()
 	end handler
-	
+
 	public handler MouseExited(in pEvent as JObject)
 		-- do something on mouse entter
 	end handler
-	
+
 	public handler SetMouseListenerCallbacks(in pJButton as JObject)
 		variable tArray as Array
 		put MouseEntered into tArray["mouseEntered"]
@@ -688,8 +687,8 @@ or
 
 >*Important:* On Android, interface callbacks are *always* run on the
 > engine thread. This means JNI local references from other threads
-> (in particular the UI thread) are unavailable. Therefore it is not 
-> advised to do anything using the JNI in interface callbacks. 
+> (in particular the UI thread) are unavailable. Therefore it is not
+> advised to do anything using the JNI in interface callbacks.
 
 Here *calling* specifies the calling convention which can be one of:
 
@@ -715,7 +714,7 @@ on Android and iOS).
       : 'property' <Name: Identifier> 'get' <Getter: Identifier> [ 'set' <Setter: Identifier> ]
 
 Property definitions can only appear in widget modules. They define a
-property which can be accessed from LiveCode Script in the usual way
+property which can be accessed from xTalk Script in the usual way
 (e.g. *the myProperty of widget 1*).
 
 Both getter and setter clauses can use either a variable or handler
@@ -738,8 +737,8 @@ Event definitions define a callable handler which calls back to the
 environment.
 
 > **Note**: Whilst events can be defined they currently cannot be used.
-> To send a message to the LiveCode Script environment use the
-> *dispatch* command which allows sending messages to arbitrary LiveCode
+> To send a message to the xTalk Script environment use the
+> *dispatch* command which allows sending messages to arbitrary xTalk
 > Script objects.
 
 ## Statements
@@ -883,9 +882,9 @@ execution to terminate, and the error is passed back to environment.
 
 The Error expression must be an expression that evaluates to a string.
 
-> **Note:** There is currently no try / catch mechanism in LiveCode
+> **Note:** There is currently no try / catch mechanism in
 > Builder, so throwing an error will cause the error to be raised in
-> LiveCode Script in the appropriate context.
+> xTalk Script in the appropriate context.
 
 ### Return Statements
 
@@ -972,13 +971,13 @@ result** expression.
       : ConstantValueExpression
       | Identifier
 
-The bytecode statement allows bytecode to be written directly for the LiveCode
+The bytecode statement allows bytecode to be written directly for the
 Builder Virtual Machine.
 
 Bytecode operation arguments can either be a constant expression, the name of a
 definition in current scope, the name of a register, or the name of a label in
 the current bytecode block. The exact opcodes and allowed arguments are defined
-in the LiveCode Builder Bytecode Reference.
+in the Builder Bytecode Reference.
 
 Labels are local to the current bytecode block, and can be used as the target
 of one of the jump instructions.
@@ -1068,7 +1067,7 @@ Result expressions are not assignable.
       : '[' [ <Elements: ExpressionList> ] ']'
 
 A list expression evaluates all the elements in the expression list from
-left to right and constructs a list value with them as elements. Each 
+left to right and constructs a list value with them as elements. Each
 expression is converted to `optional any` when constructing the list.
 
 The elements list is optional, so the empty list can be specified as
@@ -1087,7 +1086,7 @@ List expressions are not assignable.
 
 An array expression evaluates all of the key and value expressions
 from left to right, and constructs an **Array** value as appropriate.
-Each key expression must evaluate to a **String**. Each value expression 
+Each key expression must evaluate to a **String**. Each value expression
 is converted to `optional any` when constructing the array.
 
 The contents are optional, so the empty array can be written as `{}`.
@@ -1231,7 +1230,7 @@ after the ':', each type code represents a specific foreign (C) type:
 |  k   | UInt64       |
 |  K   | SInt64       |
 |  l   | UIntPtr      |
-|  L   | SIntPtr      | 
+|  L   | SIntPtr      |
 |  m   | UIntSize     |  
 |  M   | SIntSize     |  
 |  n   | Float        |

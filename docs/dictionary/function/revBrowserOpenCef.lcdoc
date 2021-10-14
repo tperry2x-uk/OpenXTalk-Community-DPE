@@ -18,7 +18,7 @@ Security: network
 Example:
 local tBrowserId
 put revBrowserOpenCef(the windowId \
-      of this stack, "http://www.OpenXTalk.com" ) into tBrowserId
+      of this stack, "http://www.OpenXTalk.org" ) into tBrowserId
 if tBrowserId is not an integer then
   answer "Failed to open browser"
 end if

@@ -11,7 +11,7 @@ Version: 0.0.0
 Description:
 This script library implements an SVG compiler for turning SVG files into
 'drawing metafiles'. A simple and efficient binary format for representing
-complex vector graphics, supported directly by the LiveCode image object.
+complex vector graphics, supported directly by the image object.
 
 Name: drawingSvgCompile
 
@@ -83,10 +83,10 @@ is no viewBox attribute then the intrinsic width and height are taken to be
 > compiled ahead-of-time when building a standalone.
 
 
->*Note:* To use this function in a standalone, you must include the XML 
+>*Note:* To use this function in a standalone, you must include the XML
 > extension.
 
-Parameters: 
+Parameters:
 
 pXmlText: The text of the SVG XML document to compile.
 
@@ -171,16 +171,16 @@ that SVG files be compiled as needed when developing in the IDE, and then
 compiled ahead-of-time when building a standalone.
 
 
->*Note:* To use this function in a standalone, you must include the XML 
+>*Note:* To use this function in a standalone, you must include the XML
 extension.
 
 
->*Note:* The <XML library> (and by extension, this function) can not load 
-> files from the resources folder on Android. You must either copy the 
+>*Note:* The <XML library> (and by extension, this function) can not load
+> files from the resources folder on Android. You must either copy the
 > resources to the documents folder or use the <drawingSvgCompile>
 > function instead.
 
-Parameters: 
+Parameters:
 
 pXmlFile: The filename of the SVG XML file to load.
 
@@ -191,7 +191,3 @@ of an image directly.
 The result: An error string if an error occurred.
 
 References: drawingSvgCompile (function), XML library (library)
-
-
-
-

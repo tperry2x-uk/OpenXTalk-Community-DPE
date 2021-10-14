@@ -9,9 +9,9 @@ Version: 1.0.0
 Author: LiveCode
 
 Description:
-This script library implements portions of Multipurpose Internet Mail 
-Extensions (MIME) as described in RFCs 2045 - 2049. Use this library to 
-implement common data formats such as email message bodies and form 
+This script library implements portions of Multipurpose Internet Mail
+Extensions (MIME) as described in RFCs 2045 - 2049. Use this library to
+implement common data formats such as email message bodies and form
 encoding in HTTP.
 
 Name: mimeTheMIMETypeOfExtension
@@ -24,7 +24,7 @@ Summary: Determine the MIME type for a file extension
 
 Example: put "Content-Type:" && mimeTheMIMETypeOfExtension("xls") & crlf after tHeaders
 
-Parameters: 
+Parameters:
 
 pExtension: A file extension
 
@@ -50,7 +50,7 @@ Example: put line 1 of mimeTheExtensionsOfMIMEType("application/epub+zip") into 
 
 Example: put mimeTheExtensionsOfMIMEType("image/*") into tImageExtensions
 
-Parameters: 
+Parameters:
 
 pMIMEType: A MIME type or wildcard pattern for matching a MIME type
 
@@ -77,7 +77,7 @@ SendEmail tBody
 
 Description: Parses the content of a field to create multipart content
 
-Parameters: 
+Parameters:
 
 pField: The long id of the field to encode
 
@@ -100,12 +100,12 @@ Example:
 put tHeaders & crlf & crlf & \
       mimeEncodeForMIMETransfer(tEmailBody, "quoted-printable") into tContentA[1]
 
-Parameters: 
+Parameters:
 
 pData:
 The data to be encoded. If the parameter is not binary data then it will
 be encoded to binary as UTF-8 encoded text before encoding with the
-requested form. 
+requested form.
 
 pEncoding:
 The encoding to return the data in
@@ -137,7 +137,7 @@ Description:
 This command takes an array of pre-encoded content and creates a multipart
 content type header and boundary to build a single multipart encoded value.
 
-Parameters: 
+Parameters:
 
 pContentA:
 A numerically indexed array of pre-encoded parts including headers. If no headers are present
@@ -162,21 +162,21 @@ Summary: Create data to be sent as an email
 
 Example:
 put mimeEncodeFieldAsMIMEMultipartDocument(the long id of field "email") into tBody
-mimeEncodeAsMIMEEmail tBody, "sales@livecode.com", field "email", , "Purchase order"
+mimeEncodeAsMIMEEmail tBody, "hello@openxtalk.org", field "email", , "Purchase order"
 
 local tBytes, tSettings, tResponseHeaders
 put "username" into tSettings["username"]
 put "p@$$w0rd" into tSettings["password"]
 
 local tResult
-put tsNetSmtpSync("smtps://mail.livecode.com:465", "sales@livecode.com", field "email", it, tResponseHeaders,tBytes,tSettings) into tResult
+put tsNetSmtpSync("smtps://mail.opentxalk.org:465", "hello@opentxalk.org", field "email", it, tResponseHeaders,tBytes,tSettings) into tResult
 if tResult begins with "tsneterr:" then
    answer error "Error:" & word 2 to -1 of tResult
 end if
 
 Description: Creates the data to be sent as an email via an SMTP server
 
-Parameters: 
+Parameters:
 
 pBody:
 The pre-encoded body of the email. See the <mimeEncodeFieldAsMIMEMultipartDocument>
@@ -218,7 +218,3 @@ Summary: The MIME version this implemented in the library
 Example: put "MIME-Version:" && mimeTheMIMEVersion() & crlf after tHeaders
 
 Description: Use the <mimeTheMIMEVersion> function create a `MIME-Version` header.
-
-
-
-

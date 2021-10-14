@@ -32,7 +32,7 @@ Use the <passKey> <property> to unlock a <password> -protected <stack>.
 If a stack has been locked against modification with a password, you can
 set the <passKey> <property> of the stack to the correct <password> to
 <unlock> the <stack>. Setting the <passKey> <property> is the <script>
-equivalent of typing the <password> into OpenXTalk's <password> <dialog
+equivalent of typing the <password> into xTalk's <password> <dialog
 box>. Use this <property> if you want to perform <password>
 authentication in a <handler>.
 

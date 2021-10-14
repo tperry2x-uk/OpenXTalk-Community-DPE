@@ -33,14 +33,14 @@ On Unix and Windows systems, <close process> closes the
 <process|process's> <standard input>. The <process> then finishes
 processing whatever data remains, and exits when done. On <Mac OS|Mac OS
 systems>, the <close process> <command> has no effect; you can use the
-<kill> <command> instead to quit an application that OpenXTalk launched.
+<kill> <command> instead to quit an application that the engine launched.
 
-The process takes a short time to exit after you issue the 
+The process takes a short time to exit after you issue the
 <close process> <command>. Since two <process|processes> cannot have the
 same name, you need to wait for a <process> to exit before opening a new
 <process> with the same name. To reopen the same <process> after closing
 it, use the <wait> <command> to delay until the <process> has finished
-exiting: 
+exiting:
 
     close process myProcess
     wait until myProcess is not among the lines of the openProcesses
@@ -54,4 +54,3 @@ References: wait (command), kill (command), read from process (command),
 quit (command), open process (command), exit (control structure),
 openProcesses (function), command (glossary), standard input (glossary),
 Mac OS (glossary), process (glossary)
-

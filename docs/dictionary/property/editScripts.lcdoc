@@ -5,7 +5,7 @@ Type: property
 Syntax: set the editScripts to {true | false}
 
 Summary:
-Has no effect and is included in <OpenXTalk> for compatibility with
+Has no effect and is included for compatibility with
 imported <SuperCard> projects.
 
 Introduced: 1.0

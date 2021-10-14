@@ -22,7 +22,7 @@ reset the templateStack
 
 Parameters:
 objectType:
-One of OpenXTalk's objects: stack, group, card, field, button, graphic,
+One of xTalk's objects: stack, group, card, field, button, graphic,
 image, scrollbar, player, audioClip, videoClip, or EPS.
 
 Description:

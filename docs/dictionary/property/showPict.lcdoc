@@ -5,7 +5,7 @@ Type: property
 Syntax: set the showPict of <card> to {true | false}
 
 Summary:
-This <property> is included in <OpenXTalk> for compatibility with
+This <property> is included for compatibility with
 imported <HyperCard> stacks.
 
 Associations: card

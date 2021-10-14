@@ -34,7 +34,7 @@ specifies which application owns the file, and the file type is used to
 determine which applications (other than the owner) can work with the
 file. 
 
->*Note:* OpenXTalk's <creator signature> is 'Revo'. The file type for a
+>*Note:* xTalk's <creator signature> is 'Revo'. The file type for a
 > <stack file> created by OpenXTalk is 'RSTK'.
 
 The <stackFileType> <property> is used to set the <type signature|file

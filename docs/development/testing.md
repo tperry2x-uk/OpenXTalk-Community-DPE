@@ -1,10 +1,11 @@
-# How to test LiveCode
+# How to test
 
-Tests are small programs that check that a particular, specific function works correctly.  They are run automatically to check whether LiveCode works properly.  They're really useful for ensuring that changes to one part of LiveCode don't break other things!
+Tests are small programs that check that a particular, specific function works correctly.  They are run automatically to check whether it works properly.  
+They're really useful for ensuring that changes to one part don't break other things!
 
-The main LiveCode engine repository contains the following sets of tests ("test suites"):
+The main engine repository contains the following sets of tests ("test suites"):
 
-* **LiveCode Script tests:** script-only stacks that are run using the LiveCode standalone engine.  They test features of the LiveCode Script language.
+* **LiveCode Script tests:** script-only stacks that are run using the standalone engine.  They test features of the Script language.
 * **LiveCode Builder tests:** LCB modules that are run using the **lc-run** tool.   They test features of the LCB core language and standard library.
 * **LiveCode Builder Compiler Frontend tests:** Fragments of LCB code which are run through the compiler and check that the compile succeeds, or emits the correct warnings or errors.
 * **LiveCode Script parser tests:** Fragments of LCS code which are run through the parser and check that the compile succeeds, or emits the correct warnings or errors.
@@ -12,23 +13,23 @@ The main LiveCode engine repository contains the following sets of tests ("test 
 
 ## Running the Tests
 
-This assumes that you've already got the LiveCode source code and that you've successfully compiled it.  See the [installation instructions](../README.md) for more details.
+This assumes that you've already got the source code and that you've successfully compiled it.  See the [installation instructions](../README.md) for more details.
 
 ### Running tests on Mac OS X and Linux
 
-From the top directory of the livecode git repository working tree, run `make check`.  This will run all the test suites.
+From the top directory of the git repository working tree, run `make check`.  This will run all the test suites.
 
 ### Running tests on Windows
 
 Open the `livecode.sln` solution file in Visual Studio, and build the "check" project.  This will run the C++-based tests.
 
-There's not currently a convenient way to run the LiveCode Script and LiveCode Builder tests on Windows.
+There's not currently a convenient way to run the Script and Builder tests on Windows.
 
 ### Running tests on Emscripten
 
 To run the C++ tests, run `make check-emscripten` from the top of the livecode git repository working tree.
 
-To run the LiveCode Script tests:
+To run the Script tests:
 
 1) Run `tools/emscripten_testgen.sh`.  This generates an HTML5 standalone in the `_tests/emscripten` directory.
 
@@ -39,15 +40,15 @@ output is shown in the browser.
 
 ## Writing Tests
 
-If at all possible, please add tests whenever make a change to LiveCode -- whether it's a feature added, a bug fixed, or a behaviour tweaked.
+If at all possible, please add tests whenever make a change -- whether it's a feature added, a bug fixed, or a behaviour tweaked.
 
-### LiveCode Script
+### Script
 
 Script-only stack-based tests live in the `tests/lcs` directory and its subdirectories.
 
 Each group of related tests lives in a suitably-named `.livecodescript` file.  For example, tests related to desktop clipboard integration are located in `tests/lcs/core/engine/clipboard.livecodescript`.  When you add a new script-only stack file, it'll get picked up by the test suite automatically; there's no need to add it to a list anywhere.
 
-Each script-only stack contains a set of test commands, with names beginning with `Test`.  Each test command gets run in a fresh copy of LiveCode.  A test command might look like:
+Each script-only stack contains a set of test commands, with names beginning with `Test`.  Each test command gets run in a fresh copy.  A test command might look like:
 
 ````
 on TestMyFeature
@@ -60,8 +61,8 @@ Before running each test command, the test framework inserts a test library stac
 * `TestDiagnostic pMessage`: Write *pMessage* to the test log as a message.
 * `TestAssert pDescription, pExpectTrue`: Make a test assertion.  The test is recorded as a failure if *pExpectTrue* is false.  *pDescription* should be a short string that describes the test (e.g. "clipboard is clear").
 * `TestSkip pDescription, pReasonSkipped`: Record a test as having been skipped.  *pReasonSkipped* should be a short explanation of why the test was skipped (e.g. "not supported on Windows").
-* `TestSkipIf pRequirement, pOptions`: Skip a test if the requirements 
-are met. `pOptions` varies depending on the `pRequirement` enum (if no 
+* `TestSkipIf pRequirement, pOptions`: Skip a test if the requirements
+are met. `pOptions` varies depending on the `pRequirement` enum (if no
 options are explicitly specified then no options are available for that
 particular `pRequirement`. The following requirements are implemented:
    - `ide` - the IDE repo is available
@@ -88,14 +89,14 @@ particular `pRequirement`. The following requirements are implemented:
    - `database` - an database module can be loaded/used. Options are a
    comma delimited list of external module names
    - `jvm` - the Java Virtual Machine is available
-* `TestSkipIfNot pRequirement, pOptions`: Skip a test if the 
-requirements are not met. Requirements and options are the same as for 
+* `TestSkipIfNot pRequirement, pOptions`: Skip a test if the
+requirements are not met. Requirements and options are the same as for
 `TestSkipIf`.
 * `TestAssertBroken pDescription, pExpectTrue, pReasonBroken`: The same as `TestAssert`, but marking the test as "expected to fail".  *pReasonBroken* should be a short explanation of why the test is currently expected to fail; it should almost always be a reference to a bug report, e.g. "bug 54321".
 * `TestAssertThrow pDescription, pHandlerName, pTarget, pExpectedError, pParam`: Assert that a given handler triggers the expected error message. *pHandlerName* is the name of the handler containing the script expected to cause an error; it is dispatched to *pTarget* with *pParam* as a parameter within a try/catch structure. *pExpectedError* is the expected script execution error name in the enumeration in engine/src/executionerrors.h - e.g. `"EE_PROPERTY_CANTSET"`.
 * `TestAssertDoesNotThrow pDescription, pHandlerName, pTarget, pParam`: Assert that a given handler does not trigger any exceptions. *pHandlerName* is the name of the handler containing the script expected to cause an error; it is dispatched to *pTarget* with *pParam* as a parameter within a try/catch structure.
-* `TestGetEngineRepositoryPath`: A function that returns the path to the main LiveCode engine repository.
-* `TestGetIDERepositoryPath`: A function that returns the path to the LiveCode IDE repository.
+* `TestGetEngineRepositoryPath`: A function that returns the path to the main engine repository.
+* `TestGetIDERepositoryPath`: A function that returns the path to the IDE repository.
 * `TestLoadExtension pName`: Attempt to load the extension with name `pName`, eg `TestLoadExtension "json"` will load the JSON library extension.
 * `TestLoadAllExtensions`: Attempt to load all available extensions.
 * `TestRepeat pDesc, pHandler, pTarget, pTimeOut, pParamsArray`: Repeatedly check the result of a handler for a test. The test is recorded as a success if the result is ever true before the given time runs out, or a failure otherwise.
@@ -143,7 +144,7 @@ within the same process as in the standalone test runner.
 
 Crashes or uncaught errors from a test command cause the test to immediately fail.
 
-### LiveCode Builder
+### Builder
 
 LCB tests live in the `tests/lcb` directory and its subdirectories.  There are currently two groups of tests:
 
@@ -152,11 +153,11 @@ LCB tests live in the `tests/lcb` directory and its subdirectories.  There are c
 
 Just like for the LCS tests described above, new `.lcb` files added to the test suite get detected, compiled and run automatically.
 
-Each test module contains a set of `public handler` definitions, with names beginning with `Test`.  Each test command gets run in a fresh LiveCode Builder environment.
+Each test module contains a set of `public handler` definitions, with names beginning with `Test`.  Each test command gets run in a fresh Builder environment.
 
-The LCB standard library has built-in syntax for writing unit tests, provided by the `com.livecode.unittest` module.  For more information and example code, look up `com.livecode.unittest` in the LiveCode Builder dictionary.
+The LCB standard library has built-in syntax for writing unit tests, provided by the `com.livecode.unittest` module.  For more information and example code, look up `com.livecode.unittest` in the Builder dictionary.
 
-### LiveCode Builder Compiler Frontend Tests
+### Builder Compiler Frontend Tests
 
 LCB compiler frontend tests live in the 'tests/lcb/compiler/frontend' directory and its subdirectories. Compiler test files all have the extension '.compilertest'.
 
@@ -213,14 +214,14 @@ When compiled, lc-compile will emit an error on the 'put' line because tInnerVar
 
 To help debug compiler tests, set the LCC_VERBOSE environment variable to 1 before running the compiler test. This will cause the compiler testrunner to emit diagnostic information, including the full output of the compile command which is being run.
 
-### LiveCode Script Parser Tests
+### Script Parser Tests
 
-The syntax for LiveCode Script parser tests is the same as that of the 
-LCB compiler frontent tests above. LCS parser test files all have the 
+The syntax for Script parser tests is the same as that of the
+LCB compiler frontent tests above. LCS parser test files all have the
 extension '.parsertest'.
 
-Expected errors are referred to by their name in the parse errors 
-enumeration. For example the following tests the variable shadowing 
+Expected errors are referred to by their name in the parse errors
+enumeration. For example the following tests the variable shadowing
 parse error "local: name shadows another variable or constant":
 
 	%TEST ShadowVariable
@@ -231,9 +232,9 @@ parse error "local: name shadows another variable or constant":
 	%ENDTEST
 
 The directive `%SET` can be used to specify the value of global properties
-used when running the test. In particular, it can be used to set the 
-value of the `explicitvariables` property. If the `explicitvariables` 
-property is not set then the test will be run with it set to `true` and 
+used when running the test. In particular, it can be used to set the
+value of the `explicitvariables` property. If the `explicitvariables`
+property is not set then the test will be run with it set to `true` and
 to `false`, and the test will fail if the result differs. For example:
 
 	%TEST CommentedContinuation
@@ -274,6 +275,6 @@ For more information on writing C++ tests with Google Test, please consult the [
 The lc-run program has some basic smoke tests for its command-line
 interface and start-up process.  You can find them in
 `tests/_lcruntests.livecodescript`, with support files in
-`tests/lc-run/`.  lc-run is used to run the LiveCode Builder tests
+`tests/lc-run/`.  lc-run is used to run the Builder tests
 mentioned above; only add to the smoke tests for things that *can't*
-be tested by writing a "normal" LiveCode Builder test.
+be tested by writing a "normal" Builder test.

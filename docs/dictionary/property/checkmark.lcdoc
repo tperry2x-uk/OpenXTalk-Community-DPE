@@ -5,7 +5,7 @@ Type: property
 Syntax: set the checkmark of <menuItem> to {true | false}
 
 Summary:
-Has no effect and is included in <OpenXTalk> for compatibility with
+Has no effect and is included for compatibility with
 imported <HyperCard> <stacks>.
 
 Introduced: 1.0
