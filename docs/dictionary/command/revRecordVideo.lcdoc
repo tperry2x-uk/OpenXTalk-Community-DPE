@@ -29,7 +29,7 @@ revRecordVideo theFileName
 Parameters:
 filePath:
 The name and location of the file that will hold the recorded video
-data. If you specify a name but not a location, OpenXTalk assumes the
+data. If you specify a name but not a location, the engine assumes the
 file is in the defaultFolder.
 
 Description:
@@ -56,9 +56,9 @@ To stop recording the video input, use the <revStopRecordingVideo>
 > library checkbox is checked.
 
 Changes:
-The use of <QuickTime> was deprecated in version 8.1 of OpenXTalk with
+The use of <QuickTime> was deprecated in version 8.1 with
 new defaults for <dontUseQT> and <dontUseQTEffects> as true on all
-systems apart from pre OS X 10.8. The Windows build of OpenXTalk no
+systems apart from pre OS X 10.8. The Windows build no
 longer supports any <QuickTime> features and setting the <dontUseQT> and
 <dontUseQTEffects> will have no effect.
 

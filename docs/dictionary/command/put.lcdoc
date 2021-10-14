@@ -84,7 +84,7 @@ the <value> before or after the current contents of the <container>. If
 you do not specify a <container>, the <put> <command> puts the value
 into the <message box>.
 
-If you put a <value> into a nonexistent <container>, OpenXTalk assumes it
+If you put a <value> into a nonexistent <container>, the engine assumes it
 is a <variable> name, and initializes the <container> as a 
 <local variable>. This is the most common way to create a local 
 <variable>.  You can also explicitly <declare> 

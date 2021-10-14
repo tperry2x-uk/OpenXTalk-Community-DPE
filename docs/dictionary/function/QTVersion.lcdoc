@@ -43,13 +43,13 @@ On Mac OS and Windows systems, if <QuickTime> is not installed, the
 > your application--to preload the code.
 
 Changes:
-The use of <QuickTime> was deprecated in version 8.1 of OpenXTalk with
+The use of <QuickTime> was deprecated in version 8.1 with
 new defaults for <dontUseQT> and <dontUseQTEffects> as true on all
-systems apart from pre OS X 10.8. The Windows build of OpenXTalk no
+systems apart from pre OS X 10.8. The Windows build no
 longer supports any <QuickTime> features and setting the <dontUseQT> and
-<dontUseQTEffects> will have no effect. Additionally <QuickTime> does 
+<dontUseQTEffects> will have no effect. Additionally <QuickTime> does
 not include 64 bit support and therefore can not be supported on OS X 64
-bit builds of OpenXTalk.
+bit builds.
 
 References: play (command), qtVersion (function), buildNumber (function),
 recordFormats (function), systemVersion (function), qtEffects (function),
@@ -58,4 +58,3 @@ videoClipPlayer (property), qtIdleRate (property), dontUseQT (property),
 dontUseQTEffects (property)
 
 Tags: multimedia
-

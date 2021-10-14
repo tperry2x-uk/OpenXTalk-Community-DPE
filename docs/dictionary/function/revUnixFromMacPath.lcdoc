@@ -35,7 +35,7 @@ Returns:
 The <revUnixFromMacPath> <function> returns a <string> with the 
 <file path> in the format expected by the <Mac OS>. The <convertOSX> 
 is true or false. If you don't specify the <convertOSX>, if <OS X> is 
-running, OpenXTalk assumes the <macPathname> is an <OS X>-style path to 
+running, the engine assumes the <macPathname> is an <OS X>-style path to 
 a <Mac OS>-style path; otherwise, it assumes the <macPathname> is a 
 <Mac OS>-style path.
 

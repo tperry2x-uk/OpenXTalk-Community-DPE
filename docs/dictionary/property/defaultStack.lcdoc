@@ -28,7 +28,7 @@ Use the <defaultStack> <property> to ensure that actions are performed
 on the correct <stack>.
 
 If no stack is specified in a statement that applies to a stack,
-OpenXTalk assumes the <defaultStack> is the <stack> meant. For example,
+the engine assumes the <defaultStack> is the <stack> meant. For example,
 the following <statement> causes the <defaultStack> to move to its next
 <card> :
 

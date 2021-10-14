@@ -34,7 +34,7 @@ size as all display densities.
 Value:
 The <filename> of an image or player specifies either a file path or a
 URL. A file path specifies the name and location of the file. If you
-specify a name but not a location, OpenXTalk assumes the file or relative
+specify a name but not a location, the engine assumes the file or relative
 paths are from the defaultFolder or the folder the stack is saved in. A
 URL specifies the name and location of a file on your system or anywhere
 on the Internet. By default, the <filename> property of newly created
@@ -109,13 +109,13 @@ not practical for a given image, you may need to design your apps to
 handle slightly different resulting image sizes.
 
 Changes:
-The use of <QuickTime> was deprecated in version 8.1 of OpenXTalk with
+The use of <QuickTime> was deprecated in version 8.1 with
 new defaults for <dontUseQT> and <dontUseQTEffects> as true on all
-systems apart from pre OS X 10.8. The Windows build of OpenXTalk no
+systems apart from pre OS X 10.8. The Windows build no
 longer supports any <QuickTime> features and setting the <dontUseQT> and
 <dontUseQTEffects> will have no effect. Additionally <QuickTime> does 
 not include 64 bit support and therefore can not be supported on OS X 64
-bit builds of OpenXTalk.
+bit builds.
 
 Support for Density Mapped Images was introduced in version 6. In
 previous versions, the filename of an image would only be able to use

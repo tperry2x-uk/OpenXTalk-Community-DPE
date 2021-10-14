@@ -37,7 +37,7 @@ command.
 where file names are not case-sensitive. It must be exactly the
 same--including the case of characters--as the name you used with the
 open file command. If you specify the name of a serial port on Mac OS or
-Windows systems, OpenXTalk reads from the specified port. The names of
+Windows systems, the engine reads from the specified port. The names of
 serial ports end in a colon (:).
 
 start:
@@ -90,7 +90,7 @@ Use the <read from file> <command> to get data from a <file>.
 > name you used with the <open file> <command>.
 
 If you specify the name of a serial port on Mac OS or Windows systems,
-OpenXTalk reads from the specified port. The names of serial ports end in
+the engine reads from the specified port. The names of serial ports end in
 a colon (:).
 
 The <start> specifies the <character> or <byte> position in the <file>

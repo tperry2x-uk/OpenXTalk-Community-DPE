@@ -39,7 +39,7 @@ set the defaultFolder to item 1 to -2 of it
 Value:
 The <filename of stack> of a <stack> specifies the <file path|name and
 location> of the <stack file>. If you specify a name but not a location,
-OpenXTalk assumes the <file> is in the <defaultFolder>. By default, the
+the engine assumes the <file> is in the <defaultFolder>. By default, the
 <filename of stack> <property> of newly created <stacks> is set to
 <empty>. 
 
