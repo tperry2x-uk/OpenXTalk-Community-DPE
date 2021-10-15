@@ -31,7 +31,7 @@ itemName:
 The unique name of the item to create in the zip archive.
 
 variableName:
-The name of a variable in your OpenXTalk program containing data to place
+The name of a variable in your program containing data to place
 into the item in the zip archive. If the revZipAddItemWithData command
 encounters an error then the result will be set to an error code
 beginning with "ziperr", otherwise the result will be empty.
