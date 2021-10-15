@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <script src="ide/Documentation/html_viewer/js/jquery-1.11.1.min.js"></script>
     <script src="ide/Documentation/html_viewer/js/marked.js"></script>
-    <script src="ide/Documentation/html_viewer/js/highlight.pack.js"></script> 
+    <script src="ide/Documentation/html_viewer/js/highlight.pack.js"></script>
 
     <link href="ide/Documentation/html_viewer/css/codestyle.css" rel="stylesheet">
     <style type="text/css">
@@ -545,8 +545,8 @@ textarea {
 
 /*
 Theme Name: Livecode 2013
-Theme URI: http://www.livecode.org/
-Description: A custom theme for LiveCode
+Theme URI: http://www.openxtalk.org/
+Description: A custom theme
 Version: 1.0
 Author: James Cant & Benjamin Beaumont
 Author URI: http://www.livecode.com/
@@ -636,28 +636,28 @@ table{border-spacing:1em 2px;}
   div .imgpadding {
   	page-break-inside: avoid;
   }
-  
+
   tr {
   	page-break-inside: avoid;
   }
-  
+
   img {
   	display: block;
    /*
 	For some reason wkhtmltopdf shrinks the text column to half size
 	when the widths of any images are not 100%.
-  */	
+  */
     width: 100%;
   }
-  
+
   body {
   	text-rendering: geometricPrecision;
   }
-  
+
   code .inline {
 	padding: 0em 0.1em;
   }
-  
+
   </style>
   </head>
   <body>
@@ -672,13 +672,13 @@ table{border-spacing:1em 2px;}
 			var toc_html = '<ul class="toc">\n';
 			var current_level = 1;
 			var max_level = 4;
-			
+
 			// Keep a count of links to ensure uniqueness
 			var count = 0;
-			
+
 			// Use the source of the guides to resolve images
 			var guide_source;
-			
+
 			renderer.heading = function(text, level) {
 				if (level <= max_level) {
 
@@ -688,7 +688,7 @@ table{border-spacing:1em 2px;}
 					count++;
 					var item = '<li><a href="#' + escapedText + '">' + text + '</a></li>\n';
 
-					if (level > current_level) 
+					if (level > current_level)
 					{
 						var num_to_open;
 						num_to_open = level - current_level;
@@ -696,10 +696,10 @@ table{border-spacing:1em 2px;}
 						{
 							toc_html += '<ul class="toc">\n';
 						}
-					
+
 						toc_html += item;
-					} 
-					else if (level < current_level) 
+					}
+					else if (level < current_level)
 					{
 						var num_to_close;
 						num_to_close = current_level - level;
@@ -707,10 +707,10 @@ table{border-spacing:1em 2px;}
 						{
 							toc_html += '</ul>\n';
 						}
-						
+
 						toc_html += item;
-					} 
-					else 
+					}
+					else
 					{
 						toc_html += item;
 					}
@@ -735,44 +735,44 @@ table{border-spacing:1em 2px;}
 			}
 
 			// Override the image rendering
-			renderer.image = function (href, title, text) 
+			renderer.image = function (href, title, text)
 			{
 				var image_parts;
 				image_parts = href.split("/");
 				var image_file;
 				image_file = image_parts[image_parts.length - 1];
-				
+
 				// Create divs with some dummy content around images to
-				// enable use of page-break-inside css 
+				// enable use of page-break-inside css
 				var img_no_pg_break;
 				img_no_pg_break = '<div class="imgpadding">&nbsp;<img src="';
-				
+
 				if (guide_source == 'ide')
 					img_no_pg_break += 'ide/Documentation';
 				else
 					img_no_pg_break += 'docs';
-					
+
 				img_no_pg_break += '/guides/images/' + image_file + '" />';
 				img_no_pg_break += '&nbsp;</div>';
 				return img_no_pg_break;
 			}
-			
+
 			var content_html = marked(prefix, { renderer: renderer });
 
 			$.each(tUserGuideData.guides, function( index, value ) {
 				guide_source = value.location;
 				content_html += marked(value.data, { renderer: renderer });
 			});
-		
+
 			document.getElementById('content').innerHTML = content_html;
 
 			var toc = document.getElementById('table_of_contents');
 			if (toc) {
 				toc.innerHTML = toc_html;
 			}
-			
+
 			hljs.initHighlighting();
-	
+
 		}
 
 		regenerate();
