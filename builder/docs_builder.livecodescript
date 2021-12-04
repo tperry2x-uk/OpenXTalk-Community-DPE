@@ -231,7 +231,7 @@ command docsBuilderGenerateDistributedAPI pEdition
    put "community" into tComponents[tIndex]["metadata"]["edition"]
 
    local tLCSDictionaryA
-   put docsBuilderParseDictionary("Script", "OXT", tComponents, tAdditionalFolders, false) into tLCSDictionaryA
+   put docsBuilderParseDictionary("Script", "", tComponents, tAdditionalFolders, false) into tLCSDictionaryA
 
    if tLCSDictionaryA is empty then
       logError "Couldn't parse script dictionary data for" && pEdition
@@ -239,7 +239,7 @@ command docsBuilderGenerateDistributedAPI pEdition
    end if
 
    put "script" into tLCSDictionaryA["filename"]
-   put "oxt_script" into tLCSDictionaryA["api"]
+   put "script" into tLCSDictionaryA["api"]
    addToList tLCSDictionaryA, tLibrariesA
 
    local tModuleList, tModularA, tModularCount, tBlocksA, tParsedA
@@ -280,12 +280,12 @@ command docsBuilderGenerateDistributedAPI pEdition
    put "OXT" into tLCBDictionaryA["author"]
    put "dictionary" into tLCBDictionaryA["type"]
    put "builder" into tLCBDictionaryA["filename"]
-   put "oxt_builder" into tLCBDictionaryA["api"]
+   put "builder" into tLCBDictionaryA["api"]
    addToList tLCBDictionaryA, tLibrariesA
 
    local tDatagridA, tDGDocs
    put builderIDEDocsFolder() & "/dictionary/datagrid.lcdoc" into tDGDocs
-   put revDocsParseDocFileToLibraryArray(tDGDocs, "Data Grid", "OXT") \
+   put revDocsParseDocFileToLibraryArray(tDGDocs, "Data Grid", "") \
          into tDataGridA
 
    if tDataGridA is empty then
@@ -295,7 +295,7 @@ command docsBuilderGenerateDistributedAPI pEdition
 
    put "dictionary" into tDataGridA["type"]
    put "dg" into tDataGridA["filename"]
-   put "oxt_script" into tDataGridA["api"]
+   put "script" into tDataGridA["api"]
 
    addToList tDataGridA, tLibrariesA
 
@@ -310,14 +310,14 @@ command docsBuilderGenerateDistributedAPI pEdition
    local tFile
    repeat for each line tFile in tFiles
       local tLibA
-      put revDocsParseDocFileToLibraryArray(tExtractedDocsFolder & slash & tFile, item -2 of tFile, "OXT") into tLibA
+      put revDocsParseDocFileToLibraryArray(tExtractedDocsFolder & slash & tFile, item -2 of tFile, "") into tLibA
 
       if tLibA is empty then
          builderLog "error", "Couldn't parse" && item -2 of tFile && "dictionary data for" && pEdition
          exit docsBuilderGenerateDistributedAPI
       end if
       put tLibA["name"] into tLibA["filename"]
-      put "oxt_script" into tLibA["api"]
+      put "script" into tLibA["api"]
 
       addToList tLibA, tLibrariesA
    end repeat
