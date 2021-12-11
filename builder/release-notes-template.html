@@ -540,12 +540,12 @@ textarea {
 <style type="text/css">
 
 /*
-Theme Name: Livecode 2013
-Theme URI: http://www.livecode.org/
+Theme Name: OpenXtalk 2021
+Theme URI: https://www.OpenXtalk.org/
 Description: A custom theme for LiveCode
 Version: 1.0
 Author: James Cant & Benjamin Beaumont
-Author URI: http://www.livecode.com/
+Author URI: https://www.OpenXtalk.org/
 */
 
 /***************************************************************************
@@ -556,7 +556,7 @@ Author URI: http://www.livecode.com/
 /* ************************************************
  * BASE STYLES
  **************************************************/
-a{ text-decoration:none; color:#799327; } /* aecf36 */
+a{ text-decoration:none; color:#673ab7; } /* aecf36 */
 a:hover{ color:#585858}
 
 h1,h2,h3,h4{ font-family:FontAwesome; font-style:normal; font-weight:normal}
@@ -611,7 +611,7 @@ table{border-spacing:1em 2px;}
     font-family: FontAwesome, "DejaVu Sans", sans-serif;
     page-break-inside: avoid;
   }
-  
+
   h1 {
      color: #ffffff;
      padding: 0;
@@ -620,20 +620,20 @@ table{border-spacing:1em 2px;}
   }
 
   h1.community {
-    background: rgb(159,201,42);
-    border: 1ex solid rgb(159,201,42);
+    background: rgb(130,71,180);
+    border: 1ex solid rgb(130,71,180);
   }
-  
+
   h1.business {
     background: #000000;
     border: 1ex solid #000000;
  }
-  
+
   h1.indy {
     background: rgb(48,160,209);
     border: 1ex solid rgb(48,160,209);
  }
-  
+
   h1.communityplus {
     background: rgb(49,163,102);
     border: 1ex solid rgb(49,163,102);
@@ -679,23 +679,23 @@ function regenerate() {
 			}
 			current_level = level;
 		}
-      
+
       if (level == 1)
       {
          var t_class = "community";
          if (text.indexOf("Indy") !== -1)
          {
             t_class = "indy";
-         } 
+         }
          else if (text.indexOf("Business") !== -1)
          {
             t_class = "business";
-         } 
+         }
          else if (text.indexOf("Community Plus") !== -1)
          {
             t_class = "communityplus";
          }
-         
+
          return '<h' + level + ' class="' + t_class + '" id="' + escapedText + '">'
    			+ text +
    			'</h' + level + '>';
