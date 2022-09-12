@@ -1,6 +1,6 @@
 Name: XCMD
 
-Synonyms: xcmd
+Synonyms: xcmd, external command
 
 Type: glossary
 
@@ -10,5 +10,4 @@ Description:
 compiled into a <resource> of type XCMD.
 
 References: external (glossary), resource (glossary), Mac OS (glossary),
-custom command (glossary), OS X (glossary)
-
+custom command (glossary), OS X (glossary), extension (glossary)

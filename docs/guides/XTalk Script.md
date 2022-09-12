@@ -219,7 +219,7 @@ features.
 The documentation is spread across four areas; the Start
 Center, the Dictionary (API), the Guides and other resources.
 
-The Start Center is aimed at introducing you to the environmenr, and should be
+The Start Center is aimed at introducing you to the environment, and should be
 your first port of call if you are a new user. The dictionary, or API,
 is a reference resource which you can refer to while
 implementing your projects.
@@ -622,9 +622,6 @@ subreddit](https://www.reddit.com/r/openxtalk).
 
 * Join the [OpenXTalk user group](https://nb-no.facebook.com/groups/23141438067/) on Facebook.
 
-* Use the [LiveCode mailing
-list](http://lists.runrev.com/mailman/listinfo/use-livecode) is also
-available.
 
 > **Tip:** Tip: You can use the Google search engine to search the list
 > archives, using [this

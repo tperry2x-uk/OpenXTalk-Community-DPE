@@ -1,4 +1,4 @@
-# Type Naming in LiveCode Builder
+# Type Naming in Extension Builder
 Copyright 2015 LiveCode Ltd.
 
 ## Introduction
@@ -27,7 +27,7 @@ and can therefore safely have a lower-case name (e.g. `string` and
 Types in the Builder standard library should therefore have mixed-case
 names.
 
-For consistency with the LiveCode naming conventions used elsewhere,
+For consistency with the naming conventions used elsewhere,
 types should have title-case names.
 
 ## Universal types
@@ -58,7 +58,7 @@ platform prefix.
 * `Float<BITS>Dec`: A decimal floating point value represented using
   the specified number of bits (e.g. `Float32Dec`).
 
-## LiveCode Core types
+## Core types
 
 The Builder language standard library provides a small number of
 "core" types that are central to the programming language and will be
@@ -88,9 +88,9 @@ fundamental types are required.  These use the `C` platform prefix.
 
 * `CDouble`: C's `double` type.
 
-## LiveCode library types
+## library types
 
-For foreign function calls into the LiveCode engine's C/C++ libraries,
+For foreign function calls into the xTalk engine's C/C++ libraries,
 some special foreign types are required.
 
 * `LCIndex`, `LCUIndex`: Indices (e.g. into lists or strings)

@@ -1,11 +1,12 @@
-Name: OpenXTalk
+Name: LiveCode
 
-Synonyms: OpenXTalk, OpenXTalk script
+Synonyms: OpenXTalk, script
 
 Type: glossary
 
 Description:
-The language in which OpenXTalk <script|scripts> are written.
+LiveCode is development xTalk environment from LiveCode Ltd. on which OpenXTalk is based.
+On Sept. 1st 2021 LiveCode Ltd. suddenly cut all support for the Open-Source
+Community Edition. OpenXTalk IDE is an unofficial/unsupported continuation of that work.
 
 References: script (glossary)
-

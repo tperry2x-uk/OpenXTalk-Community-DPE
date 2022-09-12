@@ -5,10 +5,9 @@ Synonyms: xtalk, xtalk language
 Type: glossary
 
 Description:
-One of the family of related scripting languages that includes
-<OpenXTalk>, <HyperCard|HyperTalk>, <SuperCard|SuperTalk>, Lingo, and
-others. 
+The family of scripting languages have in common HypeTalk as their main progentor,
+ includes <OpenXION|xion>, <HyperCard|HyperTalk>, <SuperCard|SuperTalk>, <MetaCard|MetaTalk>,
+ <OpenXTalk|xTalk> and others.
 
 References: HyperCard (glossary), OpenXTalk (glossary),
-SuperCard (glossary)
-
+SuperCard (glossary), OpenXION (glossary), LiveCode (glossary),

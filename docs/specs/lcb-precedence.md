@@ -9,7 +9,7 @@ that the interaction is sensible and consistent.
 
 Choosing appropriate precedence levels fulfils some important objectives:
 
-- The ordering of precedence is consistent with LiveCode Script
+- The ordering of precedence is consistent with xTalk Script
 - Complicated expressions can easily be written without needing many
   parentheses `(…)`
 - The ordering of precedence is reasonably consistent with other programming
@@ -50,6 +50,6 @@ Lower precedence numbers are more tightly-binding.
 | 17    | logical or        | `Foo() or Bar()`              |
 | 18    | sequence          | `,`                           |
 
->**Important:** Prior to LiveCode 9, exponentiation and modifier 
-> precedence were reversed. In order to write code that operates as 
+>**Important:** Prior to LiveCode 9, exponentiation and modifier
+> precedence were reversed. In order to write code that operates as
 > expected in both LC 9 and 8, please use parentheses where appropriate.

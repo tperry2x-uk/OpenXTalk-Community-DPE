@@ -1,11 +1,12 @@
 Name: HyperCard
 
-Synonyms: hypertalk, hc, ht, hypercard
+Synonyms: hypertalk, hc, hypercard, xTalk
 
 Type: glossary
 
 Description:
-A graphical authoring environment from Apple Computer. Its scripting
-language is called HyperTalk.
-
-
+The defunct authoring environment from Apple Computer (1987 - 2004) that was the
+main progenitor of all xTalk scripting environments. Its scripting language was
+called HyperTalk, and third party clones of that scripting language, such as
+SuperTalk, MediaTalk, MetaTalk, etc., collectively became known to the public as
+xTalk.
