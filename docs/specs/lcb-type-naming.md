@@ -3,7 +3,7 @@ Copyright 2015 LiveCode Ltd.
 
 ## Introduction
 
-The Builder standard library introduces a large number of types.
+Extension Builder standard library introduces a large number of types.
 These types require a consistent naming convention, in order to
 clearly indicate where the types come from and what they are intended
 to be used for.

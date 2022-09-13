@@ -1,9 +1,9 @@
-# Operator Precedence in LiveCode builder
+# Operator Precedence in Extension builder
 Copyright © LiveCode Ltd.
 
 ## Introduction
 
-The Builder standard library provides a large variety of syntax definitions.
+The Extension Builder standard library provides a large variety of syntax definitions.
 Syntax operators can be combined in a huge number of ways, and it's important
 that the interaction is sensible and consistent.
 
