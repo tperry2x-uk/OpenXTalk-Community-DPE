@@ -144,10 +144,18 @@ on startup pTest
    
    fetchLicenseForVersion sVersion, tLicense
    licenseUnlock tLicense
-   
+
+   -- this should remove the registration dialog, but does mean a relaunch has to take place (tperry 20-11-2023)
    if firstRun() then
-      go to card "AccountSignUp"
-      return empty
+      -- ignore account signup
+      --go to card "AccountSignUp"
+      --return empty
+      return sHomePath
+      local tLicense
+      fetchLicenseForVersion sVersion, tLicense
+      licenseUnlock tLicense
+      answer information "Please relaunch this program to continue."
+      close this stack
    else
       return sHomePath
    end if
