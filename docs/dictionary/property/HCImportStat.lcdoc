@@ -6,7 +6,7 @@ Syntax: get the HCImportStat
 
 Summary:
 Reports information about <stacks> that are being <import|imported> from
-<HyperCard>. 
+<HyperCard>.
 
 Introduced: 1.0
 
@@ -20,7 +20,7 @@ put the HCImportStat into field "Progress"
 Value:
 The <HCImportStat> <property> reports an <expression> of the form
 "Loading stack stackName" while a HyperCard stack is being
-<import|imported>. 
+<import|imported>.
 
 Description:
 Use the <HCImportStat> <property> to check the status of a <HyperCard>
@@ -37,5 +37,6 @@ successfully imported.
 
 References: go (command), stacks (function), property (glossary),
 import (glossary), command (glossary), HyperCard (glossary),
-expression (glossary), stack (object), HCStack (property)
+expression (glossary), stack (object), HCStack (property), hypercard (glossary)
 
+Tags: stack, hypercard

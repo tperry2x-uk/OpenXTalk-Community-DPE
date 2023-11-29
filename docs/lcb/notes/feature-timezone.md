@@ -1,4 +1,4 @@
-# LiveCode Builder Standard Library
+# Extension Builder Standard Library
 
 ## Date and time
 

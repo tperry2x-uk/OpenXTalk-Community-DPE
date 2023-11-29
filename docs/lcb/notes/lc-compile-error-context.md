@@ -1,4 +1,4 @@
-# LiveCode Builder Tools
+# Extension Builder Tools
 ## lc-compile
 ### Messages
 

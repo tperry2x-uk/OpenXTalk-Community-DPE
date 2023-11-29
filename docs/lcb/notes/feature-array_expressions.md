@@ -1,15 +1,15 @@
-# LiveCode Builder Language
+# Extension Builder Language
 ## Expressions
 
 * It is now possible to use array constants and array expressions in
-  LiveCode Builder programs.  For example:
+  Extension Builder programs.  For example:
 
       variable tArray as Array
       put {"key": true} into tArray
 
   Keys in array literals must be strings.
 
-# LiveCode Builder Tools
+# Extension Builder Tools
 ## lc-compile
 ### Errors
 

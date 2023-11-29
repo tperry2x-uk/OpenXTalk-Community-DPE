@@ -2,7 +2,7 @@ Library: com.livecode.mathfoundation
 
 Type: module
 
-Summary: This library consists of the foundational mathematical operations included in the standard library of LiveCode Builder.
+Summary: This library consists of the foundational mathematical operations included in the standard library of Extension Builder.
 
 
 Name: CeilOperator
@@ -117,7 +117,3 @@ round tNum -- tNum contains -6
 Description: Replaces <Target> with the greatest integer less than or equal to <Target>, or the least integer greater than or equal to <Target> depending on which is closest. If <Target> is exactly halfway between two integers, rounds to the one with greatest absolute value, i.e. away from 0.
 
 Tags: Math
-
-
-
-

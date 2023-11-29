@@ -2,7 +2,7 @@ Library: com.livecode.codeunit
 
 Type: module
 
-Summary: This library consists of the operations on codeunits included in the standard library of LiveCode Builder.
+Summary: This library consists of the operations on codeunits included in the standard library of Extension Builder.
 
 
 Name: DeleteLastCodeunitOf
@@ -138,7 +138,7 @@ put "hello" into tString
 put the number of codeunits in tString into tVar
 
 variable tString as String
-put the empty string into tString	
+put the empty string into tString
 repeat tVar times
 	put "a" after tString
 end repeat
@@ -372,7 +372,3 @@ Either locates the first codeunit for use as the target container of another ope
 >*Note:* It is an error if <Target> is empty.
 
 Tags: Strings
-
-
-
-

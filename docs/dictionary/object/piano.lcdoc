@@ -1,4 +1,4 @@
-Library: org.oxt.paulmcclernan.pianowidget
+Library: org.openxtalk.widget.pianowidget
 
 Type: widget
 
@@ -14,7 +14,7 @@ such as a MIDI playback library.
 
 author: Paul McClernan, Bernd Niggemann
 
-version: 1.3.6
+version: 1.3.7
 
 Name: noteOn
 
@@ -33,7 +33,7 @@ on noteOn pNoteNum,pNoteName
 	put "noteOn " & pNoteNum && pNoteName
 end noteOn
 
-Parameters:
+Parameters: 
 
 pNoteNum: The MIDI note number(s) of the note key (exp. 63), this can be an item delimited list of multiple key numbers (chords)
 
@@ -60,7 +60,7 @@ on noteOff pNoteNum,pNoteName
 	put "noteOff " & pNoteNum && pNoteName
 end noteOff
 
-Parameters:
+Parameters: 
 
 pNoteNum: The MIDI note number(s) of the note key (exp. 63), this can be an item delimited list of multiple key numbers (chords)
 
@@ -454,3 +454,4 @@ Description:
 The <octaveCount> is a read-only property that returns the amount of
 octaves  that are currently visible on the Piano's keyboard. It is the
 same as the count from <lowOctave> to <highOctave>.
+

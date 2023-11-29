@@ -2,7 +2,7 @@ Library: com.livecode.canvas
 
 Type: module
 
-Summary: This module specifies the syntax definitions and bindings for canvas drawing operations in modular LiveCode.
+Summary: This module specifies the syntax definitions and bindings for canvas drawing operations in Extension Builder.
 
 
 Name: CanvasOperationRotate
@@ -255,7 +255,7 @@ Syntax: 	rounded rectangle path of <Rectangle> with radii <Radii>
 
 Summary: Create a new rectangle path with elliptical corner rounding
 
-Parameters: 
+Parameters:
 
 Rectangle: A rectangle to create the path from
 
@@ -1046,7 +1046,7 @@ Syntax:   the pixel data of <Canvas>
 
 Summary: Get the current contents of a canvas as raw pixel data
 
-Parameters: 
+Parameters:
 
 Canvas: The canvas to be examined.
 
@@ -1764,7 +1764,7 @@ Syntax:   the pixel width of <Canvas>
 
 Summary: Get the width of a canvas in pixels.
 
-Parameters: 
+Parameters:
 
 Canvas: The canvas to be examined.
 
@@ -2361,7 +2361,7 @@ Syntax:   the pixel height of <Canvas>
 
 Summary: Get the height of a canvas in pixels.
 
-Parameters: 
+Parameters:
 
 Canvas: The canvas to be examined.
 
@@ -3337,7 +3337,7 @@ Syntax:   a new canvas with size <Size>
 
 Summary: Create a new canvas
 
-Parameters: 
+Parameters:
 
 Size: A list containing the width and height of the new canvas in pixels
 
@@ -4629,7 +4629,3 @@ set the cap style of this canvas to "round"
 stroke line path from point [50,100] to point [100,50] on this canvas
 
 Tags: Canvas
-
-
-
-

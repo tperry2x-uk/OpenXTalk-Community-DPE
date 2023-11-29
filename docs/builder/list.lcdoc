@@ -2,7 +2,7 @@ Library: com.livecode.list
 
 Type: module
 
-Summary: This library consists of the operations on lists included in the standard library of LiveCode Builder.
+Summary: This library consists of the operations on lists included in the standard library of Extension Builder.
 
 
 Name: SpliceIntoElementOfList
@@ -38,7 +38,7 @@ push 4 onto tVar2
 splice tVar into element 1 of tVar2 -- tVar2 contains the list [1,2,3,4]
 
 Description:
-Use the splice syntax to insert the elements of one list into another list. 
+Use the splice syntax to insert the elements of one list into another list.
 
 >*Note:* ```put tList into element 1 of tList2``` results in the removal of element 1 of tList2 and the insertion of tList **as an element**, i.e. tList2 becomes the list [tList,element 2 of tList2, element 3 of tList2 ...]
 
@@ -387,7 +387,7 @@ put [ "a", "b", "c", "d" ] into tList
 
 variable tContains as Boolean
 
-// put tList contains tList[1] into tContains -- error: tList[1] is not a list 
+// put tList contains tList[1] into tContains -- error: tList[1] is not a list
 
 put tList contains element 1 to 2 of tList into tContains -- tContains is true
 
@@ -420,7 +420,7 @@ variable tVar as List
 put [1, 2, 3, 4, 5] into tVar
 
 variable tBegins as Boolean
-// put tList begins with tList[1] into tBegins -- error: tList[1] is not a list 
+// put tList begins with tList[1] into tBegins -- error: tList[1] is not a list
 
 put tList begins with [1, 2] into tBegins -- tBegins is true
 
@@ -536,7 +536,7 @@ push 4 onto tVar2
 splice tVar into element 1 to 3 of tVar2 -- tVar2 contains the list [1,2,3,4]
 
 Description:
-Use the splice syntax to insert the elements of one list into another list. 
+Use the splice syntax to insert the elements of one list into another list.
 
 >*Note:* ```put tList into element 1 to 3 of tList2``` results in the removal of elements 1 to 3 of tList2 and the insertion of tList **as an element**, i.e. tList2 becomes the list [tList,element 4 of tList2, element 5 of tList2 ...]
 
@@ -705,7 +705,7 @@ push 5 onto tVar2
 splice tVar after element 1 of tVar2 -- tVar2 contains the list [1,2,3,4,5]
 
 Description:
-Use the splice syntax to insert the elements of one list into another list. 
+Use the splice syntax to insert the elements of one list into another list.
 
 >*Note:* ```put tList after element 1 of tList2``` results in the insertion of tList **as an element**, i.e. tList2 becomes the list [element 1 of tList2,tList,element 2 of tList2, element 3 of tList2 ...]
 
@@ -797,7 +797,7 @@ variable tVar as List
 put [1, 2, 3, 4, 5] into tVar
 
 variable tEnds as Boolean
-// put tList ends with tList[5] into tEnds -- error: tList[5] is not a list 
+// put tList ends with tList[5] into tEnds -- error: tList[5] is not a list
 
 put tList ends with element 1 to 5 of tList into tEnds -- tEnds is true
 
@@ -953,7 +953,7 @@ push 5 onto tVar2
 splice tVar before element 2 of tVar2 -- tVar2 contains the list [1,2,3,4,5]
 
 Description:
-Use the splice syntax to insert the elements of one list into another list. 
+Use the splice syntax to insert the elements of one list into another list.
 
 >*Note:* ```put tList before element 2 of tList2``` results in the insertion of tList **as an element**, i.e. tList2 becomes the list [element 1 of tList2,tList,element 2 of tList2, element 3 of tList2 ...]
 
@@ -1088,7 +1088,3 @@ put the number of elements in tVar into tNum -- tNum is 5
 Description: Returns the number of elements in the list.
 
 Tags: Lists
-
-
-
-

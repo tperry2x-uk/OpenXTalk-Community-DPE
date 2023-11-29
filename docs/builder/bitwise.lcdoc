@@ -2,7 +2,7 @@ Library: com.livecode.bitwise
 
 Type: module
 
-Summary: This module specifies the bitwise operations on integers included in the standard library of LiveCode Builder.
+Summary: This module specifies the bitwise operations on integers included in the standard library of Extension Builder.
 
 
 Name: BitwiseShiftRight
@@ -155,7 +155,3 @@ Shifts the bits of <Operand> left. Shifting the bits of <Operand> left
 by x is equivalent to multiplying by 2^x.
 
 Tags: Bitwise operations
-
-
-
-

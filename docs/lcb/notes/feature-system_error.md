@@ -1,4 +1,4 @@
-# LiveCode Builder Standard Library
+# Extension Builder Standard Library
 ## System error information
 
 * Two new expressions have been added for accessing platform-specific
@@ -12,4 +12,3 @@
 
 * The new `reset system error` statement clears the current system
   error.
-  

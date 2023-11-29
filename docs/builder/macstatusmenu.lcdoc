@@ -22,7 +22,7 @@ Platforms: desktop
 
 Summary: Sent when an item is picked from the menu
 
-Parameters: 
+Parameters:
 
 pName: The name of the status menu that the item was picked from
 
@@ -52,7 +52,7 @@ Platforms: desktop
 
 Example: macStatusMenuCreate "mymenu"
 
-Parameters: 
+Parameters:
 
 pName: The name of the status menu to create
 
@@ -104,14 +104,14 @@ on EnableStatusMenu pEnabled
    macStatusMenuSet "mymenu", "enabled", pEnabled
    if pEnabled then
       macStatusMenuSet "mymenu", "icon", the long id of image "enabled"
-      macStatusMenuSet "mymenu", "items", "Open" & return & "-" & return & "Settings" 
+      macStatusMenuSet "mymenu", "items", "Open" & return & "-" & return & "Settings"
    else
       macStatusMenuSet "mymenu", "icon", the long id of image "disabled"
       macStatusMenuSet "mymenu", "items", empty
    end if
 end EnableStatusMenu
 
-Parameters: 
+Parameters:
 
 pName: The name of a previously created status menu
 
@@ -130,7 +130,7 @@ pProperty:
  image then it must be in a format supported by NSImage -initWithContentsOfFile.
  Setting the icon to empty to clear it.
  - "title" - (string) the title of the menu. Set to empty (the default) to only use an icon.
- - "items" - (string) the items of is a similar format used by LiveCode menus
+ - "items" - (string) the items of is a similar format used by the script engines menus
 
 pValue: The value as described for each property
 
@@ -143,8 +143,8 @@ Where <flags> may include:
 
 !c, !n, !m: the menu item has respectively, a check, no check, or a mixed state icon
 
->**Note:** A difference between standard LiveCode menus and the macStatusMenu
-> library is that the radio button (!r) used in LiveCode menus is not supported,
+>**Note:** A difference between standard xTalk script engine menus and the macStatusMenu
+> library is that the radio button (!r) used in the script engine menus is not supported,
 > however, the mixed state (!m) is. Additionally you can use the <macStatusMenuSetCustomIcon>
 > command to specify a custom icon.
 
@@ -153,7 +153,7 @@ Where <flags> may include:
 -: the menu item is replaced with a menu separator
 
 multiple tab characters: the number of tabs specifes the depth of the menu item;
-use this to create submenus 
+use this to create submenus
 
 The <accelerator> can be specified as one of:
 
@@ -163,7 +163,7 @@ keyname:
 Named key without modifiers
 modifiers char: Specified modifiers + character
 modifiers keyname: Specified modifiers + named key
-In the accelerator, modifiers is either a space separated list of: 
+In the accelerator, modifiers is either a space separated list of:
 
 - 'command' or 'cmd'
 - 'control' or 'ctrl'
@@ -190,12 +190,12 @@ Return, Enter,
 Home, End, Escape,
 PgUp, PgDown
 
-A tag can be specified as a | character followed by a string of ASCII characters. 
-If such a tag is present then that tag will take the place of the menu label as 
+A tag can be specified as a | character followed by a string of ASCII characters.
+If such a tag is present then that tag will take the place of the menu label as
 the parameter to the menuPick.
 
-A tag will only be recognised following the <accelerator>. To specify a menu tag 
-without an accelerator shortcut, an empty <accelerator> can be specified using /| 
+A tag will only be recognised following the <accelerator>. To specify a menu tag
+without an accelerator shortcut, an empty <accelerator> can be specified using /|
 followed by the tag text.
 
 References: macStatusMenuSetCustomIcon (handler)
@@ -217,7 +217,7 @@ Platforms: desktop
 
 Example: macStatusMenuDelete "mymenu"
 
-Parameters: 
+Parameters:
 
 pName: The name of a previously created status menu
 
@@ -240,7 +240,7 @@ Platforms: desktop
 
 Example: macStatusMenuCreate "r", the long id of image "dot"
 
-Parameters: 
+Parameters:
 
 pCharacter:
 a single character to associate with the icon. May not be
@@ -256,6 +256,3 @@ When creating the menu items the icon to use for the item is identified by `!`
 followed by a character. The builtin icons are `c` (checkmark), `n` (no checkmark)
 and `m` (mixed state). Use <macStatusMenuSetCustomIcon> to add another custom icon
 to use.
-
-
-

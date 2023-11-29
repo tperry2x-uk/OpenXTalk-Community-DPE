@@ -2,7 +2,7 @@ Library: com.livecode.logic
 
 Type: module
 
-Summary: This library consists of the logical operations included in the standard library of LiveCode Builder.
+Summary: This library consists of the logical operations included in the standard library of Extension Builder.
 
 
 Name: FormatBooleanAsString
@@ -178,6 +178,3 @@ Description:
 Use <StringParsedAsBoolean> when you want to determine if a string contains "true" or "false"
 
 >*Note:* Only the strings "true" and "false" will parse to give a boolean value. Any other input will cause an error to be thrown.
-
-
-

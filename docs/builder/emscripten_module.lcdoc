@@ -4,7 +4,7 @@ Type: module
 
 Summary: This module provides utility handlers for converting to and from Emscripten types.
 
-Description: 
+Description:
 
 Name: EvalJavaScriptWithArguments
 
@@ -14,7 +14,7 @@ Syntax: EvalJavaScriptWithArguments(<pScript>,<pArgs>)
 
 Summary: Evaluate JavaScript code within the browser with arguments
 
-Parameters: 
+Parameters:
 
 pScript: The script to evaluate
 
@@ -40,7 +40,7 @@ Type: handler
 
 Syntax: HandlerAsJSFunction(<pHandler>)
 
-Summary: Wrap a LiveCode Builder handler within a JavaScript function, suitable for passing as an event handler.
+Summary: Wrap a Extension Builder handler within a JavaScript function, suitable for passing as an event handler.
 
 Parameters: 
 
@@ -78,7 +78,7 @@ Syntax: PointerFromJSObject(<pObj>)
 
 Summary: Convert a JavaScript object value to a pointer
 
-Parameters: 
+Parameters:
 
 pObj: The object to convert
 
@@ -106,7 +106,7 @@ Syntax: PointerToJSObject(<pPointer>)
 
 Summary: Convert a Pointer into a JavaScript object
 
-Parameters: 
+Parameters:
 
 pPointer: The Pointer to convert
 
@@ -135,7 +135,7 @@ Syntax: EvalJavaScript(<pScript>)
 
 Summary: Evaluate JavaScript code within the browser
 
-Parameters: 
+Parameters:
 
 pScript: The script to evaluate
 
@@ -147,7 +147,3 @@ public handler GetInputText() returns String
 end handler
 
 Description: Use <EvalJavaScript> to get the result of running a block of JavaScript code
-
-
-
-

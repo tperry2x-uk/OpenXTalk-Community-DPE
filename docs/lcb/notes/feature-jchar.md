@@ -1,5 +1,5 @@
-# LiveCode Builder Standard Library
+# Extension Builder Standard Library
 ## Foreign function interface
 
-* The Java integer primtive type JChar has been added. 
+* The Java integer primtive type JChar has been added.
   This maps to uint16_t.

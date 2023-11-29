@@ -2,7 +2,7 @@ Library: com.livecode.sort
 
 Type: module
 
-Summary: This library consists of the sorting operations provided by the standard library of LiveCode Builder.
+Summary: This library consists of the sorting operations provided by the standard library of Extension Builder.
 
 
 Name: SortListAscendingText
@@ -240,14 +240,10 @@ public handler TestSortListOfLists(in pList as List, in pKeyIndex as Number) ret
 end handler
 
 Description:
-<SortListUsingHandler> sorts a list by comparing the elements of a list according to the 
+<SortListUsingHandler> sorts a list by comparing the elements of a list according to the
 comparison implemented by the <Handler> argument.
 
->*Note:* Supplying an inconsistent comparison operator to <SortListUsingHandler> causes 
+>*Note:* Supplying an inconsistent comparison operator to <SortListUsingHandler> causes
 undefined behavior.
 
 Tags: Sorting
-
-
-
-

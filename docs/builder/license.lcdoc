@@ -2,7 +2,9 @@ Library: com.livecode.commercial.license
 
 Type: module
 
-Summary: This library provides license entitlement related operations for LiveCode Builder (commercial only).
+Summary: This library provides license entitlement related operations for Extension Builder (commercial).
+It remains in OpenXTalk for compatibility with LiveCode, but since this only applies to closed source usage
+it should be considered as deprecated in OpenXTalk builds and may be removed in the future.
 
 Tags: License
 
@@ -67,7 +69,3 @@ Returns true if the license includes the named extension or extension
 and feature.
 
 Tags: License
-
-
-
-

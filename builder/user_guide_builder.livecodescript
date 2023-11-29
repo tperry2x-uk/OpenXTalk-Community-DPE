@@ -114,20 +114,29 @@ end OutputGuideHtml
 
 private command OutputGuidePdf
    local tCommand
-
+   
+   put builderRepoFolder() & "/builder/wkhtmltopdf" into tCommand
+   
    -- Use wkhtmltopdf to convert the HTML representation
-   if $WKHTMLTOPDF is not empty then
-      put $WKHTMLTOPDF into tCommand
-   else
-      put builderRepoFolder() & "/builder/wkhtmltopdf" into tCommand
+   if there is not a file tCommand then
+      if there is a file "/usr/local/bin/wkhtmltopdf" then
+         put " /usr/local/bin/wkhtmltopdf" into tCommand
+      else if $WKHTMLTOPDF is not empty then
+         put $WKHTMLTOPDF into tCommand
+      else
+         put shell("command -v " & tCommand) into tCLIPath
+         if tCLIPath is not empty then
+            put tCLIPath into tCommand
+         end if
+      end if
    end if
-
+   
    local tTitle, tDate, tHtmlPath, tPdfPath
    put OutputGetGuideTitle() into tTitle
    put the date into tDate
    put OutputGetGuideFilename("html") into tHtmlPath
    put OutputGetGuideFilename("pdf") into tPdfPath
-
+   
    local tArgs
    put empty into tArgs
    put merge("--header-right '[[tTitle]] [[tDate]]' ") after tArgs
@@ -135,12 +144,13 @@ private command OutputGuidePdf
    put "--footer-center [page] --footer-font-size 8 --footer-spacing 5 " after tArgs
    put "--margin-top 30 --margin-bottom 20 --margin-left 20 --margin-right 20 " after tArgs
    put "--enable-internal-links --encoding UTF-8 " after tArgs
-
+   
    local tExitCode
    builderLog "report", merge("Generating [[tPdfPath]] with [[tCommand]]")
+   put tCommand && tArgs && tHtmlPath && tPdfPath
    get shell(tCommand && tArgs && tHtmlPath && tPdfPath)
    put the result into tExitCode
-
+   
    if tExitCode is not 0 then
       throw merge("Failed to run [[tCommand]]: exit code [[tExitCode]]")
    end if

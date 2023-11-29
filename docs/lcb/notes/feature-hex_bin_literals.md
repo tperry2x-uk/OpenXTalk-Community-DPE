@@ -1,4 +1,4 @@
-# LiveCode Builder Tools
+# Extension Builder Tools
 ## lc-compile
 ### Errors
 
@@ -11,7 +11,7 @@
       0xabcdefgh -- ERROR
       0b010432 -- ERROR
 
-# LiveCode Builder Language
+# Extension Builder Language
 ## Literals
 
 * Base 2 (binary) integer literals can now be specified by using a

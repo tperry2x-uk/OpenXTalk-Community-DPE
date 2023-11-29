@@ -2,7 +2,7 @@ Library: com.livecode.arithmetic
 
 Type: module
 
-Summary: This library consists of the basic arithmetic operations of standard library of LiveCode Builder.
+Summary: This library consists of the basic arithmetic operations of standard library of Extension Builder.
 
 
 Name: MinusUnaryOperator
@@ -127,7 +127,7 @@ Right: An expression that evaluates to a number.
 
 Returns: True if <Left> is less than or equal to <Right>, and false otherwise.
 
-Description: 
+Description:
 
 Tags: Math
 
@@ -376,7 +376,7 @@ variable tVar as Number
 put -3 wrap 3 into tVar -- tVar contains -3
 
 Description:
-Use wrap to ensure the value of a variable stays within a specified range. For x,y > 0, 
+Use wrap to ensure the value of a variable stays within a specified range. For x,y > 0,
 successive values of x wrap y cycle through the sequence 1, 2, ..., y.
 
 
@@ -442,7 +442,7 @@ Right: An expression that evaluates to a number.
 
 Returns: True if <Left> is less than <Right>, and false otherwise.
 
-Description: 
+Description:
 
 Tags: Math
 
@@ -490,7 +490,7 @@ Right: An expression that evaluates to a number.
 
 Returns: True if <Left> is equal to <Right>, and false otherwise.
 
-Description: 
+Description:
 
 Tags: Math
 
@@ -618,6 +618,3 @@ Description:
 Use <ListOfStringParsedAsListOfNumber> when you want to interpret pieces of text numerically. If the input list contains elements which cannot be parsed as numbers, the corresponding element will be nothing.
 
 *Note:* It is an error if any element of <Operand> is not a string.
-
-
-

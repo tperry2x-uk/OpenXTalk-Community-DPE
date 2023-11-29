@@ -2,7 +2,7 @@ Library: com.livecode.char
 
 Type: module
 
-Summary: This library consists of the operations on chars included in the standard library of LiveCode Builder.
+Summary: This library consists of the operations on chars included in the standard library of Extension Builder.
 
 
 Name: CharOffset
@@ -391,10 +391,10 @@ variable tVar as Number
 variable tLastDot as Number
 variable tAddress as String
 variable tTLD as String
-put "http://www.livecode.com/index.html" into tAddress
+put "http://www.openxtalk.org/index.html" into tAddress
 put the last offset of "." in tAddress into tLastDot
 put the offset of "." before tLastDot in tAddress into tVar
-put char tVar + 1 to tVar + 3 of tAddress into tTLD -- tTLD contains "com"
+put char tVar + 1 to tVar + 3 of tAddress into tTLD -- tTLD contains "org"
 
 Description: The first (respectively last) offset of <Needle> in <Target> is number of chars between the first char of <Target>, and the first (respectively last) occurrence of <Needle> in the substring of <Target> ending at char <Before> - 1. If neither first or last is specified, then the last offset is found. If <Needle> does not occur in the given substring of <Target>, then the output is 0.
 
@@ -423,7 +423,7 @@ variable tResult as String
 put "abcde" into tVar
 if tVar ends with "cde" then
 	put "success" into tResult
-end if	
+end if
 
 Description:
 <Source> ends with <Suffix> if and only if the chars of <Suffix> occur as a final subsequence of the chars of <Source>.
@@ -520,7 +520,7 @@ put "hello" into tString
 put the number of chars in tString into tVar
 
 variable tString as String
-put the empty string into tString	
+put the empty string into tString
 repeat tVar times
 	put "a" after tString
 end repeat
@@ -554,7 +554,7 @@ variable tResult as String
 put "abcde" into tVar
 if tVar begins with "abc" then
 	put "success" into tResult
-end if	
+end if
 
 Description:
 <Source> begins with <Prefix> if and only if the chars of <Prefix> occur as an initial subsequence of the chars of <Source>.
@@ -562,7 +562,3 @@ Description:
 >*Note:* Since "" is an initial substring of every string, every string begins with the empty string.
 
 Tags: Strings
-
-
-
-

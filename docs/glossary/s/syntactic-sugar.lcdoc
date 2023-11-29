@@ -1,0 +1,21 @@
+Name: syntactic-sugar
+
+Synonyms: syntactical, syntaxes, syntax, syntactic-sugar
+
+Type: glossary
+
+Description:
+The term syntactic sugar is sometimes used to describe aspects a programming
+language that has syntax included purely to aid in the human readability
+of the code that uses it. Such syntax may serve little or no purpose, and
+may be ignored completely by any sort of code-compilation process.
+XTalk scripting languages use lots of syntactic sugar. For example, in most
+circumstances the THE in scripts is largely ignored.
+Try throwing in a few extra THE to test:
+'''
+Put the the the the date
+'''
+But normally the availability of THE simply helps xTalk scripts read more like
+an English sentence, particularly when compared with AGOL languages like C++.
+
+References: statement (glossary)

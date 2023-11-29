@@ -20,14 +20,14 @@ Type: handler
 
 Syntax: JsonImport(<pJson>)
 
-Summary: Parse JSON text into a LiveCode value.
+Summary: Parse JSON text into a xTalk value.
 
 pJson: String containing JSON text
 
 Returns: The top level value.  The type depends on the JSON content.
 
 Description:
-<JsonImport> is used to convert data encoded in JSON format into a LiveCode
+<JsonImport> is used to convert data encoded in JSON format into a xTalk
 value.  It parses <pJson> and returns the first top-level value found.  If any
 syntax errors are found in <pJson>, an error is thrown.
 
@@ -56,14 +56,14 @@ Type: handler
 
 Syntax: JsonExport(<pValue>)
 
-Summary: Format a LiveCode value as JSON text
+Summary: Format a xTalk value as JSON text
 
-pValue: A LiveCode value (Array, List, String, Number, Boolean, or nothing)
+pValue: A xTalk value (Array, List, String, Number, Boolean, or nothing)
 
 Returns: A string containing JSON-formatted text.
 
 Description:
-<JsonExport> is used to convert a LiveCode value into data encoded in JSON
+<JsonExport> is used to convert a xTalk value into data encoded in JSON
 format.  If <pValue> is of a type that cannot be converted to JSON, an error is
 thrown.
 
@@ -72,7 +72,3 @@ Tags: JSON
 
 Parameters:
 :
-
-
-
-

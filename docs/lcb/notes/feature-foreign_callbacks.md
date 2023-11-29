@@ -1,7 +1,7 @@
 ---
 version: 8.0.0-dp-5
 ---
-# LiveCode Builder Language
+# Extension Builder Language
 
 ## Type definitions
 

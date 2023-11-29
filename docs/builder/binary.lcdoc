@@ -2,7 +2,7 @@ Library: com.livecode.binary
 
 Type: module
 
-Summary: This library consists of the operations on binary strings provided by the standard library of LiveCode Builder.
+Summary: This library consists of the operations on binary strings provided by the standard library of Extension Builder.
 
 
 Name: DataIsNotData
@@ -167,7 +167,3 @@ Related: PutBytesAfter
 Description: Use to insert bytes into data without replacement. Can be used either with a chunk expression to insert at a specified location, or without to append to the target data.
 
 Tags: Binary
-
-
-
-

@@ -6,7 +6,7 @@ Syntax: get the HCStack of <stack>
 
 Summary:
 Reports whether a <stack> was originally <import|imported> from
-<HyperCard>. 
+<HyperCard>.
 
 Associations: stack
 
@@ -36,5 +36,6 @@ If the specified stack was never a HyperCard stack, its <HCStack>
 
 References: property (glossary), script (glossary), import (glossary),
 HyperCard (glossary), stack (object), HCImportStat (property),
-properties (property)
+properties (property), hypercard (glossary)
 
+Tags: stack, hypercard

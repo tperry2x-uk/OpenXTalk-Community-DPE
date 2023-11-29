@@ -2,7 +2,7 @@ Library: com.livecode.typeconvert
 
 Type: module
 
-Summary: This library consists of the operations for performing complex type conversion in LiveCode Builder.
+Summary: This library consists of the operations for performing complex type conversion in Extension Builder.
 
 
 Name: StringSplitBy
@@ -43,7 +43,7 @@ Syntax:     combine <Target> with <Delimiter>
 
 Summary:
 Combines the list of strings in <Target>, using <Delimiter>
-                as the delimiter. 
+                as the delimiter.
 
 Target: An expression that evaluates to a list container.
 
@@ -65,7 +65,3 @@ Use the combine command to convert a list into a string representation of the li
 >*Note:* The list *must* consist entirely of string elements, otherwise the combine command will throw an error.
 
 Tags: Type conversion
-
-
-
-

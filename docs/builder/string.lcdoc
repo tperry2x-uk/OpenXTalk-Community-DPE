@@ -2,7 +2,7 @@ Library: com.livecode.string
 
 Type: module
 
-Summary: This library consists of the operations on strings included in the standard library of LiveCode Builder.
+Summary: This library consists of the operations on strings included in the standard library of Extension Builder.
 
 
 Name: ConcatenateStrings
@@ -118,7 +118,7 @@ Source: An expression which evaluates to a string.
 
 Returns: <Source> with each of its chars lowercased.
 
-Description: Uppercase letters, including special characters with diacritical marks, are converted to the lowercase equivalents. All other characters, including lowercase letters, numbers, punctuation, and special characters with no upper or lower case, are left unchanged.     
+Description: Uppercase letters, including special characters with diacritical marks, are converted to the lowercase equivalents. All other characters, including lowercase letters, numbers, punctuation, and special characters with no upper or lower case, are left unchanged.
 
 Tags: Strings
 
@@ -160,7 +160,7 @@ Right: An expression which evaluates to a string.
 
 Returns: Returns true if <Left> is not identical to <Right>.
 
-Description: The ```is not``` operator is case sensitive. 
+Description: The ```is not``` operator is case sensitive.
 
 Tags: Strings
 
@@ -242,7 +242,7 @@ Right: An expression which evaluates to a string.
 
 Returns: Returns true if <Left> is identical to <Right>.
 
-Description: The ```is``` operator is case sensitive. 
+Description: The ```is``` operator is case sensitive.
 
 Tags: Strings
 
@@ -271,7 +271,3 @@ put "eti" before char -1 of tVar -- tVar contains "alphabetic"
 Description: Use to insert a string without replacement. Can be used either with a chunk expression to insert at a specified location, or without to prepend to the target string.
 
 Tags: Strings
-
-
-
-

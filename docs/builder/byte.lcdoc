@@ -2,7 +2,7 @@ Library: com.livecode.byte
 
 Type: module
 
-Summary: This library consists of the operations on bytes included in the standard library of LiveCode Builder.
+Summary: This library consists of the operations on bytes included in the standard library of Extension Builder.
 
 
 Name: DeleteSingletonByteOf
@@ -421,7 +421,7 @@ Target: An expression which evaluates to binary data.
 
 Returns: The number of bytes in <Target>
 
-Description: 
+Description:
 
 Tags: Binary
 
@@ -443,7 +443,3 @@ Generates the requested number of bytes of cryptographic-quality
 random data.
 
 Tags: Binary, Random
-
-
-
-

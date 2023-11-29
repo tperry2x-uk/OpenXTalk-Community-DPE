@@ -1,4 +1,4 @@
-# LiveCode Builder Host Library
+# Extension Builder Host Library
 ## Canvas library
 
 A new statement `clip to <path> on <canvas>` has been implemented to allow drawing on a

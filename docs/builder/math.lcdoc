@@ -2,7 +2,7 @@ Library: com.livecode.math
 
 Type: module
 
-Summary: This library consists of the mathematical operations included in the standard library of LiveCode Builder.
+Summary: This library consists of the mathematical operations included in the standard library of Extension Builder.
 
 
 Name: MinListOperator
@@ -494,7 +494,3 @@ Interprets a string in the desired source base and converts it to the desired ta
 >*Note:* The source and destination bases must be integers between 2 and 32.
 
 Tags: Math
-
-
-
-

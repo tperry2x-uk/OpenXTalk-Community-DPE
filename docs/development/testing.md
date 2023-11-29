@@ -5,10 +5,10 @@ They're really useful for ensuring that changes to one part don't break other th
 
 The main engine repository contains the following sets of tests ("test suites"):
 
-* **LiveCode Script tests:** script-only stacks that are run using the standalone engine.  They test features of the Script language.
-* **LiveCode Builder tests:** LCB modules that are run using the **lc-run** tool.   They test features of the LCB core language and standard library.
-* **LiveCode Builder Compiler Frontend tests:** Fragments of LCB code which are run through the compiler and check that the compile succeeds, or emits the correct warnings or errors.
-* **LiveCode Script parser tests:** Fragments of LCS code which are run through the parser and check that the compile succeeds, or emits the correct warnings or errors.
+* **Script tests:** script-only stacks that are run using the standalone engine.  They test features of the Script language.
+* **Extension Builder tests:** LCB modules that are run using the **lc-run** tool.   They test features of the LCB core language and standard library.
+* **Extension Builder Compiler Frontend tests:** Fragments of LCB code which are run through the compiler and check that the compile succeeds, or emits the correct warnings or errors.
+* **xTalk Script parser tests:** Fragments of LCS code which are run through the parser and check that the compile succeeds, or emits the correct warnings or errors.
 * **C++ tests:** low-level tests written in C++ using [Google Test](https://github.com/google/googletest).  These perform low-level checks for things that can't be tested any other way.
 
 ## Running the Tests

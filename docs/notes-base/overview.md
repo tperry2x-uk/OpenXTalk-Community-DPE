@@ -4,7 +4,7 @@ LiveCode 9.0 enables access to libraries and platform APIs written in
 many other languages thanks to the community-funded 'Infinite
 LiveCode' project.
 
-This includes a greatly improved LiveCode Builder virtual machine.
+This includes a greatly improved Extension Builder virtual machine.
 
 LiveCode 9.0 contains many additional improvements to support LiveCode
 app developers, including:

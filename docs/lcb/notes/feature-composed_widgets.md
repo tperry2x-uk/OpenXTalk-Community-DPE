@@ -1,7 +1,7 @@
 ---
 version: 8.0.0-dp-3
 ---
-# LiveCode Builder Host Library
+# Extension Builder Host Library
 
 ## Composed widgets
 
@@ -49,4 +49,3 @@ as a child widget within another widget.
 
 * The [Simple Composed Widget](https://github.com/livecode/livecode/blob/develop/extensions/widgets/simplecomposed/simplecomposed.lcb)
   provides an example of how the host/child relationship can be used.
-

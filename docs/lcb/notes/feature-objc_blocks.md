@@ -1,4 +1,4 @@
-# LiveCode Builder Language
+# Extension Builder Language
 
 ## Objective-C block support
 

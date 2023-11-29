@@ -427,7 +427,7 @@ Description:
 The <theme> controls the general appearance of the header bar.  The
 header widget currently supports "native", "iOS" and "Android".  If
 the <theme> is set to "native", then the header widget will use either
-the "iOS" or "Android" theme depending on the platform that LiveCode
+the "iOS" or "Android" theme depending on the platform that the engine
 is running on.
 
 >*Note*: The value of the <theme> property is not saved by the header
@@ -458,7 +458,3 @@ The <itemLabels> are displayed by the header bar widget when the
 <itemStyle> is set to show text for each action.
 
 Related: itemArray (property), itemStyle (property)
-
-
-
-

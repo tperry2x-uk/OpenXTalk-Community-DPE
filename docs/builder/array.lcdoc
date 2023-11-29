@@ -2,7 +2,7 @@ Library: com.livecode.array
 
 Type: module
 
-Summary: This library consists of the operations on arrays included in the standard library of LiveCode Builder.
+Summary: This library consists of the operations on arrays included in the standard library of Extension Builder.
 
 
 Name: KeysOfArray
@@ -29,10 +29,10 @@ put the keys of tArray into tKeys
 sort tKeys in ascending order
 
 variable tKeysString as String
-combine tKeys with "," into tKeysString 
+combine tKeys with "," into tKeysString
 // tKeysString is "key1,key2,key3"
 
-Description: >*Note:* The resulting list is not necessarily ordered in any way. Use the <com.livecode.sort> library to sort the keys.  
+Description: >*Note:* The resulting list is not necessarily ordered in any way. Use the <com.livecode.sort> library to sort the keys.
 
 References: com.livecode.sort(library)
 
@@ -144,8 +144,8 @@ put "key" is among the keys of tArray into tIsAmong -- tIsAmong is true
 
 Description:
 The keys of an array are case insensitive. Thus
-``` tVar is among the keys of tArray``` 
-is not equivalent to 
+``` tVar is among the keys of tArray```
+is not equivalent to
 ``` tVar is in (the keys of tArray) ```
 as the latter <IsInList> operation *is* case sensitive.
 
@@ -215,8 +215,8 @@ variable tIsAmong as Boolean
 put "value" is among the elements of tArray into tIsAmong -- tIsAmong is true
 
 Description:
-Elements are compared using the default comparison for that type. Thus for a string, ```tString```, 
-```tString is among the elements of tArray``` 
+Elements are compared using the default comparison for that type. Thus for a string, ```tString```,
+```tString is among the elements of tArray```
 is a case sensitive search.
 
 Tags: Arrays
@@ -310,7 +310,3 @@ Example:
 Description: Use repeat for each key to iterate over the keys of an array in no particular order. On each iteration, the <Iterand> will contain the next key of the array being iterated over.
 
 Tags: Arrays, Control structures
-
-
-
-

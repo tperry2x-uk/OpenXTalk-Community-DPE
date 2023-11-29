@@ -1,4 +1,4 @@
-# LiveCode Builder Host Library
+# Extension Builder Host Library
 ## Engine library
 
 * You can now use `the <modifierkey> is [currently] down` expression to
